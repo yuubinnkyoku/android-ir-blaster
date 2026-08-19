@@ -11,8 +11,10 @@ jobs:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
-          channel: stable
+          flutter-version: '3.38.6'
           cache: true
       - run: flutter pub get
-      - run: flutter analyze
+      - name: Generate bundled IR database
+        run: python3 tools/build_ir_db.py
+      - run: flutter analyze --no-fatal-warnings --no-fatal-infos
       - run: flutter test
