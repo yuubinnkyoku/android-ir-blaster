@@ -192,6 +192,23 @@ Kaseikyo は探索空間が大きいため、既知の SHARP コード/アドレ
 
 DP-700SHの回路と共通かは不明。
 
+## 比較対象: Jablotron ALBUM
+
+### ALBUM 1.15 の実体は `.FWI` 更新ファイルだった
+
+現行 Jablotron 公式ダウンロードページでは ALBUM の最新版ファーム 1.15 を `zip (4.2 MB)` と表示し、リンク先は `albumq42008_en.zip` になっている。
+
+一方、Jablotron 旧サイトの公開複製では同じ「Latest ALBUM firmware version 1.15」が **`FWI (4 MB)`** と明示されている。したがって現行サイトでは配布用ZIPで包まれているものの、少なくとも旧配布形態では `.fwi` が実際のファーム更新ファイル種別だったと考えられる。
+
+参考:
+- https://www.jablotron.com/en/support/downloads/alarms/software/album
+- https://jablotron.com.cov04.vas-server.cz/en/about-jablotron/downloads/?level1=2598
+- https://www.jablotron.com.cov04.vas-server.cz/fi/tietoja-jablotronista/ladattavat-kohteet/?level1=2823
+
+DP-700SH が `.fwi` を使う証拠はない。ただし、公開職歴上で Jablotron ALBUM → AIPTEK Story Book inColor → Sharp 顧客の FUJIFILM DP-850SH/DP-1020SH と同じ開発担当者が連続しているため、更新ローダやファームのヘッダ、文字列、RTOS/SoC識別子を比較する価値が上がった。
+
+現行の `albumq42008_en.zip` はURLまで特定できたが、この実行環境からの直接取得は失敗している。ミラーまたは旧サイト上の `.fwi` 直リンクの回収を継続する。
+
 ## 未解決事項
 
 - DP-700SH の SoC 型番
@@ -214,6 +231,7 @@ DP-700SHの回路と共通かは不明。
 - SHARP の近縁機種で使われる IR コードを収集し Sharp / Kaseikyo の探索範囲を削減
 - HN-PP100/150 や DP-70SH/701SH 系とのUI・更新方式・部品の比較
 - 台湾側の開発経歴から ODM / SoC / ミドルウェアの手掛かりを逆引き
+- Jablotron ALBUM の `.fwi` 本体または旧直リンクを回収し、ヘッダ・文字列・圧縮形式を解析
 
 ## 注意
 
