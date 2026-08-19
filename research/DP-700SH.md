@@ -2,41 +2,34 @@
 
 最終更新: 2026-08-20 JST
 
-この文書は DP-700SH のハードウェア、ファームウェア、赤外線リモコン、製造元を追跡するための作業メモ。確定情報と推測を分ける。
+DP-700SH のハードウェア、ファームウェア、赤外線リモコン、開発/製造系統を追跡する作業メモ。**確定情報・状況証拠・推測を分ける**。
 
 ## 現在の実機側の状況
 
 - 対象: FUJIFILM DP-700SH
-- 純正リモコンなし。
-- nubia Z80 Ultra は Android の `android.hardware.consumerir` を持つことを実機で確認済み。
-- `yuubinnkyoku/android-ir-blaster` を Signal Tester / 総当たり探索向けに改造済み。
+- 純正リモコンは手元にない。
+- nubia Z80 Ultra で `android.hardware.consumerir` を確認済み。
+- `yuubinnkyoku/android-ir-blaster` を Signal Tester / 総当たり探索向けに改造し、APK導入済み。
 - 現在 Sharp 13-bit 系を実機で総当たり中。
-  - 入力表示上は 16-bit / 65,536 通りに見えるが、無接頭辞探索では内部カーソルが Sharp の実効 13-bit に最適化される。
-  - 実際の固有候補は 8,192 通り (`0x0000`–`0x1FFF`)。
-- DP-700SH はリモコン受光部の指向性/配置が扱いづらいという実機レビューがあるため、送信機の向きは重要。
+  - UIは4桁hexのため65,536通りに見える。
+  - 無接頭辞Sharp探索は内部で13-bitに正規化され、固有候補は8,192 (`0000`–`1FFF`)。
+- 反応が出た場合は Pause → Triggerで同一候補を再送 → 再現したらSave Hit。
 
 ## 確定度: 高
 
-### 製造元は SHARP
+### SHARP製液晶を採用
 
-実機背面ラベルで「製造元 SHARP」を確認済み。2010年当時の所有者ブログにも同じ表示の記録がある。
-
-参考:
-- https://minkara.carview.co.jp/userid/176568/blog/18787364/
-
-ただし「製造元 SHARP」だけでは SoC や全ソフトウェアスタックまで SHARP 製とは限らない。
-
-### 液晶は SHARP 製
-
-DP-1020SH / DP-850SH / DP-700SH はいずれも SHARP 製液晶を採用。DP-700SH は 7型 800x480 ASV 液晶。
+DP-1020SH / DP-850SH / DP-700SH はSHARP製液晶を採用。DP-700SHは7型800×480 ASV液晶。
 
 参考:
 - https://dc.watch.impress.co.jp/docs/news/346441.html
 - https://www.bcnretail.com/news/detail/100203_16329.html
 
-### 2010年に DP-1020SH / DP-850SH / DP-700SH 共通のファームウェア更新が存在
+**注意:** ここから「メイン基板・SoC・OSを含む本体全体がSHARP設計/OEM」とまでは断定しない。実機で使っているACアダプターにもSHARP表記があるが、これも本体内部設計の証明ではない。
 
-2010-04-30 に富士フイルムが新ファームウェアを公開。修正内容は IrSimple / IrSS / IrDA の通信がイレギュラー操作で中断した際、まれにシステムがハングする問題。
+### 2010年に3機種共通のファームウェア更新が存在
+
+2010-04-30、DP-1020SH / DP-850SH / DP-700SH向けに共通更新が公開された。修正対象はIrSimple / IrSS / IrDA通信がイレギュラー操作で中断した場合に、まれにシステムがハングする症状。
 
 旧公式URL:
 - http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download001.html
@@ -44,195 +37,174 @@ DP-1020SH / DP-850SH / DP-700SH はいずれも SHARP 製液晶を採用。DP-70
 記事:
 - https://dc.watch.impress.co.jp/docs/news/365704.html
 
-更新ファイル本体とファイル名は未回収。2026-08-20時点の通常Web検索でもバイナリ名は特定できていない。
+更新ファイル本体、ファイル名、バージョン番号は未回収。
 
-### miniUSB は通常の USB デバイス接続用
+### miniUSB-Bは通常のPC接続用USB Device
 
-取扱説明書から、PC と接続し内蔵メモリを読み書きするための USB mini-B 端子であることを確認済み。サービス専用端子という証拠はない。
+取扱説明書から、PCと接続して内蔵メモリを読み書きするためのminiUSB-B端子であることを確認済み。サービス専用端子という証拠はない。
 
-同系列の DP-1020SH の実使用記録でも miniUSB 経由でPCから本体へ大量画像をコピーしていたことが確認できる。
+### 画像転送IRとリモコン受光は別系統
 
-参考:
-- https://kurukuru-chaccha.seesaa.net/article/201004article_1.html
+仕様上、IrSS / IrSimple受信用と専用リモコン用の受光部は別用途。スマホからIrSimpleを送るだけではリモコン代用にはならない。
 
-### IrSimple/IrSS の画像転送用赤外線とリモコン受光は別用途
+### 本体情報からファームバージョン表示が可能
 
-DP-700SH は画像転送用の高速赤外線通信機能を持つ。一方で付属リモコンもあり、リモコン用受光部が存在する。画像転送プロトコルを送るだけではリモコン操作の代用にならない。
-
-### DP-700SH のリモコン受光位置/指向性に注意
-
-価格.com の実機レビューでは、DP-70SHから配置が変わり、画像転送用赤外線ポートが側面寄りになったほか、リモコンも近距離・正面から反応しないことがあると報告されている。
-
-参考:
-- https://review.kakaku.com/review/K0000084345/
-
-### `EP-D72F` は本体内部型番ではなく AC アダプター型番
-
-中古出品で `DP-700SH EP-D72F` と併記される例があるが、別の流通情報から `EP-D72F` は SHARP の AC アダプター型番と判明。SoC/基板型番探索には使えない。
-
-5V / 2A 系として流通している記録がある。DP-700SH と SHARP の電源部品上のつながりを示す材料にはなる。
+取扱説明書に本体情報/バージョン表示がある。実機の現在バージョンはまだ記録できていない。
 
 ## 確定度: 中～高
 
-### 先代 DP-70SH には隠れたファームウェア書き換え操作が存在
+### DP-850SH / DP-1020SHの開発案件は `Customer: Sharp`
 
-DP-70SH の公式ファーム更新手順についての当時の記事では、バージョン表示画面からリモコンで
-
-`拡大 → 縮小 → 時計 → 回転`
-
-と押すことでファームウェア書き換え画面へ入る手順が記録されている。
-
-参考:
-- https://dc.watch.impress.co.jp/cda/accessories/2009/04/01/10602.html
-
-DP-700SHで同じシーケンスが使えるかは未確認。純正キーコードが取得できたら優先的に試す価値が高い。
-
-### DP-850SH / DP-1020SH の開発案件は Sharp 顧客案件として記録されている
-
-台湾・新竹の技術者の公開職歴に、2009-10〜2010-02のプロジェクトとして
+台湾・新竹の技術者 Dusty Shyr（石璧維）の公開職歴に、2009-10〜2010-02の案件として以下が残る。
 
 - `Digital Photo Frame - FUJIFILM DP-850SH/DP-1020SH`
+- `Product: FUJIFILM DP-850SH/DP-1020SH`
 - `Customer: Sharp`
-
-と記録されている。
 
 参考:
 - https://tw.linkedin.com/in/%E7%92%A7%E7%B6%AD-dusty-shyr-%E7%9F%B3-a6ab8a5b
 
-DP-700SH はこの記載には含まれていない。ただし DP-700SH / 850SH / 1020SH は同時期シリーズで、2010年のファーム更新内容も共通だったため、Sharp が単なる液晶供給以上の役割を持った可能性を補強する材料として扱う。
+DP-700SHの名前はこの記録にはない。ただし700SH/850SH/1020SHは同時期シリーズで共通ファーム更新を受けているため、SHARPが液晶供給以上に開発へ関与した可能性を補強する。
 
-### 同時期の SHARP AQUOS フォトプレーヤーは μITRON/eSOL 系
+### 同じ担当者の案件が連続している
 
-SHARP HN-PP100 / HN-PP150 は eSOL の `eCROS` を採用し、リアルタイムOSとして μITRON 4.0 準拠 `PrKERNELv4` を使用。
+公開職歴上:
 
-一次資料:
-- https://www.esol.co.jp/archive/news/emb_press090512.html
+1. 2008-04〜10: Digital PhotoFrame - Electronic photo Album / Customer: Jablotron
+2. 2009-03〜09: Story Book inColor / Customer: AIPTEK（Project / SW Manager）
+3. 2009-10〜2010-02: FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp
 
-DP-700SH が同じOSだという証拠はない。SHARP の同時期デジタル写真機器における比較候補として記録する。
+同一の台湾側ソフトウェア開発チームまたはODMが複数顧客向けにデジタル写真機器を開発していた可能性がある。ただし当時の所属会社名はまだ特定できていない。
 
-### SHARP HN-PP150 の公式ファームは現在も記録が残る
+### 先代DP-70SHには隠しファーム更新画面がある
 
-2011-10-20版の更新ページが現存し、更新ファイル名は `TH150400.ver`、121MB。
+DP-70SH Ver.1.04.00の公開更新では、SDカードへファームを保存し、「本体情報→バージョン表示」中にリモコンで
+
+`拡大 → 縮小 → 時計 → 回転`
+
+と押すとファームウェア書き換え画面に入る。
 
 参考:
-- https://www.sharp.co.jp/support/photoplayer/fw_update.html
-- https://www.sharp.co.jp/support/photoplayer/fw_agree.html
+- https://dc.watch.impress.co.jp/cda/accessories/2009/04/01/10602.html
 
-DP-700SHとの形式互換性を示す証拠はない。
+DP-700SHでも同じシーケンスが残るかは未確認。リモコンキーが1つでも判明したら重要な検証対象。
+
+### 後継DP-701SH / DP-801SHにも共通更新
+
+2011-07-29に共通ファームVer.1.04.07が公開された。
+
+参考:
+- https://dc.watch.impress.co.jp/docs/news/464018.html
+
+一方、2011年12月購入のDP-801SHで1.05.01が出荷状態だったという実機報告があり、Web未公開の工場/修理向けビルドが存在した可能性がある。
 
 ## 純正リモコン調査
 
-### `RRMCG2009SCZZ` という FUJIFILM DIGITAL PHOTO FRAME 用リモコンが実在
+### 候補型番 `RRMCG2009SCZZ`
 
-複数の中古流通記録で、FUJIFILM のデジタルフォトフレーム用リモコンとして `RRMCG2009SCZZ` が確認できる。
+FUJIFILM DIGITAL PHOTO FRAME用リモコンとして `RRMCG2009SCZZ` が複数の中古流通記録に残る。
 
 参考:
 - https://paypayfleamarket.yahoo.co.jp/item/g1043790009
-- 楽天市場の中古流通記録（`C2J710` / `C2J726` として RRMCG2009SCZZ が掲載）
+- 楽天市場の中古流通記録 `C2J710`, `C2J726`
 
-ただし **DP-700SH との直接対応はまだ未確認**。現時点では候補型番扱い。
+Yahoo!フリマの出品では全ボタンの赤外線動作確認済みと記載。2026-08-20時点でメルカリにも同型番が複数残っている。
 
-### DP-700SH 専用と明記されたリモコン単品の中古流通は存在
+**ただしDP-700SH対応とはまだ直接確認できていない。**
 
-メルカリ検索結果に `【リモコンのみ本体無し】デジタルフォトフレーム DP-700SH` という出品が確認できる。
+次の確認方法:
+- DP-700SH付属リモコン写真と `RRMCG2009SCZZ` の前面ボタン配置を比較
+- 裏面ラベル/部品番号を比較
+- 同型番を採用するFUJIFILM機種を逆引き
+- LIRC / Flipper-IRDB / IRDB等の既知コードを探索
 
-この個体の裏面ラベルまたは写真から部品番号を読めれば、`RRMCG2009SCZZ` との同一性を確定できる可能性が高い。
+### 公開IRデータベースの現状
 
-### リモコン型番が確定した場合の次の探索
+`Lucaslhm/Flipper-IRDB` の `Picture_Frames` では現時点でFUJIFILM/SHARPフォトフレームの登録を確認できていない。GitHubコード検索でも `DP-700SH` / `RRMCG2009SCZZ` の既知IR信号は未発見。
 
-- LIRC / Flipper Zero / IRDB 系の信号データ
-- Sharp サービス部品番号データベース
-- 同一リモコンが付属する他機種
-- 各キーのアドレス・コマンド規則
+## 赤外線探索戦略
 
-を横断し、総当たりより先に既知コードを狙う。
+優先順位:
 
-## 赤外線探索
+1. Sharp 13-bit（8,192固有候補）
+2. 内蔵IR DBのSHARP候補
+3. Kaseikyo / SHARP vendor `5AAA`
+4. 近縁SHARP写真機器の既知コード
+5. その他の家電IRプロトコル
 
-### 最優先: Sharp 13-bit
+Kaseikyoは実効20-bitで約1,048,576候補あるため、vendor/address/commandの既知情報を拾ってから部分探索する。
 
-現在実機探索中。
+DP-700SHは受光位置/指向性が扱いづらいという実機レビューがあるので、全探索時はスマホIR送信口を受光部へ正確に向けることが重要。
 
-`android-ir-blaster` の無接頭辞 Sharp 探索は実効13-bitだけを送るため、固有候補数は 8192。
+## 比較対象
 
-反応した場合:
-1. 即 Pause
-2. Trigger で同一候補を再送
-3. 再現したら Save Hit
-4. `Sharp XXXX` のコードと実際の動作を記録
+### Jablotron / ALBUMteam `ALBUM`
 
-1キーでも見つかれば、同じアドレス/コマンド配置から残りの候補を大幅に絞れる可能性がある。
+同じ台湾側担当者が2008年に関わった案件。Jablotron公式には現在もALBUM firmware 1.15が残る。
 
-### 次候補
+現行配布:
+- `albumq42008_en.zip` 約4.2MB
 
-1. 内蔵IRデータベースの SHARP 候補
-2. Kaseikyo / Sharp vendor `5AAA`
-3. 同年代 SHARP フォトフレーム/フォトプレーヤーのリモコンコード
-4. その他の一般的な家電IR形式
+旧Jablotronサイト複製では同じfirmware 1.15を `FWI (4 MB)` と表示しているため、旧更新実体は `.fwi` 系だった可能性が高い。
 
-Kaseikyo は探索空間が大きいため、既知の SHARP コード/アドレス情報を集めてから部分探索する。
+取扱説明書から、更新はファームファイルをALBUMのルートへコピーして再起動する方式。ALBUMはUSB接続時にFAT32外部ディスクとして見える。
 
-## 同系列機から得られる情報
-
-### DP-1020SH でも miniUSB 転送時のフリーズ例あり
-
-2010年の利用記録では、773枚・約436MBをPCから一括転送した際、途中で本体がフリーズした例がある。小分け転送では実用できていた。
+ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell ApplováとDalibor Dědekが設立した企業で、Jablotronグループの一員として報道されている。ALBUMは米国/チェコで設計され、台湾/中国で生産されたとされる。
 
 参考:
-- https://kurukuru-chaccha.seesaa.net/article/201004article_1.html
+- https://www.prnewswire.com/news-releases/albumteam-named-as-ces-innovations-2010-design--engineering-award-honoree-80907592.html
+- https://www.finance.cz/clanky/217833-jablotron-navzdory-krizi-zvysil-trzby-o-petinu-na-1-2-miliardy-kc/
 
-単なる実装品質の問題か、ファイルシステム/USBスタック/メモリ制約に由来するかは不明。OS推定の直接証拠ではないが、同系列ソフトウェアの挙動として記録する。
+### Prosoyo Technology
 
-### DP-1020SH は電源接続部不具合で発売延期
+2009年前後のJablotronは中国のEMS企業Prosoyoと深く提携し、グループ生産の大きな割合を同社へ委託していたという当時報道がある。Prosoyoは現在もDongguan工場/Hong Kong拠点を持ち、製品設計からPCB実装・完成品組立までを掲げるEMS企業。
 
-2010-03 に一部個体の「電源接続部の不具合」により全数検査となり、発売が延期された。
+ただし **ALBUMをProsoyoが製造した証拠、ましてDP-700SHとの直接関係は未確認**。サプライチェーン逆引きの候補として扱う。
 
-参考:
-- https://av.watch.impress.co.jp/docs/news/353844.html
+### AIPTEK Story Book inColor
 
-DP-700SHの回路と共通かは不明。
+同担当者の2009年案件。8型800×600、USB host/slave、SD系、JPEG/MP3等を持つ。機能構成は近いが、SoC/OS/基板情報は未回収。
 
-## 比較対象: Jablotron ALBUM
+### SHARP HN-PP100 / HN-PP150
 
-### ALBUM 1.15 の実体は `.FWI` 更新ファイルだった
-
-現行 Jablotron 公式ダウンロードページでは ALBUM の最新版ファーム 1.15 を `zip (4.2 MB)` と表示し、リンク先は `albumq42008_en.zip` になっている。
-
-一方、Jablotron 旧サイトの公開複製では同じ「Latest ALBUM firmware version 1.15」が **`FWI (4 MB)`** と明示されている。したがって現行サイトでは配布用ZIPで包まれているものの、少なくとも旧配布形態では `.fwi` が実際のファーム更新ファイル種別だったと考えられる。
+同時期のSHARP AQUOSフォトプレーヤーはeSOL `eCROS`を採用し、OSはμITRON 4.0準拠 `PrKERNELv4`。
 
 参考:
-- https://www.jablotron.com/en/support/downloads/alarms/software/album
-- https://jablotron.com.cov04.vas-server.cz/en/about-jablotron/downloads/?level1=2598
-- https://www.jablotron.com.cov04.vas-server.cz/fi/tietoja-jablotronista/ladattavat-kohteet/?level1=2823
+- https://www.esol.co.jp/archive/news/emb_press090512.html
 
-DP-700SH が `.fwi` を使う証拠はない。ただし、公開職歴上で Jablotron ALBUM → AIPTEK Story Book inColor → Sharp 顧客の FUJIFILM DP-850SH/DP-1020SH と同じ開発担当者が連続しているため、更新ローダやファームのヘッダ、文字列、RTOS/SoC識別子を比較する価値が上がった。
-
-現行の `albumq42008_en.zip` はURLまで特定できたが、この実行環境からの直接取得は失敗している。ミラーまたは旧サイト上の `.fwi` 直リンクの回収を継続する。
+これはDP-700SHのOS証拠ではない。同時期SHARP写真機器の比較候補。
 
 ## 未解決事項
 
-- DP-700SH の SoC 型番
-- RAM / Flash 型番
+- DP-700SHのSoC型番
+- RAM / Flash型番
 - メイン基板型番
 - OS / RTOS
-- 2010年公式更新ファイル本体とファイル名
-- 更新ファイルの形式・署名・暗号化有無
-- 純正リモコンの型番/部品番号（`RRMCG2009SCZZ` は候補）
-- 純正リモコンの搬送波周波数とプロトコル
-- DP-70SH の隠し更新シーケンスが DP-700SH に残っているか
-- DP-700SH / DP-850SH / DP-1020SH の基板・ファーム共通範囲
-- 850SH/1020SHを担当した台湾側開発組織・SoCベンダー
+- 2010年公式更新ファイル本体・ファイル名・バージョン
+- 更新形式、署名/暗号化の有無
+- 純正リモコンの正式部品番号
+- リモコンの搬送波周波数/プロトコル/全キーコード
+- `RRMCG2009SCZZ` とDP-700SHの対応関係
+- DP-70SHの隠し更新シーケンスがDP-700SHにも残るか
+- DP-700SH/850SH/1020SHの基板/ソフト共通範囲
+- 2008〜2010年案件を担当した台湾側開発会社/ODM
 
 ## 次に掘るもの
 
-- Internet Archive / 古いミラー / キャッシュから旧 Fujifilm 更新ページとバイナリを回収
-- DP-700SH / 850SH / 1020SH の分解写真・修理記録・基板写真を探索
-- DP-700SH専用リモコン出品写真から裏面型番を特定し `RRMCG2009SCZZ` と照合
-- SHARP の近縁機種で使われる IR コードを収集し Sharp / Kaseikyo の探索範囲を削減
-- HN-PP100/150 や DP-70SH/701SH 系とのUI・更新方式・部品の比較
-- 台湾側の開発経歴から ODM / SoC / ミドルウェアの手掛かりを逆引き
-- Jablotron ALBUM の `.fwi` 本体または旧直リンクを回収し、ヘッダ・文字列・圧縮形式を解析
+- 旧FUJIFILMページのWayback/CDXから更新ファイルhref回収
+- DP-70SHおよびDP-701SH/801SHの旧公開ファイル名を回収し命名規則を推定
+- DP-700SH/850SH/1020SHの分解・修理・基板写真
+- `RRMCG2009SCZZ` の対応機種と信号コード
+- ALBUM/Story BookのFCC・内部写真・基板・SoC
+- Prosoyoや別の台湾開発会社との人員/案件接点
+- 実機から現在のファームバージョンとUSB VID/PIDを取得
 
-## 注意
+## 記録方針
 
-推測を確定情報として扱わない。特に `SHARP製造 = eCROS/PrKERNELv4` ではない。OS候補はファームウェア、基板、文字列、サービス資料等で裏取りする。
+推測を確定情報として扱わない。特に次を混同しない:
+
+- SHARP製液晶 / Sharp顧客案件
+- SHARP製ACアダプター
+- 本体全体のOEM/SoC/OS
+
+これらは別々の証拠として管理する。
