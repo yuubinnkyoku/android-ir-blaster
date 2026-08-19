@@ -76,6 +76,18 @@ DP-700SHの名前はこの記録にはない。ただし700SH/850SH/1020SHは同
 
 同一の台湾側ソフトウェア開発チームまたはODMが複数顧客向けにデジタル写真機器を開発していた可能性がある。ただし当時の所属会社名はまだ特定できていない。
 
+### AIPTEK資料との食い違いは「外部受託チーム」仮説を強める
+
+2009年のStory Book inColorについて、台湾側の公開資料には **天瀚科技（AIPTEK）が研発・製造した製品** と明記されている。一方、Dusty Shyr氏は同じ案件を自身のプロジェクト履歴で `Customer: AIPTEK` と記録している。
+
+参考:
+- https://9lib.co/document/rz32k9eq-Aiptek%E5%BD%A9%E8%89%B2%E5%85%92%E7%AB%A5%E9%9B%BB%E5%AD%90%E6%9B%B8%E9%80%B2%E8%BB%8D%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%B8%82%E5%A0%B4.html
+- https://tw.linkedin.com/in/%E7%92%A7%E7%B6%AD-dusty-shyr-%E7%9F%B3-a6ab8a5b
+
+この2点は矛盾しない。AIPTEKが製品全体の開発・製造主体でありつつ、ソフトウェアや一部システム開発を外部企業へ委託していた可能性がある。むしろDusty氏がAIPTEK社員だったなら、自社製品を `Customer: AIPTEK` と表記するのはやや不自然である。
+
+**現時点の評価:** Dusty氏は2008〜2010年に、Jablotron / AIPTEK / Sharpを顧客とする同一の台湾系受託開発会社または設計会社に所属していた可能性が高まった。会社名は未特定。これは状況証拠であり確定事項ではない。
+
 ### 先代DP-70SHには隠しファーム更新画面がある
 
 DP-70SH Ver.1.04.00の公開更新では、SDカードへファームを保存し、「本体情報→バージョン表示」中にリモコンで
@@ -165,6 +177,11 @@ ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell Applo
 
 同担当者の2009年案件。8型800×600、USB host/slave、SD系、JPEG/MP3等を持つ。機能構成は近いが、SoC/OS/基板情報は未回収。
 
+台湾側資料ではStory Book inColorを天瀚科技（AIPTEK）が研発・製造したとする一方、Dusty氏の履歴ではAIPTEKは `Customer`。このため、AIPTEK自身とは別の受託開発チームが存在した可能性が高まっている。
+
+参考:
+- https://9lib.co/document/rz32k9eq-Aiptek%E5%BD%A9%E8%89%B2%E5%85%92%E7%AB%A5%E9%9B%BB%E5%AD%90%E6%9B%B8%E9%80%B2%E8%BB%8D%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%B8%82%E5%A0%B4.html
+
 ### SHARP HN-PP100 / HN-PP150
 
 同時期のSHARP AQUOSフォトプレーヤーはeSOL `eCROS`を採用し、OSはμITRON 4.0準拠 `PrKERNELv4`。
@@ -196,6 +213,7 @@ ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell Applo
 - DP-700SH/850SH/1020SHの分解・修理・基板写真
 - `RRMCG2009SCZZ` の対応機種と信号コード
 - ALBUM/Story BookのFCC・内部写真・基板・SoC
+- Dusty Shyr氏の当時所属会社をJablotron/AIPTEK/Sharpの顧客関係から逆引き
 - Prosoyoや別の台湾開発会社との人員/案件接点
 - 実機から現在のファームバージョンとUSB VID/PIDを取得
 
