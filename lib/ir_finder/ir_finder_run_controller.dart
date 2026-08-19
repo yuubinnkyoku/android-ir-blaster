@@ -4,8 +4,10 @@ import 'package:flutter/foundation.dart';
 import 'package:irblaster_controller/ir_finder/ir_finder_models.dart';
 import 'package:irblaster_controller/ir_finder/ir_finder_prefs.dart';
 
-typedef IrFinderCandidateFetcher = Future<IrFinderCandidate?> Function(IrFinderRunController controller);
-typedef IrFinderCandidateSender = Future<void> Function(IrFinderCandidate candidate);
+typedef IrFinderCandidateFetcher = Future<IrFinderCandidate?> Function(
+    IrFinderRunController controller);
+typedef IrFinderCandidateSender = Future<void> Function(
+    IrFinderCandidate candidate);
 
 class IrFinderRunController extends ChangeNotifier {
   final IrFinderCandidateFetcher fetchCandidate;
@@ -55,6 +57,22 @@ class IrFinderRunController extends ChangeNotifier {
     required this.sendCandidate,
   });
 
+  bool get _useOptimizedBruteCursor =>
+      mode == IrFinderMode.bruteforce &&
+      prefixRaw.trim().isEmpty &&
+      IrFinderBruteCursor.hasOptimization(protocolId);
+
+  BigInt _canonicalBruteCursor(BigInt value) {
+    final BigInt nonNegative = value < BigInt.zero ? BigInt.zero : value;
+    if (!_useOptimizedBruteCursor) return nonNegative;
+    return IrFinderBruteCursor.canonicalize(protocolId, nonNegative);
+  }
+
+  BigInt _nextBruteCursor(BigInt value) {
+    if (!_useOptimizedBruteCursor) return value + BigInt.one;
+    return IrFinderBruteCursor.next(protocolId, value);
+  }
+
   void configure({
     required IrFinderMode mode,
     required String protocolId,
@@ -81,6 +99,13 @@ class IrFinderRunController extends ChangeNotifier {
     this.quickWinsFirst = quickWinsFirst;
     this.brand = brand;
     this.model = model;
+
+    // Configuration can change whether a cursor optimizer is applicable. Keep
+    // paused/resumed sessions on a canonical code whenever possible.
+    if (this.mode == IrFinderMode.bruteforce) {
+      bruteCursor = _canonicalBruteCursor(bruteCursor);
+    }
+
     _schedulePersist();
     notifyListeners();
   }
@@ -94,10 +119,10 @@ class IrFinderRunController extends ChangeNotifier {
   }) {
     this.attempted = attempted.clamp(0, 2147483647);
     this.currentOffset = currentOffset.clamp(0, 2147483647);
-    this.bruteCursor = bruteCursor < BigInt.zero ? BigInt.zero : bruteCursor;
+    this.bruteCursor = _canonicalBruteCursor(bruteCursor);
     this.startedAt = startedAt;
     this.paused = paused;
-    this.running = true;
+    running = true;
     _cancelTimer();
     _schedulePersist();
     notifyListeners();
@@ -112,7 +137,7 @@ class IrFinderRunController extends ChangeNotifier {
     paused = false;
     attempted = 0;
     currentOffset = 0;
-    bruteCursor = BigInt.zero;
+    bruteCursor = _canonicalBruteCursor(BigInt.zero);
     startedAt = DateTime.now();
     lastCandidate = null;
     lastError = null;
@@ -125,8 +150,7 @@ class IrFinderRunController extends ChangeNotifier {
   }
 
   void pause() {
-    if (!running) return;
-    if (paused) return;
+    if (!running || paused) return;
     paused = true;
     _cancelTimer();
     notifyListeners();
@@ -134,8 +158,7 @@ class IrFinderRunController extends ChangeNotifier {
   }
 
   void resume() {
-    if (!running) return;
-    if (!paused) return;
+    if (!running || !paused) return;
     paused = false;
     notifyListeners();
     _schedulePersist();
@@ -147,6 +170,7 @@ class IrFinderRunController extends ChangeNotifier {
       running = true;
       paused = true;
       startedAt ??= DateTime.now();
+      bruteCursor = _canonicalBruteCursor(bruteCursor);
       notifyListeners();
       _schedulePersist();
     }
@@ -238,8 +262,7 @@ class IrFinderRunController extends ChangeNotifier {
   }
 
   Future<void> _tick({required bool send, required bool advance}) async {
-    if (!running) return;
-    if (_tickBusy) return;
+    if (!running || _tickBusy) return;
 
     if (mode == IrFinderMode.database) {
       if (attempted >= maxKeysToTest) {
@@ -247,6 +270,12 @@ class IrFinderRunController extends ChangeNotifier {
         return;
       }
     } else {
+      if (_useOptimizedBruteCursor &&
+          IrFinderBruteCursor.isExhausted(protocolId, bruteCursor)) {
+        lastError ??= 'No more unique candidates (exhausted).';
+        await stop(clearPersistedSession: false);
+        return;
+      }
       if (!bruteAllCombinations && attempted >= bruteMaxAttempts) {
         await stop(clearPersistedSession: false);
         return;
@@ -273,7 +302,8 @@ class IrFinderRunController extends ChangeNotifier {
           return;
         }
         if (_nullCandidateSkips >= 25) {
-          lastError ??= 'Database candidate missing repeatedly. The DB may have changed; restart recommended.';
+          lastError ??=
+              'Database candidate missing repeatedly. The DB may have changed; restart recommended.';
           await stop(clearPersistedSession: false);
           return;
         }
@@ -312,7 +342,7 @@ class IrFinderRunController extends ChangeNotifier {
     attempted = (attempted + 1).clamp(0, 2147483647);
     currentOffset = (currentOffset + 1).clamp(0, 2147483647);
     if (mode == IrFinderMode.bruteforce) {
-      bruteCursor += BigInt.one;
+      bruteCursor = _nextBruteCursor(bruteCursor);
     }
   }
 
@@ -320,15 +350,14 @@ class IrFinderRunController extends ChangeNotifier {
     attempted = (attempted + 1).clamp(0, 2147483647);
     currentOffset = (currentOffset + 1).clamp(0, 2147483647);
     if (mode == IrFinderMode.bruteforce) {
-      bruteCursor += BigInt.one;
+      bruteCursor = _nextBruteCursor(bruteCursor);
     }
   }
 
-  // Jump methods to reposition safely without breaking DB ordering
+  // Jump methods to reposition safely without breaking DB ordering.
   void jumpToOffset(int value) {
     final int v = value.clamp(0, 2147483647);
     currentOffset = v;
-    // Pause to avoid racing the timer while relocating
     paused = true;
     _cancelTimer();
     _schedulePersist();
@@ -336,8 +365,7 @@ class IrFinderRunController extends ChangeNotifier {
   }
 
   void jumpToBrute(BigInt value) {
-    final BigInt v = (value < BigInt.zero) ? BigInt.zero : value;
-    bruteCursor = v;
+    bruteCursor = _canonicalBruteCursor(value);
     paused = true;
     _cancelTimer();
     _schedulePersist();

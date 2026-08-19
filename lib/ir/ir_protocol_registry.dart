@@ -24,7 +24,6 @@ import 'protocols/samsung32.dart';
 import 'protocols/samsung36.dart';
 import 'protocols/kaseikyo.dart';
 import 'protocols/sharp.dart';
-import 'protocols/sharp_scan.dart';
 import 'protocols/sony12.dart';
 import 'protocols/sony15.dart';
 import 'protocols/sony20.dart';
@@ -59,8 +58,6 @@ class IrProtocolIds {
   static const String samsung32 = 'samsung32';
   static const String samsung36 = 'samsung36';
   static const String sharp = 'sharp';
-  static const String sharpScanLow = 'sharp_scan_low';
-  static const String sharpScanHigh = 'sharp_scan_high';
   static const String sony12 = 'sony12';
   static const String sony15 = 'sony15';
   static const String sony20 = 'sony20';
@@ -75,7 +72,8 @@ class IrProtocolIds {
 
 class IrProtocolRegistry {
   static final Map<String, IrProtocolDefinition> _definitions = {
-    RawSignalProtocolEncoder.protocolId: const RawSignalProtocolEncoder().definition,
+    RawSignalProtocolEncoder.protocolId:
+        const RawSignalProtocolEncoder().definition,
     NecProtocolEncoder.protocolId: const NecProtocolEncoder().definition,
 
     denonProtocolDefinition.id: denonProtocolDefinition,
@@ -98,8 +96,6 @@ class IrProtocolRegistry {
     samsung32ProtocolDefinition.id: samsung32ProtocolDefinition,
     samsung36ProtocolDefinition.id: samsung36ProtocolDefinition,
     sharpProtocolDefinition.id: sharpProtocolDefinition,
-    sharpScanLowProtocolDefinition.id: sharpScanLowProtocolDefinition,
-    sharpScanHighProtocolDefinition.id: sharpScanHighProtocolDefinition,
     kaseikyoProtocolDefinition.id: kaseikyoProtocolDefinition,
     audioLearnedProtocolDefinition.id: audioLearnedProtocolDefinition,
     elksmartLearnedProtocolDefinition.id: elksmartLearnedProtocolDefinition,
@@ -142,8 +138,6 @@ class IrProtocolRegistry {
     Samsung32ProtocolEncoder.protocolId: const Samsung32ProtocolEncoder(),
     Samsung36ProtocolEncoder.protocolId: const Samsung36ProtocolEncoder(),
     SharpProtocolEncoder.protocolId: const SharpProtocolEncoder(),
-    SharpScanLowProtocolEncoder.protocolId: const SharpScanLowProtocolEncoder(),
-    SharpScanHighProtocolEncoder.protocolId: const SharpScanHighProtocolEncoder(),
 
     KaseikyoProtocolEncoder.protocolId: const KaseikyoProtocolEncoder(),
 
@@ -157,7 +151,8 @@ class IrProtocolRegistry {
 
   static List<IrProtocolDefinition> allDefinitions() {
     final list = _definitions.values.toList(growable: false);
-    list.sort((a, b) => a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase()));
+    list.sort((a, b) =>
+        a.displayName.toLowerCase().compareTo(b.displayName.toLowerCase()));
     return list;
   }
 

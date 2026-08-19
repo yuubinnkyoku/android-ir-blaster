@@ -14,9 +14,10 @@ const IrProtocolDefinition kaseikyoProtocolDefinition = IrProtocolDefinition(
       label: 'Address (4 bytes)',
       type: IrFieldType.string,
       required: true,
-      maxLength: 11, // "AA BB CC DD"
+      maxLength: 11,
       hint: 'e.g., 80 02 20 00',
-      helperText: 'Address (4 bytes, hex).',
+      helperText:
+          'Address (4 bytes, hex). If ID byte is 00, finder-compatible packed ID bits may be taken from command bits 10..11.',
       maxLines: 1,
     ),
     IrFieldDef(
@@ -24,7 +25,7 @@ const IrProtocolDefinition kaseikyoProtocolDefinition = IrProtocolDefinition(
       label: 'Command (4 bytes)',
       type: IrFieldType.string,
       required: true,
-      maxLength: 11, // "AA BB CC DD"
+      maxLength: 11,
       hint: 'e.g., D0 03 00 00',
       helperText: 'Command (4 bytes, hex).',
       maxLines: 1,
@@ -42,14 +43,13 @@ class KaseikyoProtocolEncoder implements IrProtocolEncoder {
   @override
   IrProtocolDefinition get definition => kaseikyoProtocolDefinition;
 
-  // Timings
   static const int unit = 432;
-  static const int headerMark = 8 * unit; // 3456
-  static const int headerSpace = 4 * unit; // 1728
-  static const int bitMark = unit; // 432
-  static const int zeroSpace = unit; // 432
-  static const int oneSpace = 3 * unit; // 1296
-  static const int repeatDistanceUs = 130000 - 56000; // 74000
+  static const int headerMark = 8 * unit;
+  static const int headerSpace = 4 * unit;
+  static const int bitMark = unit;
+  static const int zeroSpace = unit;
+  static const int oneSpace = 3 * unit;
+  static const int repeatDistanceUs = 130000 - 56000;
 
   @override
   IrEncodeResult encode(Map<String, dynamic> params) {
@@ -59,31 +59,26 @@ class KaseikyoProtocolEncoder implements IrProtocolEncoder {
         _read4Bytes(params, 'command', protocolName: 'Kaseikyo');
 
     final int b0 = addr[0] & 0xFF;
-
     final int genre1 = (b0 >> 4) & 0x0F;
     final int genre2 = b0 & 0x0F;
 
     final int vendorLsb = addr[1] & 0xFF;
     final int vendorMsb = addr[2] & 0xFF;
 
-    final int id2 = addr[3] & 0x03;
-
-    // Command is the 32-bit message.command in little-endian.
-    // Only low 10 bits are meaningful for Kaseikyo in
+    // Command is carried little-endian in the first two command bytes.
+    // The protocol uses 10 command bits. For Signal Tester brute force we also
+    // use bits 10..11 as the 2-bit ID when the explicit address ID byte is 00.
+    // This turns the finder's 6-hex input into 20 genuinely useful bits instead
+    // of repeating each waveform 64 times and fixing ID to zero.
     final int command16 = ((cmd[1] & 0xFF) << 8) | (cmd[0] & 0xFF);
     final int command10 = command16 & 0x03FF;
+    final int explicitId2 = addr[3] & 0x03;
+    final int packedId2 = (command16 >> 10) & 0x03;
+    final int id2 = explicitId2 != 0 ? explicitId2 : packedId2;
 
-    // Vendor parity
     int vendorParity = (vendorLsb ^ vendorMsb) & 0xFF;
     vendorParity = ((vendorParity & 0x0F) ^ (vendorParity >> 4)) & 0x0F;
 
-    // Build the 6 protocol bytes
-    // data[0] = vendor_lsb
-    // data[1] = vendor_msb
-    // data[2] = (vendorParity & 0xf) | (genre1 << 4)
-    // data[3] = (genre2 & 0xf) | ((command & 0xf) << 4)
-    // data[4] = (id << 6) | (command >> 4)
-    // data[5] = data[2] ^ data[3] ^ data[4]
     final int d0 = vendorLsb;
     final int d1 = vendorMsb;
     final int d2 = (vendorParity & 0x0F) | ((genre1 & 0x0F) << 4);
@@ -92,14 +87,8 @@ class KaseikyoProtocolEncoder implements IrProtocolEncoder {
     final int d5 = (d2 ^ d3 ^ d4) & 0xFF;
 
     final List<int> bytesLsbFirst = <int>[d0, d1, d2, d3, d4, d5];
+    final List<int> out = <int>[headerMark, headerSpace];
 
-    final List<int> out = <int>[];
-
-    // Header
-    out.add(headerMark);
-    out.add(headerSpace);
-
-    // Bits LSB-first within each byte
     for (final int b in bytesLsbFirst) {
       for (int i = 0; i < 8; i++) {
         final int bit = (b >> i) & 1;
@@ -108,7 +97,6 @@ class KaseikyoProtocolEncoder implements IrProtocolEncoder {
       }
     }
 
-    // Trailing mark + pause
     out.add(bitMark);
     out.add(repeatDistanceUs);
 
@@ -129,9 +117,6 @@ class KaseikyoProtocolEncoder implements IrProtocolEncoder {
     }
     final String s = v.trim();
 
-    // Accept:
-    // - "AA BB CC DD"
-    // - "AABBCCDD"
     final List<String> parts;
     final RegExp spaced = RegExp(r'^([0-9A-Fa-f]{2}\s+){3}[0-9A-Fa-f]{2}$');
     final RegExp compact = RegExp(r'^[0-9A-Fa-f]{8}$');
