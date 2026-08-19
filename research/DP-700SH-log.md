@@ -99,6 +99,16 @@ ACアダプター出典:
 
 液晶・電源・リモコン部品番号・Sharp顧客案件という複数の独立した痕跡が揃ってきた。ただし、それぞれをまとめて「本体全体がSharp設計」と断定しない。
 
+#### 2011世代ではSharpとの共同開発が明記
+
+2011年2月のデジカメ Watch発表会記事では、後継のDP-701SH / DP-801SHが **「シャープと共同開発した24ビット表示が可能な『クリスタルフォト液晶』」を搭載** と明記されている。
+
+出典:
+- https://dc.watch.impress.co.jp/docs/news/425705.html
+- FUJIFILMプレス向け画像ページ: https://www.fujifilm.co.jp/press/ffnr0485.html
+
+これは少なくとも2011世代で、Sharpの関与が単なるパネル供給ではなく表示系の共同開発まで及んだことを示す。2010世代へそのまま遡及はできないが、DP-700SH/850SH/1020SHで確認済みのSharp製液晶、`Customer: Sharp`、Sharp製ACアダプター、Sharp系 `RRMCG` 部品番号との連続性は強まった。
+
 ### Jablotron ALBUM が重要な比較対象
 
 Jablotronの製品一覧に `ALBUM` という Digital Photo Frame が実在し、現在も公式ダウンロードページが残る。
