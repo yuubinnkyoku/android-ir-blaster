@@ -196,6 +196,18 @@ class IrFinderBruteSpec {
           totalHexDigits: 6, // use command+address as 3 bytes
           displayName: 'Kaseikyo (Panasonic)',
         );
+      case 'sharp_scan_low':
+        return const IrFinderBruteSpec(
+          protocolId: 'sharp_scan_low',
+          totalHexDigits: 3,
+          displayName: 'Sharp scan 0000-0FFF',
+        );
+      case 'sharp_scan_high':
+        return const IrFinderBruteSpec(
+          protocolId: 'sharp_scan_high',
+          totalHexDigits: 3,
+          displayName: 'Sharp scan 1000-1FFF',
+        );
       case 'xsat':
         return const IrFinderBruteSpec(
           protocolId: 'xsat',

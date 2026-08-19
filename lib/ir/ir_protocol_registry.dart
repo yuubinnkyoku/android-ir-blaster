@@ -24,6 +24,7 @@ import 'protocols/samsung32.dart';
 import 'protocols/samsung36.dart';
 import 'protocols/kaseikyo.dart';
 import 'protocols/sharp.dart';
+import 'protocols/sharp_scan.dart';
 import 'protocols/sony12.dart';
 import 'protocols/sony15.dart';
 import 'protocols/sony20.dart';
@@ -55,9 +56,11 @@ class IrProtocolIds {
   static const String rec80 = 'rec80';
   static const String recs80 = 'recs80';
   static const String recs80L = 'recs80_l';
-    static const String samsung32 = 'samsung32';
+  static const String samsung32 = 'samsung32';
   static const String samsung36 = 'samsung36';
   static const String sharp = 'sharp';
+  static const String sharpScanLow = 'sharp_scan_low';
+  static const String sharpScanHigh = 'sharp_scan_high';
   static const String sony12 = 'sony12';
   static const String sony15 = 'sony15';
   static const String sony20 = 'sony20';
@@ -66,7 +69,7 @@ class IrProtocolIds {
   static const String kaseikyo = 'kaseikyo';
   static const String elksmartLearned = 'elksmart_learned';
   static const String huaweiIrLearned = 'huawei_ir_learned';
-  static const String lgeIrLearned    = 'lge_ir_learned';
+  static const String lgeIrLearned = 'lge_ir_learned';
   static const String tiqiaaLearned = 'tiqiaa_learned';
 }
 
@@ -95,11 +98,13 @@ class IrProtocolRegistry {
     samsung32ProtocolDefinition.id: samsung32ProtocolDefinition,
     samsung36ProtocolDefinition.id: samsung36ProtocolDefinition,
     sharpProtocolDefinition.id: sharpProtocolDefinition,
+    sharpScanLowProtocolDefinition.id: sharpScanLowProtocolDefinition,
+    sharpScanHighProtocolDefinition.id: sharpScanHighProtocolDefinition,
     kaseikyoProtocolDefinition.id: kaseikyoProtocolDefinition,
     audioLearnedProtocolDefinition.id: audioLearnedProtocolDefinition,
     elksmartLearnedProtocolDefinition.id: elksmartLearnedProtocolDefinition,
     huaweiIrLearnedProtocolDefinition.id: huaweiIrLearnedProtocolDefinition,
-    lgeIrLearnedProtocolDefinition.id:    lgeIrLearnedProtocolDefinition,
+    lgeIrLearnedProtocolDefinition.id: lgeIrLearnedProtocolDefinition,
     sony12ProtocolDefinition.id: sony12ProtocolDefinition,
     sony15ProtocolDefinition.id: sony15ProtocolDefinition,
     sony20ProtocolDefinition.id: sony20ProtocolDefinition,
@@ -137,6 +142,8 @@ class IrProtocolRegistry {
     Samsung32ProtocolEncoder.protocolId: const Samsung32ProtocolEncoder(),
     Samsung36ProtocolEncoder.protocolId: const Samsung36ProtocolEncoder(),
     SharpProtocolEncoder.protocolId: const SharpProtocolEncoder(),
+    SharpScanLowProtocolEncoder.protocolId: const SharpScanLowProtocolEncoder(),
+    SharpScanHighProtocolEncoder.protocolId: const SharpScanHighProtocolEncoder(),
 
     KaseikyoProtocolEncoder.protocolId: const KaseikyoProtocolEncoder(),
 
@@ -147,7 +154,6 @@ class IrProtocolRegistry {
     Thomson7ProtocolEncoder.protocolId: const Thomson7ProtocolEncoder(),
     XsatProtocolEncoder.protocolId: const XsatProtocolEncoder(),
   };
-
 
   static List<IrProtocolDefinition> allDefinitions() {
     final list = _definitions.values.toList(growable: false);
