@@ -46,7 +46,16 @@
 - **確定**: DP-700SH/850SH/1020SHの液晶パネルはSharp製。
 - **確定**: DP-850SH/1020SHの開発案件がLinkedIn上で `Customer: Sharp` と記録されている。
 - **実機で確認済み**: DP-700SHで使っているACアダプターにSHARP表記がある。
+- **新規確認**: DP-700SHの付属ACアダプターは販売記録で `EP-D72F` と特定できる。Sofmap中古品ページではDP-700SHの付属品として `ACアダプター(EP-D72F)` を明記。別流通では `SHARP ACアダプター EP-D72F` と明記され、5V 2A/10W、約4.0×1.7mmの仕様で扱われる。
 - **未確定**: DP-700SH本体のメイン基板、SoC、OS、全体設計がSharp製/OEMであること。
+
+出典:
+- https://used.sofmap.com/r/item/2133006495537
+- https://paypayfleamarket.yahoo.co.jp/item/e1186028374
+- https://www.ebay.co.uk/b/bn_616753
+- https://jp.mercari.com/search?keyword=DP-700SH
+
+この追加証拠により、「手元の個体だけ偶然Sharp製アダプターを使っていた」可能性はかなり下がり、Sharp製電源部品が標準付属だった可能性が高まった。ただし本体ODMの直接証拠にはしない。
 
 メイン調査メモの「製造元SHARP」と断定していた箇所は 2026-08-20 に修正し、証拠を上記の粒度へ分離した。
 
@@ -157,7 +166,7 @@ SoCベンダー候補（Sunplus / MagicPixel / Actions / MStar等）と人物名
 
 ### その他
 
-- `EP-D72F` はDP-700SH内部型番ではなくSHARP ACアダプター型番だったため、SoC探索キーから除外。
+- `EP-D72F` はDP-700SH内部型番ではなくSHARP ACアダプター型番。今回、SofmapのDP-700SH中古品記録でも標準付属品として `ACアダプター(EP-D72F)` と明記されることを確認した。
 - DP-1020SHは発売時に一部個体の電源接続部不具合で全数検査・発売延期があった。
 - DP-1020SH実利用例ではminiUSB経由の大量一括転送中にフリーズした報告あり。
 - DP-700SH/850SH/1020SHは共通のIrSimple/IrSS/IrDA修正ファームを受けており、700SHだけ動画/音声機能を省いている。共通ソフト基盤 + 機種別機能構成だった可能性がある（推測）。
