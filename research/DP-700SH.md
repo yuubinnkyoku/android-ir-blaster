@@ -65,6 +65,23 @@ DP-1020SH / DP-850SH / DP-700SH はSHARP製液晶を採用。DP-700SHは7型800�
 
 取扱説明書に本体情報/バージョン表示がある。実機の現在バージョンはまだ記録できていない。
 
+### DP-700SH純正リモコン型番は `RRMCG2009SCZZ`
+
+2026-08-20、Yahoo!オークションのDP-700SH出品写真から、付属リモコン裏面ラベルを直接確認した。ラベルには以下が明瞭に写っている。
+
+- `REMOTE CONTROL UNIT`
+- `RRMCG2009SCZZ`
+- `使用電池 リチウム電池 CR2025 1個`
+- `FUJIFILM Corporation`
+
+出品自体が **FUJIFILM DP-700SH** のもので、同じ出品写真にDP-700SH用リモコンの前面・背面が掲載されているため、従来の「候補型番」から **DP-700SHの純正付属リモコン型番として直接確認済み** へ格上げする。
+
+参考:
+- Yahoo!オークション DP-700SH 出品 `q1171811726`
+  - https://auctions.yahoo.co.jp/jp/auction/q1171811726
+
+前面はFUJIFILMロゴ入りで、電源、メニュー、方向/決定、戻る、スライドショー、インデックス、モード切替、便利メニュー、時計、絞り込み、縮小、拡大、回転などDP系で必要なキーを持つ。
+
 ## 確定度: 中～高
 
 ### DP-850SH / DP-1020SHの開発案件は `Customer: Sharp`
@@ -108,6 +125,27 @@ DP-700SHの名前はこの記録にはない。ただし700SH/850SH/1020SHは同
 
 **現時点の評価:** Dusty氏は2008〜2010年に、Jablotron / AIPTEK / Sharpを顧客とする同一の台湾系受託開発会社または設計会社に所属していた可能性が高まった。会社名は未特定。これは状況証拠であり確定事項ではない。
 
+### `RRMCG2009SCZZ` はDP-850SH / DP-1020SHでも使われた可能性が高い
+
+メルカリの同型番リモコン出品には対応機種として `DP-850SH` / `DP-1020SH` が明記されている。中古出品者による記載なので公式互換表ではないが、DP-700SHでの写真による直接確認と合わせると、3機種が同一リモコンを共有した可能性は高い。
+
+参考:
+- https://jp.mercari.com/item/m93734607492
+- https://jp.mercari.com/item/m53512993273
+
+これは3機種のUI/リモコン入力層が共通だった可能性を補強する。ただし、基板やSoCまで同一であることを意味しない。
+
+### `RRMCG` 型番体系はSHARPのリモコン部品番号で広く使われる
+
+SHARPの旧製品資料には `RRMCG1392CESA`, `RRMCG1327CESA`, サービス用 `RRMCG0033TASA` など多数の例があり、`RRMCG...` がSHARPのリモコン部品番号体系であることを確認できる。
+
+参考:
+- https://sharp.manymanuals.com/data-projectors/xg-e3500u/instruction-manual-16837/37
+- https://manualzilla.com/doc/7351006/sharp-pg-d100u-instruction-manual
+- https://manualzz.com/doc/736350/sharp-s50a2vl-fd1u-camcorder-service-manual
+
+したがってFUJIFILMロゴ/ラベルの `RRMCG2009SCZZ` も **SHARP系部品番号体系に乗ったリモコンである可能性が高い**。これはSharpがDPシリーズのリモコン設計・調達に関与した状況証拠になるが、`RRMCG2009SCZZ` の製造者をSHARPと断定する一次資料は未回収。
+
 ### 先代DP-70SHには隠しファーム更新画面がある
 
 DP-70SH Ver.1.04.00の公開更新では、SDカードへファームを保存し、「本体情報→バージョン表示」中にリモコンで
@@ -119,7 +157,7 @@ DP-70SH Ver.1.04.00の公開更新では、SDカードへファームを保存�
 参考:
 - https://dc.watch.impress.co.jp/cda/accessories/2009/04/01/10602.html
 
-DP-700SHでも同じシーケンスが残るかは未確認。リモコンキーが1つでも判明したら重要な検証対象。
+DP-700SH純正リモコンにも **拡大・縮小・時計・回転** の4キーがすべて存在することを写真で確認できた。したがって、先代と同じ隠し更新シーケンスをDP-700SHでも試せる条件が揃った。ただし、同じシーケンスが実装されているかは未確認。
 
 ### 後継DP-701SH / DP-801SHにも共通更新
 
@@ -130,25 +168,22 @@ DP-700SHでも同じシーケンスが残るかは未確認。リモコンキー
 
 一方、2011年12月購入のDP-801SHで1.05.01が出荷状態だったという実機報告があり、Web未公開の工場/修理向けビルドが存在した可能性がある。
 
-## 純正リモコン調査
+## 赤外線リモコン調査
 
-### 候補型番 `RRMCG2009SCZZ`
+### 確定した純正型番
 
-FUJIFILM DIGITAL PHOTO FRAME用リモコンとして `RRMCG2009SCZZ` が複数の中古流通記録に残る。
+`RRMCG2009SCZZ` はDP-700SHの純正付属リモコン。
+
+既知の公開情報:
+- 使用電池: CR2025 × 1
+- FUJIFILM Corporation表記
+- Yahoo!フリマの単品出品では全ボタンの赤外線発光確認済み
+- DP-850SH / DP-1020SH対応として流通する個体あり
 
 参考:
+- https://auctions.yahoo.co.jp/jp/auction/q1171811726
 - https://paypayfleamarket.yahoo.co.jp/item/g1043790009
-- 楽天市場の中古流通記録 `C2J710`, `C2J726`
-
-Yahoo!フリマの出品では全ボタンの赤外線動作確認済みと記載。2026-08-20時点でメルカリにも同型番が複数残っている。
-
-**ただしDP-700SH対応とはまだ直接確認できていない。**
-
-次の確認方法:
-- DP-700SH付属リモコン写真と `RRMCG2009SCZZ` の前面ボタン配置を比較
-- 裏面ラベル/部品番号を比較
-- 同型番を採用するFUJIFILM機種を逆引き
-- LIRC / Flipper-IRDB / IRDB等の既知コードを探索
+- https://jp.mercari.com/item/m93734607492
 
 ### 公開IRデータベースの現状
 
@@ -163,6 +198,8 @@ Yahoo!フリマの出品では全ボタンの赤外線動作確認済みと記�
 3. Kaseikyo / SHARP vendor `5AAA`
 4. 近縁SHARP写真機器の既知コード
 5. その他の家電IRプロトコル
+
+`RRMCG` がSHARP系部品番号である状況証拠が増えたため、Sharp 13-bit優先は従来より合理的になった。ただしプロトコルそのものは未確定。
 
 Kaseikyoは実効20-bitで約1,048,576候補あるため、vendor/address/commandの既知情報を拾ってから部分探索する。
 
@@ -219,9 +256,7 @@ ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell Applo
 - OS / RTOS
 - 2010年公式更新ファイル本体・ファイル名・バージョン
 - 更新形式、署名/暗号化の有無
-- 純正リモコンの正式部品番号
 - リモコンの搬送波周波数/プロトコル/全キーコード
-- `RRMCG2009SCZZ` とDP-700SHの対応関係
 - DP-70SHの隠し更新シーケンスがDP-700SHにも残るか
 - DP-700SH/850SH/1020SHの基板/ソフト共通範囲
 - 2008〜2010年案件を担当した台湾側開発会社/ODM
@@ -231,11 +266,13 @@ ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell Applo
 - 旧FUJIFILMページのWayback/CDXから更新ファイルhref回収
 - DP-70SHおよびDP-701SH/801SHの旧公開ファイル名を回収し命名規則を推定
 - DP-700SH/850SH/1020SHの分解・修理・基板写真
-- `RRMCG2009SCZZ` の対応機種と信号コード
+- `RRMCG2009SCZZ` の信号コード
+- `RRMCG` 系SHARPリモコンのプロトコル対応から信号方式を逆引き
 - ALBUM/Story BookのFCC・内部写真・基板・SoC
 - Dusty Shyr氏の当時所属会社をJablotron/AIPTEK/Sharpの顧客関係から逆引き
 - Prosoyoや別の台湾開発会社との人員/案件接点
 - 実機から現在のファームバージョンとUSB VID/PIDを取得
+- 実機で「本体情報→バージョン表示→拡大→縮小→時計→回転」の反応を確認
 
 ## 記録方針
 
@@ -243,6 +280,7 @@ ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell Applo
 
 - SHARP製液晶 / Sharp顧客案件
 - SHARP製ACアダプター
+- `RRMCG` 系リモコン部品番号
 - 本体全体のOEM/SoC/OS
 
 これらは別々の証拠として管理する。
