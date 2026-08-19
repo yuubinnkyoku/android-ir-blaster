@@ -15,6 +15,7 @@
 - `RRMCG2009SCZZ` は FUJIFILM DIGITAL PHOTO FRAME 用リモコンとして中古流通記録があるが、DP-700SHへの対応は未確定。
 - 2026-08-20時点でメルカリに `RRMCG2009SCZZ` 単品が少なくとも3件残っており、1件は499円。型番自体の実在性は十分高いが、出品タイトルには対応機種が明記されていない。
 - Yahoo!フリマの過去出品では `RRMCG2009SCZZ` の全ボタン赤外線動作確認済みという記録がある。
+- `RRMCG2009SCZZ DP-700SH/850SH/1020SH` の組み合わせでWeb横断検索したが、対応機種を直接断定できるページはまだ見つからない。
 
 ### ファームウェア
 
@@ -24,6 +25,8 @@
 - Impressの記事から旧公式ダウンロードURLへのリンク自体は現在も辿れるが、富士フイルム側の実体は消失しており通常取得できない。
 - 後継 DP-701SH / DP-801SH は2011-07-29に共通ファームウェア Ver.1.04.07 が公開された。
 - 価格.comの実機報告では2011-12-17購入のDP-801SHに **Ver.1.05.01** が入っていた。公開版1.04.07より新しい工場/修理向けビルドが存在した可能性が高い。
+- DP-70SH Ver.1.04.00 と DP-701SH/801SH Ver.1.04.07 のファイル名を検索したが、記事本文から先の実バイナリ名はまだ回収できていない。
+- Wayback/CDXを直接叩く試みは、この実行環境ではWeb安全制限およびコンテナDNS失敗に阻まれた。検索エンジン経由の保存ページ/ミラー探索を継続する。
 
 ### 同じ開発者からの迂回調査
 
@@ -45,7 +48,7 @@
 - **実機で確認済み**: DP-700SHで使っているACアダプターにSHARP表記がある。
 - **未確定**: DP-700SH本体のメイン基板、SoC、OS、全体設計がSharp製/OEMであること。
 
-以前の調査メモで「本体の製造元SHARP」と強く書きすぎていた箇所は、上記の確定度に修正する。
+メイン調査メモの「製造元SHARP」と断定していた箇所は 2026-08-20 に修正し、証拠を上記の粒度へ分離した。
 
 ### Jablotron ALBUM が重要な比較対象
 
@@ -80,6 +83,38 @@ ALBUM取扱説明書から:
 
 現時点ではfirmware URLは判明したが、こちらの実行環境からバイナリ本体の取得には成功していない。現行URLへの直接取得は失敗し、検索エンジンにもファイル名 `albumq42008_en.zip` のミラーは見つからなかった。次は旧サイト複製のリンク先またはInternet Archiveから `.fwi` の実ファイル名を逆引きする。
 
+### ALBUMteamの正体を整理
+
+ALBUMの取扱説明書には `Program © 2008 ALBUMteam Ltd.` とあり、会社名を確認できた。
+
+追加調査では:
+- ALBUMteam Ltd. は2008年にチェコのデザイナー Dominika Nell Applová と Jablotron創業者 Dalibor Dědek が設立。
+- 2010年の公式プレスリリースでは本社San Francisco、チェコにも拠点。ALBUM/ALBUM2は米国・チェコで設計、台湾・中国で生産と説明されている。
+- 当時のチェコ報道ではALBUMteamはJablotron holdingの新しい子会社/グループ企業として扱われている。
+
+したがって **ALBUMteam = 台湾ODM** という仮説は棄却。台湾側のDusty Shyrの所属会社は別に存在した可能性が高い。
+
+参考:
+- https://www.prnewswire.com/news-releases/albumteam-named-as-ces-innovations-2010-design--engineering-award-honoree-80907592.html
+- https://www.finance.cz/clanky/217833-jablotron-navzdory-krizi-zvysil-trzby-o-petinu-na-1-2-miliardy-kc/
+
+### Prosoyo Technologyという製造側候補
+
+2009年前後のJablotronについての当時報道から、中国のEMS企業 **Prosoyo Technology** との非常に深い関係が判明。
+
+- Jablotronグループは量産の多くを外注。
+- 2009年報道ではProsoyoがJablotron生産の約45%を担ったとされる。
+- 別報道ではJablotronが中国生産へ移行する過程でProsoyoへ人員を送り込み品質/生産を管理し、資本関係も深めたとされる。
+- 2009年5月にはチェコ法人 `JABLOTRON PCB Assembly s.r.o.` の出資者としてProsoyo Technology Limitedが登記された記録もある。
+- Prosoyoは現在もDongguan工場/Hong Kong拠点を持ち、製品設計、PCB実装、完成品組立、MCU/Memory/PLD programmingまで掲げるEMS企業。
+
+参考:
+- https://www.finance.cz/clanky/217833-jablotron-navzdory-krizi-zvysil-trzby-o-petinu-na-1-2-miliardy-kc/
+- https://www.euro.cz/clanky/jak-vydelavat-v-cine-894445/
+- https://www.prosoyoems.com/
+
+ただし **ALBUMをProsoyoが製造した直接証拠はまだない**。FUJIFILM/Sharp案件との接点も未確認。現時点ではサプライチェーン逆引き用の候補。
+
 ### AIPTEK Story Book inColor
 
 同じ担当者の2009年案件。8インチ 800x600、USB、SD/SDHC/MMC/MS Pro、JPEG/MP3などを持つカラー電子書籍/フォトフレーム兼用機。
@@ -110,9 +145,10 @@ FCC ID / teardown / processor名を検索したが、現時点ではStory Book i
 
 - Jablotron `albumq42008_en.zip` の取得またはミラー発掘
 - 旧Jablotronサイト複製から `.fwi` の実ファイル名・直リンクを回収
-- ALBUMの基板/SoC/ファーム解析記事を探索
+- ALBUM / ALBUM2 のFCC・内部写真・基板/SoC情報を探索
 - AIPTEK Story Book inColor の基板情報からSoCを特定
-- 台湾側開発者の当時の所属企業を、Jablotron ALBUMとAIPTEK案件から逆引き
+- 台湾側開発者の当時の所属企業を、Jablotron/AIPTEK/Sharpの3案件から逆引き
+- ProsoyoとALBUMteamまたは台湾開発チームの具体的接点を確認
 - DP-700SH専用リモコンの裏面部品番号を中古画像から確定
 - `RRMCG2009SCZZ` の前面ボタン配置をDP-700SH取説の純正リモコンと比較
 - 旧FUJIFILM更新ページのInternet Archive保存物からダウンロードhrefを回収
