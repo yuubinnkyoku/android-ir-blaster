@@ -90,6 +90,12 @@ DP-700SHの名前はこの記録にはない。ただし700SH/850SH/1020SHは同
 
 同一の台湾側ソフトウェア開発チームまたはODMが複数顧客向けにデジタル写真機器を開発していた可能性がある。ただし当時の所属会社名はまだ特定できていない。
 
+**検索上の注意:** LinkedInの現在所属欄に出る `新帝` は **SanDisk（新帝科技）** を指す。台湾の2010年資料でも `新帝科技（SanDisk Corporation）` と対応することを確認できる。これは現在の所属を示すものであり、2008〜2010年のJablotron / AIPTEK / Sharp案件を担当した受託会社名の手掛かりとしては使わない。
+
+参考:
+- https://tw.linkedin.com/jobs/view/technologist-engineer-firmware-engineering-at-sandisk-4396560497
+- https://seminar.trendforce.com/Compuforum/2010/TW/sponsors
+
 ### AIPTEK資料との食い違いは「外部受託チーム」仮説を強める
 
 2009年のStory Book inColorについて、台湾側の公開資料には **天瀚科技（AIPTEK）が研発・製造した製品** と明記されている。一方、Dusty Shyr氏は同じ案件を自身のプロジェクト履歴で `Customer: AIPTEK` と記録している。
