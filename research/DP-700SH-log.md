@@ -58,7 +58,13 @@ Jablotronの製品一覧に `ALBUM` という Digital Photo Frame が実在し�
 - Latest ALBUM firmware version 1.15: 約4.2 MB
 - User manual: 約893.7 kB
 - 現行ページのfirmwareリンク先URLは `https://www.jablotron.com/file/edee/ke-stazeni/software/albumq42008_en.zip`
-- 現行サイトではZIP扱いだが、旧Jablotronサイトの検索インデックスでは同じ更新を **FWI (4 MB)** と表示する記録がある。
+- 現行サイトではZIP扱いだが、Jablotron旧サイトの公開複製では同じ更新を **`FWI (4 MB)`** と明記している。
+
+旧サイト複製:
+- https://jablotron.com.cov04.vas-server.cz/en/about-jablotron/downloads/?level1=2598
+- https://www.jablotron.com.cov04.vas-server.cz/fi/tietoja-jablotronista/ladattavat-kohteet/?level1=2823
+
+このため、`albumq42008_en.zip` は配布用コンテナで、内部または旧配布形態の実更新ファイルは `.fwi` だった可能性が高い。これは ALBUM の情報であり、DP-700SH が `.fwi` を使う証拠ではない。
 
 ALBUM取扱説明書から:
 - SD/MMC
@@ -72,7 +78,7 @@ ALBUM取扱説明書から:
 
 同じ開発担当者が翌年のAIPTEK Story Book、さらにその直後のSharp向けFUJIFILM DP-850SH/1020SHを担当しているため、ALBUMファームを取得・比較できれば、RTOS/SoC/ライブラリ/更新形式の系譜を探る有力な比較資料になる。
 
-現時点ではfirmware URLは判明したが、こちらの実行環境からバイナリ本体の取得には成功していない。検索エンジンにもファイル名 `albumq42008_en.zip` のミラーは見つからなかった。
+現時点ではfirmware URLは判明したが、こちらの実行環境からバイナリ本体の取得には成功していない。現行URLへの直接取得は失敗し、検索エンジンにもファイル名 `albumq42008_en.zip` のミラーは見つからなかった。次は旧サイト複製のリンク先またはInternet Archiveから `.fwi` の実ファイル名を逆引きする。
 
 ### AIPTEK Story Book inColor
 
@@ -103,6 +109,7 @@ FCC ID / teardown / processor名を検索したが、現時点ではStory Book i
 ### 次の探索
 
 - Jablotron `albumq42008_en.zip` の取得またはミラー発掘
+- 旧Jablotronサイト複製から `.fwi` の実ファイル名・直リンクを回収
 - ALBUMの基板/SoC/ファーム解析記事を探索
 - AIPTEK Story Book inColor の基板情報からSoCを特定
 - 台湾側開発者の当時の所属企業を、Jablotron ALBUMとAIPTEK案件から逆引き
