@@ -24,11 +24,14 @@ jobs:
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          channel: stable
+          flutter-version: '3.38.6'
           cache: true
 
       - name: Install dependencies
         run: flutter pub get
+
+      - name: Generate bundled IR database
+        run: python3 tools/build_ir_db.py
 
       - name: Build debug APK
         run: flutter build apk --debug
