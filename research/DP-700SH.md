@@ -25,7 +25,21 @@ DP-1020SH / DP-850SH / DP-700SH はSHARP製液晶を採用。DP-700SHは7型800�
 - https://dc.watch.impress.co.jp/docs/news/346441.html
 - https://www.bcnretail.com/news/detail/100203_16329.html
 
-**注意:** ここから「メイン基板・SoC・OSを含む本体全体がSHARP設計/OEM」とまでは断定しない。実機で使っているACアダプターにもSHARP表記があるが、これも本体内部設計の証明ではない。
+**注意:** ここから「メイン基板・SoC・OSを含む本体全体がSHARP設計/OEM」とまでは断定しない。
+
+### DP-700SHの標準ACアダプターはSHARP `EP-D72F`
+
+中古販売記録で、DP-700SHの付属品としてACアダプター型番 `EP-D72F` が明記されている。別の中古流通記録では同型番が **SHARP ACアダプター** として扱われ、仕様は5V 2A（10W）、プラグ外径約4.0mm/内径約1.7mm、センタープラスとされる。
+
+参考:
+- https://used.sofmap.com/r/item/2133006495537
+- https://paypayfleamarket.yahoo.co.jp/item/e1186028374
+- https://www.ebay.co.uk/b/bn_616753
+- https://jp.mercari.com/search?keyword=DP-700SH
+
+実機で確認済みの「ACアダプターにSHARP表記」という観察と一致する。これにより、SHARP製電源部品がDP-700SHの標準付属品として採用されていた可能性は高い。
+
+**ただし、これはメイン基板・SoC・OSを含む本体全体がSHARP設計/OEMである証拠ではない。** 液晶、電源、開発顧客関係の証拠は分離して扱う。
 
 ### 2010年に3機種共通のファームウェア更新が存在
 
