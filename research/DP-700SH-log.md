@@ -12,10 +12,42 @@
 - `android-ir-blaster` の Sharp 無接頭辞総当たりは、UI上の16bit空間（65,536）とは別に内部カーソルを13bitへ正規化しているため、固有波形は8,192通り。
 - 主要な Flipper Zero 公開IRデータベース `Lucaslhm/Flipper-IRDB` の `Picture_Frames` を確認したが、現時点では Micca / Nixplay / Pandigital のみで FUJIFILM / SHARP フォトフレームの登録は見つからなかった。
 - GitHubコード検索でも `DP-700SH` と候補リモコン型番 `RRMCG2009SCZZ` の既知IRデータは見つからなかった。
-- `RRMCG2009SCZZ` は FUJIFILM DIGITAL PHOTO FRAME 用リモコンとして中古流通記録があるが、DP-700SHへの対応は未確定。
-- 2026-08-20時点でメルカリに `RRMCG2009SCZZ` 単品が少なくとも3件残っており、1件は499円。型番自体の実在性は十分高いが、出品タイトルには対応機種が明記されていない。
 - Yahoo!フリマの過去出品では `RRMCG2009SCZZ` の全ボタン赤外線動作確認済みという記録がある。
-- `RRMCG2009SCZZ DP-700SH/850SH/1020SH` の組み合わせでWeb横断検索したが、対応機種を直接断定できるページはまだ見つからない。
+
+#### `RRMCG2009SCZZ` をDP-700SH純正リモコンとして直接確認
+
+以前は `RRMCG2009SCZZ` をFUJIFILM DIGITAL PHOTO FRAME用の「候補型番」として扱っていたが、Yahoo!オークションの **DP-700SH出品 `q1171811726`** の画像検索結果で、付属リモコンの前面と裏面を直接確認できた。
+
+裏面ラベルには明瞭に:
+
+- `REMOTE CONTROL UNIT`
+- `RRMCG2009SCZZ`
+- `使用電池 リチウム電池 CR2025 1個`
+- `FUJIFILM Corporation`
+
+とある。出品対象そのものがDP-700SHであり、同一出品の写真にリモコンが付属しているため、**DP-700SHと `RRMCG2009SCZZ` の対応関係は直接確認済み**へ格上げする。
+
+出典:
+- https://auctions.yahoo.co.jp/jp/auction/q1171811726
+
+前面写真から、DP-70SHの隠し更新手順で使う `拡大 → 縮小 → 時計 → 回転` の4キーが `RRMCG2009SCZZ` にすべて存在することも確認できた。したがってDP-700SH実機で同じサービス/更新シーケンスを試すことが物理的に可能。実装が残っているかは未確認。
+
+またメルカリでは同型番を `DP-850SH / DP-1020SH` 対応として販売している個体が複数見つかった。中古出品者の記載であり公式互換表ではないため確定扱いにはしないが、DP-700SHでの直接確認と合わせると、3機種が同じリモコンを共有した可能性は高い。
+
+出典:
+- https://jp.mercari.com/item/m93734607492
+- https://jp.mercari.com/item/m53512993273
+
+さらに `RRMCG` という型番接頭辞を逆引きすると、SHARPの旧製品マニュアル/サービス資料に `RRMCG1392CESA`, `RRMCG1327CESA`, `RRMCG0033TASA` など多数の例がある。したがって `RRMCG...` はSHARPのリモコン部品番号体系として長年使われている。
+
+出典:
+- https://sharp.manymanuals.com/data-projectors/xg-e3500u/instruction-manual-16837/37
+- https://manualzilla.com/doc/7351006/sharp-pg-d100u-instruction-manual
+- https://manualzz.com/doc/736350/sharp-s50a2vl-fd1u-camcorder-service-manual
+
+**評価:** FUJIFILM表記の `RRMCG2009SCZZ` がSHARP系の部品番号体系に乗っていることは、SharpがDPシリーズのリモコン設計/部品調達にも関与した可能性を補強する。ただし、このリモコンの製造者自体をSHARPと断定できる一次資料はまだない。
+
+これによりSharp 13-bit系を優先している現在の総当たり方針には追加の状況証拠が得られた。ただし、`RRMCG` 接頭辞から赤外線プロトコルまでSharp方式と断定することはできない。
 
 ### ファームウェア
 
@@ -43,7 +75,7 @@
 
 #### `新帝` は当時の受託会社名ではない
 
-今回、Dusty Shyr氏の現在所属として表示される `新帝` を確認したところ、これは **SanDisk（新帝科技 / SanDisk Corporation）** を指すことが分かった。LinkedInのSanDisk求人が会社名を `新帝` と表示し、2010年の台湾業界資料でも `新帝科技（SanDisk Corporation）` と明記されている。
+Dusty Shyr氏の現在所属として表示される `新帝` は **SanDisk（新帝科技 / SanDisk Corporation）**。LinkedInのSanDisk求人が会社名を `新帝` と表示し、2010年の台湾業界資料でも `新帝科技（SanDisk Corporation）` と明記されている。
 
 出典:
 - https://tw.linkedin.com/jobs/view/technologist-engineer-firmware-engineering-at-sandisk-4396560497
@@ -56,18 +88,16 @@
 - **確定**: DP-700SH/850SH/1020SHの液晶パネルはSharp製。
 - **確定**: DP-850SH/1020SHの開発案件がLinkedIn上で `Customer: Sharp` と記録されている。
 - **実機で確認済み**: DP-700SHで使っているACアダプターにSHARP表記がある。
-- **新規確認**: DP-700SHの付属ACアダプターは販売記録で `EP-D72F` と特定できる。Sofmap中古品ページではDP-700SHの付属品として `ACアダプター(EP-D72F)` を明記。別流通では `SHARP ACアダプター EP-D72F` と明記され、5V 2A/10W、約4.0×1.7mmの仕様で扱われる。
+- **確認済み**: DP-700SHの付属ACアダプターは販売記録で `EP-D72F`。Sofmap中古品ページでは `ACアダプター(EP-D72F)` と明記。別流通では `SHARP ACアダプター EP-D72F` と明記され、5V 2A/10W、約4.0×1.7mmの仕様で扱われる。
+- **新規確認**: DP-700SHの純正リモコンは `RRMCG2009SCZZ`。この `RRMCG` 接頭辞はSHARPのリモコン部品番号体系で広く使われる。
 - **未確定**: DP-700SH本体のメイン基板、SoC、OS、全体設計がSharp製/OEMであること。
 
-出典:
+ACアダプター出典:
 - https://used.sofmap.com/r/item/2133006495537
 - https://paypayfleamarket.yahoo.co.jp/item/e1186028374
 - https://www.ebay.co.uk/b/bn_616753
-- https://jp.mercari.com/search?keyword=DP-700SH
 
-この追加証拠により、「手元の個体だけ偶然Sharp製アダプターを使っていた」可能性はかなり下がり、Sharp製電源部品が標準付属だった可能性が高まった。ただし本体ODMの直接証拠にはしない。
-
-メイン調査メモの「製造元SHARP」と断定していた箇所は 2026-08-20 に修正し、証拠を上記の粒度へ分離した。
+液晶・電源・リモコン部品番号・Sharp顧客案件という複数の独立した痕跡が揃ってきた。ただし、それぞれをまとめて「本体全体がSharp設計」と断定しない。
 
 ### Jablotron ALBUM が重要な比較対象
 
@@ -148,7 +178,7 @@ FCC ID / teardown / processor名を検索したが、現時点ではStory Book i
 
 ### AIPTEKの「研発・製造」と `Customer: AIPTEK` の食い違い
 
-新たに2009年前後の台湾資料で、Story Book inColorについて「天瀚科技（AIPTEK）が研発・製造」と明記された記述を確認した。
+2009年前後の台湾資料で、Story Book inColorについて「天瀚科技（AIPTEK）が研発・製造」と明記された記述を確認した。
 
 参考:
 - https://9lib.co/document/rz32k9eq-Aiptek%E5%BD%A9%E8%89%B2%E5%85%92%E7%AB%A5%E9%9B%BB%E5%AD%90%E6%9B%B8%E9%80%B2%E8%BB%8D%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%B8%82%E5%A0%B4.html
@@ -171,12 +201,13 @@ SoCベンダー候補（Sunplus / MagicPixel / Actions / MStar等）と人物名
 
 - 3機種は同じ2010-04-30ファーム更新を受け、修正対象もIrSimple/IrSS/IrDA通信スタックで共通。
 - DP-700SHは上位機から動画/音声再生を削ったモデルで、画像管理・赤外線・USB・メディア処理などは共通機能が多い。
+- `RRMCG2009SCZZ` がDP-700SHで直接確認され、DP-850SH/1020SH向けとしても中古流通しているため、UI/リモコン入力層も3機種で共通だった可能性が高まった。
 - したがって、少なくともアプリケーション/ミドルウェアのかなりの部分を共有していた可能性が高い。これは推測であり、基板共通までは未証明。
 - DP-1020SHの2010年レビューには本体が `Made in China` だったとの実機報告がある。Sharp顧客案件 + 中国製造 + 台湾側開発というサプライチェーン像と整合するが、ODM名は依然不明。
 
 ### その他
 
-- `EP-D72F` はDP-700SH内部型番ではなくSHARP ACアダプター型番。今回、SofmapのDP-700SH中古品記録でも標準付属品として `ACアダプター(EP-D72F)` と明記されることを確認した。
+- `EP-D72F` はDP-700SH内部型番ではなくSHARP ACアダプター型番。SofmapのDP-700SH中古品記録でも標準付属品として `ACアダプター(EP-D72F)` と明記される。
 - DP-1020SHは発売時に一部個体の電源接続部不具合で全数検査・発売延期があった。
 - DP-1020SH実利用例ではminiUSB経由の大量一括転送中にフリーズした報告あり。
 - DP-700SH/850SH/1020SHは共通のIrSimple/IrSS/IrDA修正ファームを受けており、700SHだけ動画/音声機能を省いている。共通ソフト基盤 + 機種別機能構成だった可能性がある（推測）。
@@ -189,7 +220,8 @@ SoCベンダー候補（Sunplus / MagicPixel / Actions / MStar等）と人物名
 - AIPTEK Story Book inColor の基板情報からSoCを特定
 - 台湾側開発者の当時の所属企業を、Jablotron/AIPTEK/Sharpの3案件から逆引き
 - ProsoyoとALBUMteamまたは台湾開発チームの具体的接点を確認
-- DP-700SH専用リモコンの裏面部品番号を中古画像から確定
-- `RRMCG2009SCZZ` の前面ボタン配置をDP-700SH取説の純正リモコンと比較
+- `RRMCG2009SCZZ` の赤外線波形/コードを探索
+- SHARP `RRMCG` 系リモコンの既知プロトコルを型番横断で調べ、総当たり範囲を絞る
 - 旧FUJIFILM更新ページのInternet Archive保存物からダウンロードhrefを回収
 - DP-701SH/801SHの公開Ver.1.04.07のファイル名を回収し、2010世代の命名規則を推定
+- 実機で `本体情報→バージョン表示→拡大→縮小→時計→回転` を試す
