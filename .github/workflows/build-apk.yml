@@ -5,6 +5,9 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 
 jobs:
   build-debug-apk:
@@ -29,6 +32,9 @@ jobs:
 
       - name: Install dependencies
         run: flutter pub get
+
+      - name: Generate bundled IR database
+        run: python3 tools/build_ir_db.py
 
       - name: Build debug APK
         run: flutter build apk --debug
