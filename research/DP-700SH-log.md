@@ -41,6 +41,16 @@
 
 この並びは同一の台湾側ソフトウェア開発チーム/ODMが複数顧客向けにデジタルフォト製品を開発していた可能性を示す。ただし会社名は公開プロフィールから取れていない。
 
+#### `新帝` は当時の受託会社名ではない
+
+今回、Dusty Shyr氏の現在所属として表示される `新帝` を確認したところ、これは **SanDisk（新帝科技 / SanDisk Corporation）** を指すことが分かった。LinkedInのSanDisk求人が会社名を `新帝` と表示し、2010年の台湾業界資料でも `新帝科技（SanDisk Corporation）` と明記されている。
+
+出典:
+- https://tw.linkedin.com/jobs/view/technologist-engineer-firmware-engineering-at-sandisk-4396560497
+- https://seminar.trendforce.com/Compuforum/2010/TW/sponsors
+
+したがって、プロフィール上部の `新帝` を2008〜2010年のJablotron / AIPTEK / Sharp案件を担当した会社名と読むのは誤り。これは**現在所属の表示**であり、未特定の台湾側受託開発会社の探索とは切り離す。
+
 ### Sharp関与についての確定度整理
 
 - **確定**: DP-700SH/850SH/1020SHの液晶パネルはSharp製。
