@@ -127,6 +127,27 @@ ALBUMの取扱説明書には `Program © 2008 ALBUMteam Ltd.` とあり、会�
 
 FCC ID / teardown / processor名を検索したが、現時点ではStory Book inColorそのものの基板・SoC情報は見つからなかった。
 
+### AIPTEKの「研発・製造」と `Customer: AIPTEK` の食い違い
+
+新たに2009年前後の台湾資料で、Story Book inColorについて「天瀚科技（AIPTEK）が研発・製造」と明記された記述を確認した。
+
+参考:
+- https://9lib.co/document/rz32k9eq-Aiptek%E5%BD%A9%E8%89%B2%E5%85%92%E7%AB%A5%E9%9B%BB%E5%AD%90%E6%9B%B8%E9%80%B2%E8%BB%8D%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%B8%82%E5%A0%B4.html
+- https://www.ithome.com.tw/news/58275
+- https://tw.linkedin.com/in/%E7%92%A7%E7%B6%AD-dusty-shyr-%E7%9F%B3-a6ab8a5b
+
+一方、Dusty Shyr氏のプロジェクト履歴では同製品の顧客が `Customer: AIPTEK`。このため「Dusty氏がAIPTEK社員として自社製品を開発した」とみなすより、AIPTEKが製品全体の開発・製造主体でありつつ、Dusty氏の所属会社へソフトウェア/システム開発を外注したと読む方が自然。
+
+これにより、2008〜2010年の3案件を結ぶ **未特定の台湾系受託開発会社** の存在仮説が強まった。
+
+- Jablotron: Customer
+- AIPTEK: Customer
+- Sharp: Customer
+
+同一人物が短期間に3社の案件を連続担当しており、特にStory BookではProject / SW Managerを担当。会社名はまだ未特定。
+
+SoCベンダー候補（Sunplus / MagicPixel / Actions / MStar等）と人物名の組み合わせ検索も行ったが、直接の所属証拠は得られなかった。検索結果はLinkedIn本人ページへ収束した。
+
 ### DP-700SH/850SH/1020SH世代の共通基盤について
 
 - 3機種は同じ2010-04-30ファーム更新を受け、修正対象もIrSimple/IrSS/IrDA通信スタックで共通。
