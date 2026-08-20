@@ -73,6 +73,19 @@
 
 この並びは同一の台湾側ソフトウェア開発チーム/ODMが複数顧客向けにデジタルフォト製品を開発していた可能性を示す。ただし会社名は公開プロフィールから取れていない。
 
+#### 学術資料から `Bih-Wei Shyr` 表記を確認
+
+国立陽明交通大学（旧・国立交通大学）の機関リポジトリで、1998年の修士論文 `影像序列中網型物件之建立與追蹤` の著者が **石璧維 / Bih-Wei Shyr** と登録されている。2000年のSPIE論文でも `Bih Wei Shyr` として確認できた。
+
+出典:
+- https://ir.lib.nycu.edu.tw/handle/11536/64322
+- https://scholar.nycu.edu.tw/en/publications/generation-and-tracking-of-mesh-objects-in-image-sequences/
+- https://tw.linkedin.com/in/%E7%92%A7%E7%B6%AD-dusty-shyr-%E7%9F%B3-a6ab8a5b
+
+LinkedInの `石璧維 (Dusty Shyr)` はNCTU EE卒であり、漢字氏名・大学・時期が整合する。したがって同一人物とみてよい。修士研究は特徴点抽出、階層メッシュ、動画像中の物体追跡・動き推定など画像処理分野。
+
+**探索上の意味:** 今後は `Dusty Shyr` のほか `Bih-Wei Shyr`, `Bih Wei Shyr`, `Shyr BW` でも旧職歴・特許・技術資料を横断できる。今回これらの表記で特許・勤務先を検索したが、2008〜2010年の受託会社を直接示す資料はまだ見つからなかった。
+
 #### `新帝` は当時の受託会社名ではない
 
 Dusty Shyr氏の現在所属として表示される `新帝` は **SanDisk（新帝科技 / SanDisk Corporation）**。LinkedInのSanDisk求人が会社名を `新帝` と表示し、2010年の台湾業界資料でも `新帝科技（SanDisk Corporation）` と明記されている。
@@ -228,7 +241,7 @@ SoCベンダー候補（Sunplus / MagicPixel / Actions / MStar等）と人物名
 - 旧Jablotronサイト複製から `.fwi` の実ファイル名・直リンクを回収
 - ALBUM / ALBUM2 のFCC・内部写真・基板/SoC情報を探索
 - AIPTEK Story Book inColor の基板情報からSoCを特定
-- 台湾側開発者の当時の所属企業を、Jablotron/AIPTEK/Sharpの3案件から逆引き
+- 台湾側開発者の当時の所属企業を `Dusty Shyr` / `Bih-Wei Shyr` / `Bih Wei Shyr` / `Shyr BW` とJablotron/AIPTEK/Sharpの3案件から逆引き
 - ProsoyoとALBUMteamまたは台湾開発チームの具体的接点を確認
 - `RRMCG2009SCZZ` の赤外線波形/コードを探索
 - SHARP `RRMCG` 系リモコンの既知プロトコルを型番横断で調べ、総当たり範囲を絞る
