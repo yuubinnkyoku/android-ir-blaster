@@ -1,6 +1,6 @@
 # FUJIFILM DP-700SH リバースエンジニアリング調査メモ
 
-最終更新: 2026-08-20 JST
+最終更新: 2026-08-21 JST
 
 DP-700SH のハードウェア、ファームウェア、赤外線リモコン、開発/製造系統を追跡する作業メモ。**確定情報・状況証拠・推測を分ける**。
 
@@ -154,7 +154,7 @@ SHARPの旧製品資料には `RRMCG1392CESA`, `RRMCG1327CESA`, サービス用 
 
 参考:
 - https://sharp.manymanuals.com/data-projectors/xg-e3500u/instruction-manual-16837/37
-- https://manualzilla.com/doc/7351006/sharp-pg-d100u-instruction-manual
+- https://manualzilla.com/doc/7351006/sharp-pg-d100u/instruction-manual
 - https://manualzz.com/doc/736350/sharp-s50a2vl-fd1u-camcorder-service-manual
 
 したがってFUJIFILMロゴ/ラベルの `RRMCG2009SCZZ` も **SHARP系部品番号体系に乗ったリモコンである可能性が高い**。これはSharpがDPシリーズのリモコン設計・調達に関与した状況証拠になるが、`RRMCG2009SCZZ` の製造者をSHARPと断定する一次資料は未回収。
@@ -171,6 +171,14 @@ DP-70SH Ver.1.04.00の公開更新では、SDカードへファームを保存�
 - https://dc.watch.impress.co.jp/cda/accessories/2009/04/01/10602.html
 
 DP-700SH純正リモコンにも **拡大・縮小・時計・回転** の4キーがすべて存在することを写真で確認できた。したがって、先代と同じ隠し更新シーケンスをDP-700SHでも試せる条件が揃った。ただし、同じシーケンスが実装されているかは未確認。
+
+さらにデジカメ Watchの2009年バックナンバーには、**2009-09-18にも「DP-70SHの最新ファームウェア」公開記事が記録されている**。したがってDP-70SHの公開ファーム更新は、確認できた範囲で少なくとも2009-03-31と2009-09-18の2回存在した。後者のバージョン番号・変更内容・実ファイル名・バイナリは未回収。
+
+参考:
+- https://dc.watch.impress.co.jp/docs/news/index2009.html
+- https://dc.watch.impress.co.jp/docs/news/20090918_316738.html
+
+**推測:** 2009年3月の隠し更新画面/SD更新機構が、その後の公開更新にも継続利用された可能性は高い。ただし9月版の更新手順本文を回収できておらず、同一手順だったこと自体は未確認。ましてDP-700SHへの継承は未確認。
 
 ### 後継DP-701SH / DP-801SHにも共通更新
 
@@ -289,6 +297,7 @@ ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell Applo
 ## 次に掘るもの
 
 - 旧FUJIFILMページのWayback/CDXから更新ファイルhref回収
+- DP-70SHの2009-09-18更新についてバージョン番号・変更内容・実ファイル名を回収
 - DP-70SHおよびDP-701SH/801SHの旧公開ファイル名を回収し命名規則を推定
 - DP-700SH/850SH/1020SHの分解・修理・基板写真
 - `RRMCG2009SCZZ` の信号コード
