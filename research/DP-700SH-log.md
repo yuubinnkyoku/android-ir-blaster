@@ -308,3 +308,27 @@ DP-701SH / DP-801SHの取扱説明書の主な仕様から、両機種は以下�
 - Dusty Shyr氏の2008〜2010年当時の所属会社
 
 ファーム名については `dp1020sh_dp850sh_dp700sh` と `.zip` / `.bin` / `.dat` 等の組み合わせを再検索したが、新しいインデックス露出は得られなかった。
+
+### JABLOTRON TAIWANの役割を当時資料で切り分け
+
+Jablotron Groupの当時のCompany Profileを確認すると、支社の役割として明確に:
+
+- `JABLOTRON TAIWAN – sales and marketing for Asia region`
+- `JABLOTRON CHINA – production QC and component supplying`
+
+と記載されていた。同じ資料には別に `R&D, Design Engineering`、`R&D, SW and HW Engineering` も掲げられる。
+
+出典:
+- https://www.sklep-jablotron.pl/userfiles/files/company_profile.pdf
+- https://tw.linkedin.com/in/%E7%92%A7%E7%B6%AD-dusty-shyr-%E7%9F%B3-a6ab8a5b
+
+**確定:** 少なくとも当時の公式会社案内上、JABLOTRON TAIWANは開発拠点ではなく「アジア向け営業・マーケティング」拠点として位置付けられていた。
+
+**推測への影響:** Dusty氏の2008年案件は `Customer: Jablotron`。したがって、「Dusty氏がJABLOTRON TAIWAN所属の社内開発者だった」という仮説は弱くなる。Jablotron/ALBUMteam側から台湾の別会社・設計チームへ開発を委託していた、という既存仮説には追加の状況証拠になる。ただしDusty氏の勤務先社名そのものは未特定。
+
+またチェコ政府の商業公報には、2011年に **ALBUMteam s.r.o.の全資産・権利義務がJABLOTRON ALARMS a.s.へ合併承継された** 記録がある。これはALBUMteamとJablotronグループの企業関係を公的登記資料でも確認できる材料。
+
+出典:
+- https://ov.gov.cz/zapis/9717145
+
+今回も、2010年DP-700SH/850SH/1020SHのファーム実体/実ファイル名、SoC/OS、基板写真、`RRMCG2009SCZZ` の赤外線コード自体には新しい確証は得られなかった。
