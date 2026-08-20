@@ -107,6 +107,19 @@ DP-700SHの名前はこの記録にはない。ただし700SH/850SH/1020SHは同
 
 同一の台湾側ソフトウェア開発チームまたはODMが複数顧客向けにデジタル写真機器を開発していた可能性がある。ただし当時の所属会社名はまだ特定できていない。
 
+### Dusty Shyr氏の学術上の実名表記は `Bih-Wei Shyr`
+
+国立陽明交通大学（旧・国立交通大学）の機関リポジトリに、1998年の修士論文 `影像序列中網型物件之建立與追蹤` の著者として **石璧維 / Bih-Wei Shyr** が記録されている。2000年のSPIE論文にも `Bih Wei Shyr` として掲載される。
+
+研究内容は画像特徴点抽出、階層メッシュ、動画像中の物体追跡・動き推定など、画像処理系。LinkedInの `石璧維 (Dusty Shyr)` は学歴をNCTU EEとしており、漢字氏名・大学・時期が整合するため、同一人物とみてよい。
+
+参考:
+- https://ir.lib.nycu.edu.tw/handle/11536/64322
+- https://scholar.nycu.edu.tw/en/publications/generation-and-tracking-of-mesh-objects-in-image-sequences/
+- https://tw.linkedin.com/in/%E7%92%A7%E7%B6%AD-dusty-shyr-%E7%9F%B3-a6ab8a5b
+
+**意味:** 当時所属会社の探索では `Dusty Shyr` だけでなく `Bih-Wei Shyr`, `Bih Wei Shyr`, `Shyr BW` も検索語として使える。現時点では、この実名表記から2008〜2010年の勤務先を直接示す資料や特許までは見つかっていない。
+
 **検索上の注意:** LinkedInの現在所属欄に出る `新帝` は **SanDisk（新帝科技）** を指す。台湾の2010年資料でも `新帝科技（SanDisk Corporation）` と対応することを確認できる。これは現在の所属を示すものであり、2008〜2010年のJablotron / AIPTEK / Sharp案件を担当した受託会社名の手掛かりとしては使わない。
 
 参考:
@@ -281,7 +294,7 @@ ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell Applo
 - `RRMCG2009SCZZ` の信号コード
 - `RRMCG` 系SHARPリモコンのプロトコル対応から信号方式を逆引き
 - ALBUM/Story BookのFCC・内部写真・基板・SoC
-- Dusty Shyr氏の当時所属会社をJablotron/AIPTEK/Sharpの顧客関係から逆引き
+- Dusty Shyr氏の当時所属会社を `Dusty Shyr` / `Bih-Wei Shyr` / `Bih Wei Shyr` / `Shyr BW` とJablotron/AIPTEK/Sharpの顧客関係から逆引き
 - Prosoyoや別の台湾開発会社との人員/案件接点
 - 実機から現在のファームバージョンとUSB VID/PIDを取得
 - 実機で「本体情報→バージョン表示→拡大→縮小→時計→回転」の反応を確認
