@@ -138,6 +138,21 @@ DP-700SHの名前はこの記録にはない。ただし700SH/850SH/1020SHは同
 
 **現時点の評価:** Dusty氏は2008〜2010年に、Jablotron / AIPTEK / Sharpを顧客とする同一の台湾系受託開発会社または設計会社に所属していた可能性が高まった。会社名は未特定。これは状況証拠であり確定事項ではない。
 
+### Jablotron Taiwanは当時「アジア向け営業・マーケティング」拠点として記載
+
+Jablotron Groupの当時のCompany Profileでは、支社の役割を次のように記載している。
+
+- `JABLOTRON TAIWAN – sales and marketing for Asia region`
+- `JABLOTRON CHINA – production QC and component supplying`
+
+同資料には別に `R&D, Design Engineering`、`R&D, SW and HW Engineering` も掲げられている。したがって、少なくともこの会社案内上では **JABLOTRON TAIWANは開発拠点ではなく営業・マーケティング拠点** と位置付けられていた。
+
+参考:
+- https://www.sklep-jablotron.pl/userfiles/files/company_profile.pdf
+- https://tw.linkedin.com/in/%E7%92%A7%E7%B6%AD-dusty-shyr-%E7%9F%B3-a6ab8a5b
+
+**推測:** Dusty氏の2008年案件が `Customer: Jablotron` と表記されていることと合わせると、「Dusty氏がJABLOTRON TAIWANの社内開発者としてALBUMを作った」という読み方は弱くなる。Jablotron本体/ALBUMteamから別の台湾系設計会社・受託チームへ開発が発注されていた可能性を補強する。ただし、これだけでDusty氏の勤務先そのものを特定することはできない。
+
 ### `RRMCG2009SCZZ` はDP-850SH / DP-1020SHでも使われた可能性が高い
 
 メルカリの同型番リモコン出品には対応機種として `DP-850SH` / `DP-1020SH` が明記されている。中古出品者による記載なので公式互換表ではないが、DP-700SHでの写真による直接確認と合わせると、3機種が同一リモコンを共有した可能性は高い。
@@ -281,9 +296,12 @@ DP-700SHは受光位置/指向性が扱いづらいという実機レビュー�
 
 ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell ApplováとDalibor Dědekが設立した企業で、Jablotronグループの一員として報道されている。ALBUMは米国/チェコで設計され、台湾/中国で生産されたとされる。
 
+さらにチェコ政府の商業公報には、**2011年にALBUMteam s.r.o.の全資産・権利義務がJABLOTRON ALARMS a.s.へ合併承継された**記録がある。これはALBUMteamとJablotronグループの企業関係を公的登記資料でも確認できる材料になる。ただし、台湾側ODMの社名を示すものではない。
+
 参考:
 - https://www.prnewswire.com/news-releases/albumteam-named-as-ces-innovations-2010-design--engineering-award-honoree-80907592.html
 - https://www.finance.cz/clanky/217833-jablotron-navzdory-krizi-zvysil-trzby-o-petinu-na-1-2-miliardy-kc/
+- https://ov.gov.cz/zapis/9717145
 
 ### Prosoyo Technology
 
@@ -332,6 +350,7 @@ ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell Applo
 - `RRMCG` 系SHARPリモコンのプロトコル対応から信号方式を逆引き
 - ALBUM/Story BookのFCC・内部写真・基板・SoC
 - Dusty Shyr氏の当時所属会社を `Dusty Shyr` / `Bih-Wei Shyr` / `Bih Wei Shyr` / `Shyr BW` とJablotron/AIPTEK/Sharpの顧客関係から逆引き
+- JABLOTRON TAIWAN以外の台湾系設計会社/受託チームを、2008年ALBUMの台湾生産・Dusty氏の顧客表記から逆引き
 - Prosoyoや別の台湾開発会社との人員/案件接点
 - 実機から現在のファームバージョンとUSB VID/PIDを取得
 - 実機で「本体情報→バージョン表示→拡大→縮小→時計→回転」の反応を確認
