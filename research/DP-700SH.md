@@ -265,17 +265,36 @@ DP-701SH / DP-801SHの取扱説明書では、両機種の仕様として以下�
 
 `Lucaslhm/Flipper-IRDB` の `Picture_Frames` では現時点でFUJIFILM/SHARPフォトフレームの登録を確認できていない。GitHubコード検索でも `DP-700SH` / `RRMCG2009SCZZ` の既知IR信号は未発見。
 
+### Sharp 13-bit方式についての確定事項と注意
+
+Linux kernelのリモコン・プロトコル資料で `RC_PROTO_SHARP` は **SharpのVCRで使われる方式** と説明され、5-bit address + 8-bit command のメッセージと、約40 ms後の反転側メッセージを組にする方式として記載されている。SB-ProjectsのSharp protocol資料も、38 kHz搬送波、LSB-first、同じaddressを保ちつつcommand等を反転した第2メッセージを送る構造を説明している。
+
+参考:
+- https://www.kernel.org/doc/html/next/userspace-api/media/rc/rc-protos.html
+- https://www.sbprojects.net/knowledge/ir/sharp.php
+
+リポジトリの `lib/ir/protocols/sharp.dart` を確認すると、現在の実装はすでに次を行っている。
+
+- 38 kHzで送信
+- 5-bit address + 8-bit commandをLSB-firstで構成
+- 第1メッセージ送信後に長い空白期間を置く
+- 第2メッセージではaddressを維持し、commandを反転し、expansion/check側も反転する
+
+したがって、**現在のSharp総当たりが「第2メッセージを送っていない単発フレーム実装」だから反応しない、という仮説は除外できる。** 少なくともメッセージ構造は公開資料のSharp方式と整合している。
+
+ただし重要な注意として、`RRMCG...` がSHARP系部品番号であることは **`RRMCG2009SCZZ` が `RC_PROTO_SHARP` を使う証拠にはならない**。Linux kernel側の記述もSharp製品一般ではなくSharp VCRで使われる方式として説明している。したがって「RRMCG型番だからSharp 13-bitが有力」という従来の重み付けは弱める。Sharp 13-bitを総当たりすること自体は探索仮説として有効だが、プロトコル確定の根拠ではない。
+
 ## 赤外線探索戦略
 
-優先順位:
+現在の探索候補:
 
-1. Sharp 13-bit（8,192固有候補）
+1. Sharp 13-bit（8,192固有候補）— 実装は正規の2メッセージ構造を概ね再現。ただし採用プロトコルである証拠はない。
 2. 内蔵IR DBのSHARP候補
 3. Kaseikyo / SHARP vendor `5AAA`
 4. 近縁SHARP写真機器の既知コード
 5. その他の家電IRプロトコル
 
-`RRMCG` がSHARP系部品番号である状況証拠が増えたため、Sharp 13-bit優先は従来より合理的になった。ただしプロトコルそのものは未確定。
+`RRMCG` はSHARP系部品番号であるが、型番体系から赤外線方式までは導けない。したがってSharp 13-bit優先は「Sharp関与から試す価値がある」という探索上の仮説に留める。
 
 Kaseikyoは実効20-bitで約1,048,576候補あるため、vendor/address/commandの既知情報を拾ってから部分探索する。
 
@@ -347,7 +366,7 @@ ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell Applo
 - DP-70SHおよびDP-701SH/801SHの旧公開ファイル名を回収し命名規則を推定
 - DP-700SH/850SH/1020SHの分解・修理・基板写真
 - `RRMCG2009SCZZ` の信号コード
-- `RRMCG` 系SHARPリモコンのプロトコル対応から信号方式を逆引き
+- `RRMCG` 系SHARPリモコンのプロトコル対応から信号方式を逆引き。ただし型番接頭辞だけで `RC_PROTO_SHARP` と決め打ちしない
 - ALBUM/Story BookのFCC・内部写真・基板・SoC
 - Dusty Shyr氏の当時所属会社を `Dusty Shyr` / `Bih-Wei Shyr` / `Bih Wei Shyr` / `Shyr BW` とJablotron/AIPTEK/Sharpの顧客関係から逆引き
 - JABLOTRON TAIWAN以外の台湾系設計会社/受託チームを、2008年ALBUMの台湾生産・Dusty氏の顧客表記から逆引き
@@ -362,6 +381,7 @@ ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell Applo
 - SHARP製液晶 / Sharp顧客案件
 - SHARP製ACアダプター
 - `RRMCG` 系リモコン部品番号
+- `RC_PROTO_SHARP` などの赤外線プロトコル
 - 本体全体のOEM/SoC/OS
 
 これらは別々の証拠として管理する。
