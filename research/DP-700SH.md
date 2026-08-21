@@ -64,12 +64,17 @@ DP-1020SH / DP-850SH / DP-700SH はSHARP製液晶を採用。DP-700SHは7型800�
 - `MADE IN CHINA`
 - `ATECH`
 
-`ATECH` 表記の意味（実製造会社名/ブランド/工場コード等）は未確認。
+この `ATECH` は **台湾の ATECH OEM INC.（亞元科技股份有限公司）** とみてよい。UL Solutions の認証データで、ATECH OEM INC. が保有する電源アダプター認証 `E227161` のモデル群に **`T04A-0520XXX-XX`** が含まれており、実機ラベルの `T04A-0520002-S2` はこの形式に一致する。
+
+ATECH OEM INC. は台湾・台北に本社を置く電源/磁性部品メーカーで、中国の東莞（華南）および湖北宜昌（華中）に生産拠点を持つと会社紹介にある。実機アダプターの `MADE IN CHINA` と整合する。ただし、どちらの中国工場で `EP-D72F` が製造されたかは未確認であり、ATECHがDP-700SH本体のODM/EMSだったことを示す証拠でもない。
 
 参考:
 - https://used.sofmap.com/r/item/2133006495537
 - https://paypayfleamarket.yahoo.co.jp/item/e1186028374
 - https://www.ebay.co.uk/b/bn_616753
+- https://productiq.ulprospector.com/en/profile/2433476/qqgq.e227161
+- https://www.atechoem.com/document-detail/0/1511/
+- https://www.icaa.org.tw/data-64119
 - 2026-08-21 ユーザー提供実機写真
 
 ### DP-700SH本体は中国製造個体を直接確認
@@ -346,7 +351,7 @@ ALBUMteamは台湾ODMではなく、Jablotronグループ系のチェコ企業�
 
 **推測:** 少なくともアプリケーション/ミドルウェアのかなりの部分を共有していた可能性が高い。ただしSoC、メイン基板、RAM/Flashが同一であることは未証明。
 
-DP-700SHはSharpを製造元として中国製造されている。台湾側でSharp向けの設計/ソフト開発、中国で量産という構図は従来より整合的になったが、台湾側開発会社と中国側EMSの社名は未特定。
+DP-700SHはSharpを製造元として中国製造されている。台湾側でSharp向けの設計/ソフト開発、中国で量産という構図は従来より整合的になったが、台湾側開発会社と中国側EMSの社名は未特定。なお、付属ACアダプター `EP-D72F` の電源OEMは台湾 ATECH OEM INC. と確認できたが、本体製造系統とは分けて扱う。
 
 ## 未解決事項
 
@@ -362,7 +367,7 @@ DP-700SHはSharpを製造元として中国製造されている。台湾側でS
 - DP-700SH/850SH/1020SHの基板/ソフト共通範囲
 - 2008〜2010年案件を担当した台湾側開発会社/ODM
 - 中国側の実製造会社/EMS
-- `EP-D72F` ラベルの `ATECH` / `T04A-0520002-S2` の製造者情報
+- `EP-D72F` がATECHの東莞/宜昌のどの生産拠点で作られたか
 
 ## 次に掘るもの
 
@@ -374,7 +379,7 @@ DP-700SHはSharpを製造元として中国製造されている。台湾側でS
 - ALBUM/Story Bookの内部写真・基板・SoC
 - Dusty Shyr / Bih-Wei Shyrの2008〜2010年勤務先逆引き
 - Sharp製造案件として台湾受託先・中国EMSを逆引き
-- `ATECH` / `T04A-0520002-S2` を電源側から逆引き
+- ATECHの旧認証/製造記録から `EP-D72F` の中国側生産拠点を絞る
 - 実機からUSB VID/PIDを取得
 - 実機で「本体情報→バージョン表示→拡大→縮小→時計→回転」の反応を確認
 
@@ -385,6 +390,7 @@ DP-700SHはSharpを製造元として中国製造されている。台湾側でS
 - SharpがDP-700SH銘板上の製造元であること
 - SHARP製液晶 / Sharp顧客案件
 - SHARP製ACアダプター
+- ATECH OEM INC. が `EP-D72F` の電源OEMであること
 - `RRMCG` 系リモコン部品番号
 - `RC_PROTO_SHARP` などの赤外線プロトコル
 - `MADE IN CHINA` という最終製造国表示
