@@ -42,7 +42,7 @@
 
 出典:
 - https://sharp.manymanuals.com/data-projectors/xg-e3500u/instruction-manual-16837/37
-- https://manualzilla.com/doc/7351006/sharp-pg-d100u-instruction-manual
+- https://manualzilla.com/doc/7351006/sharp-pg-d100u/instruction-manual
 - https://manualzz.com/doc/736350/sharp-s50a2vl-fd1u-camcorder-service-manual
 
 **評価:** FUJIFILM表記の `RRMCG2009SCZZ` がSHARP系の部品番号体系に乗っていることは、SharpがDPシリーズのリモコン設計/部品調達にも関与した可能性を補強する。ただし、このリモコンの製造者自体をSHARPと断定できる一次資料はまだない。
@@ -469,3 +469,31 @@ Web上でも、SHARP製5V 2A電源として **`T04A-05200D2-S2`** そのもの�
 **未確定:** `S2` と `S3` の具体的な差、プラグ寸法を含む電気的・機械的互換性、Sharpが公式に `EP-D82F` をDP-700SHへ互換指定していたか。中古販売者の互換記載だけでは公式互換とは扱わない。
 
 なお今回の再検索でも、2010年公式ファームの実ファイル名/本体、SoC/OS/基板写真、`RRMCG2009SCZZ` の赤外線コード、台湾側受託開発会社名そのものには新しい直接証拠を得られなかった。
+
+### 台湾側開発会社候補として Sanjet Technology（勝捷光電）が浮上
+
+AIPTEK（天瀚科技）の公式年報を遡ると、2009年6月に代工/OEM事業を既存会社の勝捷光電股份有限公司（Sanjet Technology Corp.）へ分割譲渡したことが明記される。年報の直後の沿革には2009年11月のStory Book inColor発表も記録される。
+
+出典:
+- https://www.aiptek.com.tw/uploads/information_year/en/111%E5%B9%B4%E5%A0%B1.pdf
+- https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=667e5451-a279-49d9-a14e-0e437620cbb9
+
+会社登記ではSanjetは2008-11-20設立、英名 `SANJET TECHNOLOGY CORP.`。2009-06-25時点の住所は `新竹市工業東四路19號6樓` で、AIPTEKが2003年から拠点としていた `工業東四路19號` と一致する。
+
+出典:
+- https://findbiz.nat.gov.tw/fts/company/24268077
+- https://www.findcompany.com.tw/en/SANJET%20TECHNOLOGY%20CORP.
+
+Sanjetが2009-06-26に出願した商標の指定商品には `數位相片播放器` / `數位相框` が含まれる。また、AIPTEKが2008年に出願したデジタルフォトフレーム実用新案 `CN201153780Y` は現在の権利者表示がSanjetになっている。
+
+出典:
+- https://www.findcompany.com.tw/trademark/01391873_098027401
+- https://patents.google.com/patent/CN201153780Y/zh
+
+**確定:** AIPTEKの代工/OEM事業が2009-06にSanjetへ移り、Sanjet自身が同時期にデジタルフォトフレームを事業対象としていた。AIPTEKの一部デジタルフォトフレーム関連知財もSanjetへ移った痕跡がある。
+
+**有力な推測:** Dusty Shyr氏の `Story Book inColor` 案件（2009-03〜09）はこの事業分割をまたぎ、次のSharp顧客FUJIFILM DP-850SH/DP-1020SH案件は2009-10開始。Dusty氏が分割されたOEM/開発チーム側、すなわちSanjetに所属・移籍していたと仮定すると、`Customer: AIPTEK` から `Customer: Sharp` への時系列が非常に自然。
+
+**未確定:** Dusty/Bih-Wei Shyr氏のSanjet在籍を示す直接資料、SanjetとSharp/FUJIFILM DPシリーズの契約・製品資料。Sanjetを当時の受託会社と確定はしない。
+
+今回も公式ファーム実体/ファイル名、DP-700SHのSoC/OS/基板写真、`RRMCG2009SCZZ` の赤外線コード自体は新規回収なし。
