@@ -400,3 +400,30 @@ DP-700SHはSharpを製造元として中国製造されている。台湾側でS
 - `MADE IN CHINA` という最終製造国表示
 - 台湾側開発会社 / 中国側EMS / Sharpの役割
 - 本体全体のOEM/SoC/OS
+
+## 台湾側開発会社候補: Sanjet Technology（勝捷光電）
+
+AIPTEK自身の年報を遡ると、2009年6月に **AIPTEK（天瀚科技）が代工/OEM事業を既存会社の勝捷光電股份有限公司（Sanjet Technology Corp.）へ分割譲渡した** と明記されている。同じ年報では、その直後の2009年11月に `Story Book inColor` を発表したことも連続して記録される。
+
+参考:
+- https://www.aiptek.com.tw/uploads/information_year/en/111%E5%B9%B4%E5%A0%B1.pdf
+- https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=667e5451-a279-49d9-a14e-0e437620cbb9
+
+**確定:** 勝捷光電は2008-11-20設立の新竹企業で、英名は `SANJET TECHNOLOGY CORP.`。2009-06-25時点の登記住所は `新竹市工業東四路19號6樓`。AIPTEKは2003年から同じ `工業東四路19號` を本拠としており、分割時期のSanjetがAIPTEK拠点内にいたことと整合する。
+
+参考:
+- https://findbiz.nat.gov.tw/fts/company/24268077
+- https://www.findcompany.com.tw/en/SANJET%20TECHNOLOGY%20CORP.
+- 上記AIPTEK年報
+
+さらにSanjetが2009-06-26に出願した商標 `勝捷` の指定商品には、**`數位相片播放器` と `數位相框`（デジタルフォトフレーム）** が明記される。AIPTEKが2008-02-01に出願した「交換可能な複数フレームを備えたデジタルフォトフレーム」中国実用新案も、現在の権利者表示がSanjetになっており、少なくともAIPTEKのデジタルフォトフレーム関連事業/IPがSanjet側へ移った痕跡がある。
+
+参考:
+- https://www.findcompany.com.tw/trademark/01391873_098027401
+- https://patents.google.com/patent/CN201153780Y/zh
+
+**有力な推測:** Dusty Shyr氏の `Story Book inColor / Customer: AIPTEK` 案件は2009-03〜09で、AIPTEK→SanjetのOEM事業分割（2009-06）をまたぐ。次の `FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp` 案件は2009-10開始。もしDusty氏がAIPTEKのOEM部門からSanjetへ移ったチームに所属していたなら、分割後にAIPTEKを「Customer」と表記し、その直後にSharpを顧客としてDPシリーズを担当した時系列が非常に自然になる。
+
+ただし **Dusty/Bih-Wei Shyr氏がSanjetに在籍した直接資料、SanjetがDP-850SH/DP-1020SHを受託した契約・製品資料はまだ見つかっていない**。したがってSanjetは現時点で「台湾側開発会社の最有力候補の一つ」であり、確定扱いにはしない。
+
+今後は2009〜2010年のSanjet社員・求人・特許発明者・旧製品カタログ・Sharp/FUJIFILMとの取引記録を優先して追う。
