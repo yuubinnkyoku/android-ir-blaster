@@ -169,7 +169,7 @@ SHARPの旧製品資料には `RRMCG1392CESA`, `RRMCG1327CESA`, サービス用 
 
 参考:
 - https://sharp.manymanuals.com/data-projectors/xg-e3500u/instruction-manual-16837/37
-- https://manualzilla.com/doc/7351006/sharp-pg-d100u/instruction-manual
+- https://manualzilla.com/doc/7351006/sharp-pg-d100u-instruction-manual
 - https://manualzz.com/doc/736350/sharp-s50a2vl-fd1u-camcorder-service-manual
 
 したがってFUJIFILMロゴ/ラベルの `RRMCG2009SCZZ` も **SHARP系部品番号体系に乗ったリモコンである可能性が高い**。これはSharpがDPシリーズのリモコン設計・調達に関与した状況証拠になるが、`RRMCG2009SCZZ` の製造者をSHARPと断定する一次資料は未回収。
@@ -337,6 +337,26 @@ ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell Applo
 参考:
 - https://9lib.co/document/rz32k9eq-Aiptek%E5%BD%A9%E8%89%B2%E5%85%92%E7%AB%A5%E9%9B%BB%E5%AD%90%E6%9B%B8%E9%80%B2%E8%BB%8D%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%B8%82%E5%A0%B4.html
 
+### FUJIFILM `DP-7V`
+
+DP-700SHと同時期のFUJIFILM製デジタルフォトフレーム。2010-07-30に公開ファームウェア **Ver.1.2.30** が提供された。
+
+出典:
+- https://dc.watch.impress.co.jp/docs/news/385194.html
+- 旧公式URL: http://fujifilm.jp/support/digitalphotoframe/download/dp7v/download001.html
+
+価格.comの2010-05-04実機報告では、同時購入した2台に **Ver.1.2.2.0** と **Ver.1.2.2.5** が混在し、古い方だけ自動回転が正常動作しない差があったとされる。公開更新1.2.30以前にも、Webで公開されていない出荷時ファームの細かな改版が存在したことを示す資料になる。
+
+出典:
+- https://bbs.kakaku.com/bbs/K0000060109/
+
+またDP-700SHの利用者レビューには、先代DP-70SHと比較して、DP-700SHではSDカードの押し出し機構が省略され、その点が **DP-7Vと同じ** と明記されている。
+
+出典:
+- https://review.kakaku.com/review/K0000084345/
+
+**評価:** これだけでDP-700SHとDP-7Vが同一基板・同一SoCとは言えない。DP-7Vは800×600、動画/音声対応、赤外線画像転送なしなど機能差も大きい。ただし、同時期FUJIFILM DPFで「未公開の出荷時ファーム改版」と「後からの公開更新」が共存していた実例として、DP-700SHの不明な初期/工場ファームを考える比較対象になる。また筐体/カード機構のコストダウン設計に共通点があるため、基板写真やSoC探索ではDP-7Vも補助比較対象に加える。
+
 ### SHARP HN-PP100 / HN-PP150
 
 同時期のSHARP AQUOSフォトプレーヤーはeSOL `eCROS`を採用し、OSはμITRON 4.0準拠 `PrKERNELv4`。
@@ -365,6 +385,7 @@ ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell Applo
 - DP-70SHの2009-09-18更新についてバージョン番号・変更内容・実ファイル名を回収
 - DP-70SHおよびDP-701SH/801SHの旧公開ファイル名を回収し命名規則を推定
 - DP-700SH/850SH/1020SHの分解・修理・基板写真
+- DP-7Vの公開Ver.1.2.30の実ファイル名・基板/SoCを回収し、同時期FUJIFILM DPFの更新形式・設計系統を比較
 - `RRMCG2009SCZZ` の信号コード
 - `RRMCG` 系SHARPリモコンのプロトコル対応から信号方式を逆引き。ただし型番接頭辞だけで `RC_PROTO_SHARP` と決め打ちしない
 - ALBUM/Story BookのFCC・内部写真・基板・SoC
