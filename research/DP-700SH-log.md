@@ -497,3 +497,32 @@ Sanjetが2009-06-26に出願した商標の指定商品には `數位相片播�
 **未確定:** Dusty/Bih-Wei Shyr氏のSanjet在籍を示す直接資料、SanjetとSharp/FUJIFILM DPシリーズの契約・製品資料。Sanjetを当時の受託会社と確定はしない。
 
 今回も公式ファーム実体/ファイル名、DP-700SHのSoC/OS/基板写真、`RRMCG2009SCZZ` の赤外線コード自体は新規回収なし。
+
+### SanjetとSunplusの資本接点、Sunplus/Generalplus SoC候補の再評価
+
+Sunplus Technology（凌陽科技）の2009年年報にある有価証券保有表を確認した。**Sunplus Venture Capital Co., Ltd. は2009-12-31時点で Sanjet Technology Corp. 株式を369千株保有し、持株比率は約1%**。同じ投資先一覧にはAIPTEK International Inc.も含まれる。
+
+出典:
+- https://www.sunplus.com/ir/annual/2009_ar_en.pdf
+
+さらに文曄科技の2009年年報では、AIPTEKが2009年6月の会社分割で一部事業をSanjetへ移し、AIPTEK株主がその対価としてSanjet株式を受け取ったことが、投資簿価の振替まで含めて説明されている。AIPTEK→Sanjetの事業移管を、AIPTEK自身とは別の上場会社の財務資料でも確認できた。
+
+出典:
+- https://www.wtmec.com/wp-content/uploads/2015/05/%E6%96%87%E6%9B%84_2009%E5%B9%B4%E5%B9%B4%E5%A0%B1.pdf
+
+**確定:** SanjetとSunplus系投資会社の資本接点は2009年末までに存在した。
+
+**重要な注意:** 約1%の株式保有は、Sanjetの製品にSunplus製SoCが採用されたことを意味しない。同じ表に多数の投資先があるため、ベンチャー投資関係だけでも説明できる。ここからDP-700SHのSoCをSunplusと断定してはいけない。
+
+一方、同時期のハードウェア比較対象として、Sunplusのデジタルフォトフレーム向け `SPMF2800/SPMF2800A` を搭載した市販フォトフレームの解析例が見つかる。2009年製造の個体を解析した公開記録では、起動ログに `SPMF28XX Boot Loader` が現れ、MIPS32 4K系CPU、ThreadX、SPI Flash、SD/MS、USB、`Evm RC Driver`、115200bps UART、SD/USBを使う更新機構などが確認されている。これはDP-700SHとは別の製品である。
+
+出典:
+- https://qiita.com/yamori813/items/2919b6344e7e27704726
+- https://www.mikrocontroller.net/topic/218149
+- https://www.wpgholdings.com/productline/detail/zhtw/Generalplus
+
+**探索上の意味:** SanjetがSunplus系資本と接点を持ち、Sunplus/Generalplusが同時期にデジタルフォトフレーム向けSoCを供給していたため、Sunplus/Generalplus系をSoC候補として照合する価値は以前より上がった。ただし、**DP-700SHがSPMF2800系、ThreadX、MIPSを使う直接証拠は現時点でゼロ**。
+
+ファーム本体を回収できた場合は、`SPMF28XX`, `ThreadX`, `MIPS32_4Kx`, `SPIF RSV`, `2800 sysAppInit`, `Evm RC Driver` などの文字列を優先して検索する。基板写真が取れれば `SPMF28xx` / Generalplus系刻印も照合する。
+
+今回もDP-700SH公式ファーム実体/実ファイル名、DP-700SH自身のSoC/OS/基板写真、`RRMCG2009SCZZ` の赤外線コード自体は未回収。
