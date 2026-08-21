@@ -435,3 +435,20 @@ Sunplus Technology（凌陽科技）の2009年年報では、**Sunplus Venture C
 - `MADE IN CHINA` という最終製造国表示
 - 台湾側開発会社 / 中国側EMS / Sharpの役割
 - 本体全体のOEM/SoC/OS
+
+## 追加根拠: 2009年12月のSanjet公式サイト
+
+Wayback Machineの **2009-12-15 03:37:34** 保存版で、Sanjet自身の当時公式トップページを直接確認した。これはDP-850SH/DP-1020SH開発案件（2009-10〜2010-02）の期間中に当たる。
+
+当時ページには、Sanjetが **OEM/ODMサービスを提供する会社** であること、製品系列に **`Digital Photo Frame`** を含むことが明記されている。ほかに Digital Camcorder / Digital Still Camera / Projector / Digital Tablet も列挙される。
+
+さらに当時の連絡先として `4F, No.19, Industry E. Rd 4, Hsinchu Science Park` が記載され、AIPTEKと同じ工業東四路19号の建物に実運用拠点を置いていたことも同時代一次資料で確認できた。
+
+Wayback保存版:
+- https://web.archive.org/web/20091215033734id_/http://www.sanjetco.com/
+
+**確定:** 2009年12月時点のSanjetは、自社公式サイト上でデジタルフォトフレームを含むOEM/ODM事業を明示していた。
+
+**推測への影響:** AIPTEKからOEM事業を継承したSanjetが、Sharp向けFUJIFILM DPF案件の台湾側受託会社だったという仮説は従来より強くなる。時期・所在地・事業形態・製品分野がすべて一致するため。
+
+**未確定:** Dusty/Bih-Wei Shyr氏のSanjet在籍、SanjetがSharpまたはFUJIFILM DP-850SH/DP-1020SHを直接受託した契約・製品資料。ここは引き続き推測として扱う。
