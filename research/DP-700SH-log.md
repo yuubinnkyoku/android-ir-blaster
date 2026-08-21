@@ -526,3 +526,55 @@ Sunplus Technology（凌陽科技）の2009年年報にある有価証券保有�
 ファーム本体を回収できた場合は、`SPMF28XX`, `ThreadX`, `MIPS32_4Kx`, `SPIF RSV`, `2800 sysAppInit`, `Evm RC Driver` などの文字列を優先して検索する。基板写真が取れれば `SPMF28xx` / Generalplus系刻印も照合する。
 
 今回もDP-700SH公式ファーム実体/実ファイル名、DP-700SH自身のSoC/OS/基板写真、`RRMCG2009SCZZ` の赤外線コード自体は未回収。
+
+### Sanjetの「台湾R&D・中国製造」実態を回顧資料で確認
+
+2014年の『今周刊』による勝捷光電の取材記事を確認。2009年6月の天瀚科技（AIPTEK）のブランド/代工分離後について、勝捷光電を **「承接台灣研發、大陸製造的代工廠」** と記している。
+
+記事にはさらに、当時の勝捷光電が:
+- 光学・マルチメディア・ソフトウェア技術の専門チームを抱えていた
+- 専属工場を持っていた
+- 前段の研究開発・設計から後段の出荷まで対応できた
+- AIPTEKから分割された際、日本顧客1社も引き継いだ
+
+とある。
+
+出典:
+- https://www.businesstoday.com.tw/article/category/80394/post/201402060014/
+
+またAIPTEKの2008-12-30の公開情報観測站公告では、代工業務を100%子会社Sanjetへ分割し、分割事業価値を5.3億台湾ドルとしてSanjet株式をAIPTEK株主へ交付する手続きが確認できる。後年のAIPTEK年報にも2009年6月の分割完了が記載される。
+
+出典:
+- https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=9e9eb4f1-7147-4fda-bcf7-40aad50f93f5
+- https://www.aiptek.com.tw/uploads/information_year/en/110%E5%B9%B4%E5%A0%B1.pdf
+
+**確定:** SanjetはAIPTEKのフォトフレーム知財を持つだけの会社ではなく、AIPTEKから切り出された、台湾側の研究開発人員と中国側製造を組み合わせる受託開発・製造組織だった。特に「マルチメディア」と「ソフトウェア」の専門チームが明記された点は、Dusty Shyr氏のProject/SW Manager案件との比較で重要。
+
+**推測への影響:** `Story Book inColor / Customer: AIPTEK`（2009-03〜09）が分割時期をまたぎ、その直後に `FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp`（2009-10〜）へ移る職歴と、Sanjetの組織像はかなり自然につながる。Sanjetは台湾側受託会社候補として以前より強くなった。
+
+**未確定:** Dusty/Bih-Wei Shyr氏がSanjet社員だったこと、分割時に引き継いだ日本顧客がSharpだったこと、SanjetがDP-700SH/850SH/1020SHを設計・製造したこと、中国側工場名。これらは直接証拠なし。
+
+### Waybackで2010年公式更新ページの具体的保存時刻を確認
+
+Wayback Machineの保存一覧を直接検索し、旧FUJIFILM共通更新ページ
+`http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download001.html`
+について次の保存を確認した。
+
+- 2010-05-05 17:10:35
+- 2011-08-10 17:16:07
+- 2011-11-04 09:06:21
+- 2012-06-25 08:22:31
+
+2010-05-05版は更新公開（2010-04-30）のわずか5日後なので、当時のダウンロードリンクを含むページ本体が保存されている可能性が高い。
+
+ただし今回、Waybackの本文取得は2010版・2011版ともHTTP 502となり、ブラウザで保存URLを開く試みもタイムアウトした。したがって **アーカイブの存在と時刻までは確定、更新ファイルの `href`・実ファイル名は依然未回収**。
+
+Sanjetの旧公式ドメイン `sanjetco.com` についても、2009-12-15から保存が存在し、2010年1〜4月にも複数保存があることを確認した。これはDP-850SH/1020SHの開発時期と重なるため、旧会社ページ・製品/採用情報を復元する具体的な探索先になった。ただしこちらも本文取得は今回HTTP 502で未回収。
+
+### 今回未回収
+
+- DP-700SH/850SH/1020SH公式ファームの実体・実ファイル名・公開更新後バージョン
+- DP-700SHのSoC / OS / RAM / Flash / 基板写真
+- `RRMCG2009SCZZ` の搬送波・プロトコル・全キーコード
+- Dusty/Bih-Wei Shyr氏のSanjet在籍を示す直接資料
+- SanjetとSharp/FUJIFILM DPシリーズを直接結ぶ契約・製品資料
