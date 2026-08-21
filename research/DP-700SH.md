@@ -2,7 +2,7 @@
 
 最終更新: 2026-08-21 JST
 
-DP-700SH のハードウェア、ファームウェア、赤外線リモコン、開発/製造系統を追跡する作業メモ。**確定情報・状況証拠・推測を分ける**。
+DP-700SH のハードウェア、ファームウェア、赤外線リモコン、開発/製造系統を追跡する作業メモ。**確定情報・状況証拠・推測を分ける**。詳細な探索経路は `research/DP-700SH-log.md` に残す。
 
 ## 現在の実機側の状況
 
@@ -35,11 +35,21 @@ DP-1020SH / DP-850SH / DP-700SH はSHARP製液晶を採用。DP-700SHは7型800�
 - https://used.sofmap.com/r/item/2133006495537
 - https://paypayfleamarket.yahoo.co.jp/item/e1186028374
 - https://www.ebay.co.uk/b/bn_616753
-- https://jp.mercari.com/search?keyword=DP-700SH
 
-実機で確認済みの「ACアダプターにSHARP表記」という観察と一致する。これにより、SHARP製電源部品がDP-700SHの標準付属品として採用されていた可能性は高い。
+実機で確認済みの「ACアダプターにSHARP表記」という観察と一致する。
 
-**ただし、これはメイン基板・SoC・OSを含む本体全体がSHARP設計/OEMである証拠ではない。** 液晶、電源、開発顧客関係の証拠は分離して扱う。
+**ただし、これはメイン基板・SoC・OSを含む本体全体がSHARP設計/OEMである証拠ではない。**
+
+### DP-700SH本体は中国製造個体を直接確認
+
+中古出品のDP-700SH背面写真で、本体下部の銘板を直接確認した。銘板には `デジタルフォトフレーム DP-700SH`、`定格: 5V 8W` とともに **`MADE IN CHINA`** の表記が写っている。
+
+参考:
+- https://jp.mercari.com/item/m81292816659
+
+**確定:** DP-700SH本体そのものに中国製造個体が存在することを、出品者の説明文ではなく実機銘板から直接確認できる。
+
+**注意:** これは最終製造国の証拠であり、ODM/EMSの社名、台湾側開発チームの所属会社、Sharpが最終組立を行ったことまでは示さない。DP-1020SHにも `Made in China` という実機レビューがあり、2010世代で中国量産が行われたという見方とは整合する。
 
 ### 2010年に3機種共通のファームウェア更新が存在
 
@@ -51,7 +61,7 @@ DP-1020SH / DP-850SH / DP-700SH はSHARP製液晶を採用。DP-700SHは7型800�
 記事:
 - https://dc.watch.impress.co.jp/docs/news/365704.html
 
-更新ファイル本体、ファイル名、バージョン番号は未回収。
+更新ファイル本体、実ファイル名、バージョン番号は未回収。
 
 ### miniUSB-Bは通常のPC接続用USB Device
 
@@ -67,22 +77,19 @@ DP-1020SH / DP-850SH / DP-700SH はSHARP製液晶を採用。DP-700SHは7型800�
 
 ### DP-700SH純正リモコン型番は `RRMCG2009SCZZ`
 
-2026-08-20、Yahoo!オークションのDP-700SH出品写真から、付属リモコン裏面ラベルを直接確認した。ラベルには以下が明瞭に写っている。
+Yahoo!オークションのDP-700SH出品写真から、付属リモコン裏面ラベルを直接確認した。
 
 - `REMOTE CONTROL UNIT`
 - `RRMCG2009SCZZ`
 - `使用電池 リチウム電池 CR2025 1個`
 - `FUJIFILM Corporation`
 
-出品自体が **FUJIFILM DP-700SH** のもので、同じ出品写真にDP-700SH用リモコンの前面・背面が掲載されているため、従来の「候補型番」から **DP-700SHの純正付属リモコン型番として直接確認済み** へ格上げする。
-
 参考:
-- Yahoo!オークション DP-700SH 出品 `q1171811726`
-  - https://auctions.yahoo.co.jp/jp/auction/q1171811726
+- https://auctions.yahoo.co.jp/jp/auction/q1171811726
 
-前面はFUJIFILMロゴ入りで、電源、メニュー、方向/決定、戻る、スライドショー、インデックス、モード切替、便利メニュー、時計、絞り込み、縮小、拡大、回転などDP系で必要なキーを持つ。
+前面には電源、メニュー、方向/決定、戻る、スライドショー、インデックス、モード切替、便利メニュー、時計、絞り込み、縮小、拡大、回転などのキーがある。
 
-## 確定度: 中～高
+## 確定度: 中～高 / 状況証拠
 
 ### DP-850SH / DP-1020SHの開発案件は `Customer: Sharp`
 
@@ -97,7 +104,7 @@ DP-1020SH / DP-850SH / DP-700SH はSHARP製液晶を採用。DP-700SHは7型800�
 
 DP-700SHの名前はこの記録にはない。ただし700SH/850SH/1020SHは同時期シリーズで共通ファーム更新を受けているため、SHARPが液晶供給以上に開発へ関与した可能性を補強する。
 
-### 同じ担当者の案件が連続している
+### 同じ台湾側担当者の案件が連続
 
 公開職歴上:
 
@@ -111,72 +118,59 @@ DP-700SHの名前はこの記録にはない。ただし700SH/850SH/1020SHは同
 
 国立陽明交通大学（旧・国立交通大学）の機関リポジトリに、1998年の修士論文 `影像序列中網型物件之建立與追蹤` の著者として **石璧維 / Bih-Wei Shyr** が記録されている。2000年のSPIE論文にも `Bih Wei Shyr` として掲載される。
 
-研究内容は画像特徴点抽出、階層メッシュ、動画像中の物体追跡・動き推定など、画像処理系。LinkedInの `石璧維 (Dusty Shyr)` は学歴をNCTU EEとしており、漢字氏名・大学・時期が整合するため、同一人物とみてよい。
-
 参考:
 - https://ir.lib.nycu.edu.tw/handle/11536/64322
 - https://scholar.nycu.edu.tw/en/publications/generation-and-tracking-of-mesh-objects-in-image-sequences/
 - https://tw.linkedin.com/in/%E7%92%A7%E7%B6%AD-dusty-shyr-%E7%9F%B3-a6ab8a5b
 
-**意味:** 当時所属会社の探索では `Dusty Shyr` だけでなく `Bih-Wei Shyr`, `Bih Wei Shyr`, `Shyr BW` も検索語として使える。現時点では、この実名表記から2008〜2010年の勤務先を直接示す資料や特許までは見つかっていない。
-
-**検索上の注意:** LinkedInの現在所属欄に出る `新帝` は **SanDisk（新帝科技）** を指す。台湾の2010年資料でも `新帝科技（SanDisk Corporation）` と対応することを確認できる。これは現在の所属を示すものであり、2008〜2010年のJablotron / AIPTEK / Sharp案件を担当した受託会社名の手掛かりとしては使わない。
-
-参考:
-- https://tw.linkedin.com/jobs/view/technologist-engineer-firmware-engineering-at-sandisk-4396560497
-- https://seminar.trendforce.com/Compuforum/2010/TW/sponsors
+LinkedInの現在所属欄に出る `新帝` は **SanDisk（新帝科技）** であり、2008〜2010年当時の受託会社名としては扱わない。
 
 ### AIPTEK資料との食い違いは「外部受託チーム」仮説を強める
 
-2009年のStory Book inColorについて、台湾側の公開資料には **天瀚科技（AIPTEK）が研発・製造した製品** と明記されている。一方、Dusty Shyr氏は同じ案件を自身のプロジェクト履歴で `Customer: AIPTEK` と記録している。
+2009年のStory Book inColorについて台湾側公開資料は **天瀚科技（AIPTEK）が研発・製造** とする一方、Dusty氏の履歴では同案件を `Customer: AIPTEK` と記録している。
 
 参考:
 - https://9lib.co/document/rz32k9eq-Aiptek%E5%BD%A9%E8%89%B2%E5%85%92%E7%AB%A5%E9%9B%BB%E5%AD%90%E6%9B%B8%E9%80%B2%E8%BB%8D%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%B8%82%E5%A0%B4.html
-- https://tw.linkedin.com/in/%E7%92%A7%E7%B6%AD-dusty-shyr-%E7%9F%B3-a6ab8a5b
+- https://www.ithome.com.tw/news/58275
 
-この2点は矛盾しない。AIPTEKが製品全体の開発・製造主体でありつつ、ソフトウェアや一部システム開発を外部企業へ委託していた可能性がある。むしろDusty氏がAIPTEK社員だったなら、自社製品を `Customer: AIPTEK` と表記するのはやや不自然である。
+**推測:** AIPTEKが製品全体の開発・製造主体でありつつ、一部ソフトウェア/システム開発をDusty氏の所属会社へ委託していた可能性がある。
 
-**現時点の評価:** Dusty氏は2008〜2010年に、Jablotron / AIPTEK / Sharpを顧客とする同一の台湾系受託開発会社または設計会社に所属していた可能性が高まった。会社名は未特定。これは状況証拠であり確定事項ではない。
+### JABLOTRON TAIWANは当時「アジア向け営業・マーケティング」拠点
 
-### Jablotron Taiwanは当時「アジア向け営業・マーケティング」拠点として記載
-
-Jablotron Groupの当時のCompany Profileでは、支社の役割を次のように記載している。
+Jablotron Groupの当時のCompany Profileでは:
 
 - `JABLOTRON TAIWAN – sales and marketing for Asia region`
 - `JABLOTRON CHINA – production QC and component supplying`
 
-同資料には別に `R&D, Design Engineering`、`R&D, SW and HW Engineering` も掲げられている。したがって、少なくともこの会社案内上では **JABLOTRON TAIWANは開発拠点ではなく営業・マーケティング拠点** と位置付けられていた。
+と記載される。
 
 参考:
 - https://www.sklep-jablotron.pl/userfiles/files/company_profile.pdf
-- https://tw.linkedin.com/in/%E7%92%A7%E7%B6%AD-dusty-shyr-%E7%9F%B3-a6ab8a5b
 
-**推測:** Dusty氏の2008年案件が `Customer: Jablotron` と表記されていることと合わせると、「Dusty氏がJABLOTRON TAIWANの社内開発者としてALBUMを作った」という読み方は弱くなる。Jablotron本体/ALBUMteamから別の台湾系設計会社・受託チームへ開発が発注されていた可能性を補強する。ただし、これだけでDusty氏の勤務先そのものを特定することはできない。
+**推測への影響:** Dusty氏がJABLOTRON TAIWANの社内開発者だったという読みは弱く、Jablotron/ALBUMteamから別の台湾系設計会社へ開発が発注されていた可能性を補強する。
 
 ### `RRMCG2009SCZZ` はDP-850SH / DP-1020SHでも使われた可能性が高い
 
-メルカリの同型番リモコン出品には対応機種として `DP-850SH` / `DP-1020SH` が明記されている。中古出品者による記載なので公式互換表ではないが、DP-700SHでの写真による直接確認と合わせると、3機種が同一リモコンを共有した可能性は高い。
+中古流通で同型番が `DP-850SH` / `DP-1020SH` 対応として明記されている。公式互換表ではないため確定扱いにはしないが、3機種のUI/リモコン入力層が共通だった可能性を補強する。
 
 参考:
 - https://jp.mercari.com/item/m93734607492
 - https://jp.mercari.com/item/m53512993273
 
-これは3機種のUI/リモコン入力層が共通だった可能性を補強する。ただし、基板やSoCまで同一であることを意味しない。
+### `RRMCG` はSHARP系リモコン部品番号として広く使われる
 
-### `RRMCG` 型番体系はSHARPのリモコン部品番号で広く使われる
-
-SHARPの旧製品資料には `RRMCG1392CESA`, `RRMCG1327CESA`, サービス用 `RRMCG0033TASA` など多数の例があり、`RRMCG...` がSHARPのリモコン部品番号体系であることを確認できる。
+SHARPの旧製品資料には `RRMCG1392CESA`, `RRMCG1327CESA`, `RRMCG0033TASA` など多数の例がある。
 
 参考:
 - https://sharp.manymanuals.com/data-projectors/xg-e3500u/instruction-manual-16837/37
 - https://manualzilla.com/doc/7351006/sharp-pg-d100u-instruction-manual
 - https://manualzz.com/doc/736350/sharp-s50a2vl-fd1u-camcorder-service-manual
 
-したがってFUJIFILMロゴ/ラベルの `RRMCG2009SCZZ` も **SHARP系部品番号体系に乗ったリモコンである可能性が高い**。これはSharpがDPシリーズのリモコン設計・調達に関与した状況証拠になるが、`RRMCG2009SCZZ` の製造者をSHARPと断定する一次資料は未回収。
+これはSharpがリモコン設計/調達に関与した状況証拠にはなるが、`RRMCG2009SCZZ` の製造者や赤外線方式を確定するものではない。
 
 ### 先代DP-70SHには隠しファーム更新画面がある
 
-DP-70SH Ver.1.04.00の公開更新では、SDカードへファームを保存し、「本体情報→バージョン表示」中にリモコンで
+DP-70SH Ver.1.04.00では、SDカードへファームを保存し、「本体情報→バージョン表示」中にリモコンで
 
 `拡大 → 縮小 → 時計 → 回転`
 
@@ -185,177 +179,109 @@ DP-70SH Ver.1.04.00の公開更新では、SDカードへファームを保存�
 参考:
 - https://dc.watch.impress.co.jp/cda/accessories/2009/04/01/10602.html
 
-DP-700SH純正リモコンにも **拡大・縮小・時計・回転** の4キーがすべて存在することを写真で確認できた。したがって、先代と同じ隠し更新シーケンスをDP-700SHでも試せる条件が揃った。ただし、同じシーケンスが実装されているかは未確認。
+DP-700SH純正リモコンにも4キーがすべて存在するため、同じシーケンスを試すことはできる。ただし実装継承は未確認。
 
-さらにデジカメ Watchの2009年バックナンバーには、**2009-09-18にも「DP-70SHの最新ファームウェア」公開記事が記録されている**。したがってDP-70SHの公開ファーム更新は、確認できた範囲で少なくとも2009-03-31と2009-09-18の2回存在した。後者のバージョン番号・変更内容・実ファイル名・バイナリは未回収。
+デジカメ Watchの2009年バックナンバーには **2009-09-18にもDP-70SHの最新ファームウェア記事** がある。DP-70SHの公開更新は少なくとも2回存在した。
 
 参考:
-- https://dc.watch.impress.co.jp/docs/news/index2009.html
 - https://dc.watch.impress.co.jp/docs/news/20090918_316738.html
-
-**推測:** 2009年3月の隠し更新画面/SD更新機構が、その後の公開更新にも継続利用された可能性は高い。ただし9月版の更新手順本文を回収できておらず、同一手順だったこと自体は未確認。ましてDP-700SHへの継承は未確認。
 
 ### 後継DP-701SH / DP-801SHにも共通更新
 
-2011-07-29に共通ファームVer.1.04.07が公開された。
+2011-07-29に共通ファームVer.1.04.07が公開された。一方、2011年12月購入のDP-801SHでVer.1.05.01が出荷状態だったという実機報告があり、Web未公開の工場/修理向けビルドが存在した可能性がある。
 
 参考:
 - https://dc.watch.impress.co.jp/docs/news/464018.html
 
-一方、2011年12月購入のDP-801SHで1.05.01が出荷状態だったという実機報告があり、Web未公開の工場/修理向けビルドが存在した可能性がある。
+### 2009年からSharpが製品訴求の前面に出ていた
 
-### 2009年時点でも「富士フイルム×Sharp」の製品として販売訴求されていた
-
-カメラのキタムラが残している2009年のDP-70SH販売ページには、**「写真の『富士フィルム』と液晶の『シャープ』が考えた全方位高画質デジタルフォトフレーム」** と記載されている。ITmediaも同時期の記事見出しで「富士フイルム×シャープ＝フォトフレーム」と表現している。
+DP-70SH販売ページには「写真の富士フイルム」と「液晶のシャープ」が考えた製品という趣旨の訴求があり、ITmediaも当時「富士フイルム×シャープ」と表現した。
 
 参考:
 - https://www.kitamura.jp/shopping/ichioshi/2009/fujifilm_dp-70sh.html
 - https://www.itmedia.co.jp/news/article/0902/04/1090204098/
 
-**評価:** これはFUJIFILM/Sharp両社の正式な「共同開発」発表そのものではなく、販売店・媒体側の表現であるため確定度は中程度以下。ただし、Sharpの位置付けが単なる無名のパネル供給元ではなく、2009年の初代DP-70SH時点から製品価値の中核として前面に出されていたことを示す同時代資料ではある。
+これは正式な共同開発発表ではないため、状況証拠として扱う。
 
-### 後継DP-701SH / DP-801SHではSharpとの「共同開発」が明記される
+### 後継2011世代ではSharpとの共同開発が明記
 
-2011年2月のデジカメ Watch発表会記事は、DP-701SH / DP-801SHについて **「シャープと共同開発した24ビット表示が可能な『クリスタルフォト液晶』」を搭載** と明記している。
+2011年2月のDP-701SH / DP-801SH発表記事では、**「シャープと共同開発した24ビット表示が可能な『クリスタルフォト液晶』」** と明記される。
 
 参考:
 - https://dc.watch.impress.co.jp/docs/news/425705.html
-- FUJIFILMの同製品プレス向け画像ページ: https://www.fujifilm.co.jp/press/ffnr0485.html
+- https://www.fujifilm.co.jp/press/ffnr0485.html
 
-これは少なくとも後継2011世代では、Sharpの関与が単なる液晶パネル供給に留まらず、表示系の共同開発に及んだ直接的な資料である。
-
-**推測:** 2010年のDP-700SH/850SH/1020SHについても、Sharp製液晶、Sharp製電源、`Customer: Sharp` の開発案件、Sharp系 `RRMCG` 部品番号という痕跡と合わせると、Sharpが製品開発に深く関与した系譜が翌年まで継続した可能性は高い。ただし、2011世代の「共同開発」を2010世代へそのまま遡及して確定扱いにはしない。
-
-### 2011世代は2010世代の単純なハードウェア継承ではなさそう
-
-DP-701SH / DP-801SHの取扱説明書では、両機種の仕様として以下が確認できる。
-
-- 液晶タイプ: TN液晶
-- 内蔵メモリー: 512MB
-- メモリーカード: SDメモリーカード / メモリースティック
-- USB Device: miniUSB-B ×1
-- 赤外線: IrSS / IrSimple受信用×1、専用リモコン用×1
-- ACアダプター: `EP-D701`
-
-参考:
-- https://manualzilla.com/doc/6704692/%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89---%E5%AF%8C%E5%A3%AB%E3%83%95%E3%82%A4%E3%83%AB%E3%83%A0
-
-2010世代のDP-700SHはSharp ASV液晶・1GB内蔵メモリー・より多種類のカード対応・`EP-D72F`であり、2011世代はUI/赤外線/USBの構造を引き継ぎつつ、表示・記憶・電源周辺の構成が大きく変わっている。
-
-**意味:** 2011世代の「Sharp共同開発」は系譜の証拠として有用だが、2010世代のSoC/基板を推定する比較対象としては慎重に扱うべき。単純な同一基板の小改良ではない可能性が高い。
+ただし2011世代はTN液晶、512MB、SD/MS、miniUSB-B、赤外線2系統、ACアダプター `EP-D701` で、2010世代のDP-700SH（ASV液晶、1GB、より多種類のカード、`EP-D72F`）から構成がかなり変わる。SoC/基板の直接比較は慎重に行う。
 
 ## 赤外線リモコン調査
 
-### 確定した純正型番
-
-`RRMCG2009SCZZ` はDP-700SHの純正付属リモコン。
-
-既知の公開情報:
-- 使用電池: CR2025 × 1
-- FUJIFILM Corporation表記
-- Yahoo!フリマの単品出品では全ボタンの赤外線発光確認済み
-- DP-850SH / DP-1020SH対応として流通する個体あり
-
-参考:
-- https://auctions.yahoo.co.jp/jp/auction/q1171811726
-- https://paypayfleamarket.yahoo.co.jp/item/g1043790009
-- https://jp.mercari.com/item/m93734607492
-
-### 公開IRデータベースの現状
-
-`Lucaslhm/Flipper-IRDB` の `Picture_Frames` では現時点でFUJIFILM/SHARPフォトフレームの登録を確認できていない。GitHubコード検索でも `DP-700SH` / `RRMCG2009SCZZ` の既知IR信号は未発見。
-
 ### Sharp 13-bit方式についての確定事項と注意
 
-Linux kernelのリモコン・プロトコル資料で `RC_PROTO_SHARP` は **SharpのVCRで使われる方式** と説明され、5-bit address + 8-bit command のメッセージと、約40 ms後の反転側メッセージを組にする方式として記載されている。SB-ProjectsのSharp protocol資料も、38 kHz搬送波、LSB-first、同じaddressを保ちつつcommand等を反転した第2メッセージを送る構造を説明している。
+Linux kernelの `RC_PROTO_SHARP` は5-bit address + 8-bit commandのメッセージと、約40ms後の反転側メッセージを組にする方式。SB-Projectsも38kHz、LSB-first、同じaddressを維持しつつcommand等を反転した第2メッセージを説明する。
 
 参考:
 - https://www.kernel.org/doc/html/next/userspace-api/media/rc/rc-protos.html
 - https://www.sbprojects.net/knowledge/ir/sharp.php
 
-リポジトリの `lib/ir/protocols/sharp.dart` を確認すると、現在の実装はすでに次を行っている。
+`lib/ir/protocols/sharp.dart` はこの2メッセージ構造をすでに実装している。したがって「第2メッセージを送っていないため反応しない」という仮説は除外できる。
 
-- 38 kHzで送信
-- 5-bit address + 8-bit commandをLSB-firstで構成
-- 第1メッセージ送信後に長い空白期間を置く
-- 第2メッセージではaddressを維持し、commandを反転し、expansion/check側も反転する
+ただし、`RRMCG...` がSHARP系部品番号であることは `RRMCG2009SCZZ` が `RC_PROTO_SHARP` を使う証拠ではない。
 
-したがって、**現在のSharp総当たりが「第2メッセージを送っていない単発フレーム実装」だから反応しない、という仮説は除外できる。** 少なくともメッセージ構造は公開資料のSharp方式と整合している。
+### 探索候補
 
-ただし重要な注意として、`RRMCG...` がSHARP系部品番号であることは **`RRMCG2009SCZZ` が `RC_PROTO_SHARP` を使う証拠にはならない**。Linux kernel側の記述もSharp製品一般ではなくSharp VCRで使われる方式として説明している。したがって「RRMCG型番だからSharp 13-bitが有力」という従来の重み付けは弱める。Sharp 13-bitを総当たりすること自体は探索仮説として有効だが、プロトコル確定の根拠ではない。
-
-## 赤外線探索戦略
-
-現在の探索候補:
-
-1. Sharp 13-bit（8,192固有候補）— 実装は正規の2メッセージ構造を概ね再現。ただし採用プロトコルである証拠はない。
+1. Sharp 13-bit（8,192固有候補）
 2. 内蔵IR DBのSHARP候補
 3. Kaseikyo / SHARP vendor `5AAA`
 4. 近縁SHARP写真機器の既知コード
 5. その他の家電IRプロトコル
 
-`RRMCG` はSHARP系部品番号であるが、型番体系から赤外線方式までは導けない。したがってSharp 13-bit優先は「Sharp関与から試す価値がある」という探索上の仮説に留める。
-
-Kaseikyoは実効20-bitで約1,048,576候補あるため、vendor/address/commandの既知情報を拾ってから部分探索する。
-
-DP-700SHは受光位置/指向性が扱いづらいという実機レビューがあるので、全探索時はスマホIR送信口を受光部へ正確に向けることが重要。
+`Lucaslhm/Flipper-IRDB` の `Picture_Frames` ではFUJIFILM/SHARPフォトフレームの登録を未確認。GitHubコード検索でも `DP-700SH` / `RRMCG2009SCZZ` の既知IR信号は未発見。
 
 ## 比較対象
 
 ### Jablotron / ALBUMteam `ALBUM`
 
-同じ台湾側担当者が2008年に関わった案件。Jablotron公式には現在もALBUM firmware 1.15が残る。
+同じ台湾側担当者が2008年に関わった案件。Jablotron公式にはALBUM firmware 1.15が残る。
 
-現行配布:
-- `albumq42008_en.zip` 約4.2MB
+- 現行配布: `albumq42008_en.zip` 約4.2MB
+- 旧Jablotronサイト複製では同じfirmware 1.15を `FWI (4 MB)` と表示
 
-旧Jablotronサイト複製では同じfirmware 1.15を `FWI (4 MB)` と表示しているため、旧更新実体は `.fwi` 系だった可能性が高い。
+したがって旧更新実体は `.fwi` 系だった可能性が高い。ただしDP-700SHが `.fwi` を使う証拠ではない。
 
-取扱説明書から、更新はファームファイルをALBUMのルートへコピーして再起動する方式。ALBUMはUSB接続時にFAT32外部ディスクとして見える。
+参考:
+- https://www.jablotron.com/en/support/downloads/alarms/software
+- https://jablotron.com.cov04.vas-server.cz/en/about-jablotron/downloads/?level1=2598
 
-ALBUMteamは台湾企業ではなく、2008年にチェコのDominika Nell ApplováとDalibor Dědekが設立した企業で、Jablotronグループの一員として報道されている。ALBUMは米国/チェコで設計され、台湾/中国で生産されたとされる。
-
-さらにチェコ政府の商業公報には、**2011年にALBUMteam s.r.o.の全資産・権利義務がJABLOTRON ALARMS a.s.へ合併承継された**記録がある。これはALBUMteamとJablotronグループの企業関係を公的登記資料でも確認できる材料になる。ただし、台湾側ODMの社名を示すものではない。
+ALBUMteamは台湾ODMではなく、Jablotronグループ系のチェコ企業。ALBUM/ALBUM2は米国・チェコで設計、台湾・中国で生産されたと報じられる。
 
 参考:
 - https://www.prnewswire.com/news-releases/albumteam-named-as-ces-innovations-2010-design--engineering-award-honoree-80907592.html
-- https://www.finance.cz/clanky/217833-jablotron-navzdory-krizi-zvysil-trzby-o-petinu-na-1-2-miliardy-kc/
 - https://ov.gov.cz/zapis/9717145
 
 ### Prosoyo Technology
 
-2009年前後のJablotronは中国のEMS企業Prosoyoと深く提携し、グループ生産の大きな割合を同社へ委託していたという当時報道がある。Prosoyoは現在もDongguan工場/Hong Kong拠点を持ち、製品設計からPCB実装・完成品組立までを掲げるEMS企業。
+2009年前後のJablotronは中国EMS企業Prosoyoと深く提携していたという当時報道がある。Prosoyoは製品設計からPCB実装、完成品組立までを掲げる。
 
-ただし **ALBUMをProsoyoが製造した証拠、ましてDP-700SHとの直接関係は未確認**。サプライチェーン逆引きの候補として扱う。
+ただし **ALBUMをProsoyoが製造した証拠、DP-700SHとの直接関係は未確認**。
+
+参考:
+- https://www.finance.cz/clanky/217833-jablotron-navzdory-krizi-zvysil-trzby-o-petinu-na-1-2-miliardy-kc/
+- https://www.euro.cz/clanky/jak-vydelavat-v-cine-894445/
+- https://www.prosoyoems.com/
 
 ### AIPTEK Story Book inColor
 
 同担当者の2009年案件。8型800×600、USB host/slave、SD系、JPEG/MP3等を持つ。機能構成は近いが、SoC/OS/基板情報は未回収。
 
-台湾側資料ではStory Book inColorを天瀚科技（AIPTEK）が研発・製造したとする一方、Dusty氏の履歴ではAIPTEKは `Customer`。このため、AIPTEK自身とは別の受託開発チームが存在した可能性が高まっている。
-
-参考:
-- https://9lib.co/document/rz32k9eq-Aiptek%E5%BD%A9%E8%89%B2%E5%85%92%E7%AB%A5%E9%9B%BB%E5%AD%90%E6%9B%B8%E9%80%B2%E8%BB%8D%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%B8%82%E5%A0%B4.html
-
 ### FUJIFILM `DP-7V`
 
-DP-700SHと同時期のFUJIFILM製デジタルフォトフレーム。2010-07-30に公開ファームウェア **Ver.1.2.30** が提供された。
+2010-07-30に公開ファーム **Ver.1.2.30** が提供された。価格.comの実機報告では同時購入の2台に **Ver.1.2.2.0** と **Ver.1.2.2.5** が混在しており、Web未公開の出荷時改版が存在したことを示す。
 
-出典:
+参考:
 - https://dc.watch.impress.co.jp/docs/news/385194.html
-- 旧公式URL: http://fujifilm.jp/support/digitalphotoframe/download/dp7v/download001.html
-
-価格.comの2010-05-04実機報告では、同時購入した2台に **Ver.1.2.2.0** と **Ver.1.2.2.5** が混在し、古い方だけ自動回転が正常動作しない差があったとされる。公開更新1.2.30以前にも、Webで公開されていない出荷時ファームの細かな改版が存在したことを示す資料になる。
-
-出典:
 - https://bbs.kakaku.com/bbs/K0000060109/
 
-またDP-700SHの利用者レビューには、先代DP-70SHと比較して、DP-700SHではSDカードの押し出し機構が省略され、その点が **DP-7Vと同じ** と明記されている。
-
-出典:
-- https://review.kakaku.com/review/K0000084345/
-
-**評価:** これだけでDP-700SHとDP-7Vが同一基板・同一SoCとは言えない。DP-7Vは800×600、動画/音声対応、赤外線画像転送なしなど機能差も大きい。ただし、同時期FUJIFILM DPFで「未公開の出荷時ファーム改版」と「後からの公開更新」が共存していた実例として、DP-700SHの不明な初期/工場ファームを考える比較対象になる。また筐体/カード機構のコストダウン設計に共通点があるため、基板写真やSoC探索ではDP-7Vも補助比較対象に加える。
+同時期FUJIFILM DPFのファーム命名・更新形式を横から追う比較対象。ただし同一SoC/基板の証拠ではない。
 
 ### SHARP HN-PP100 / HN-PP150
 
@@ -364,34 +290,41 @@ DP-700SHと同時期のFUJIFILM製デジタルフォトフレーム。2010-07-30
 参考:
 - https://www.esol.co.jp/archive/news/emb_press090512.html
 
-これはDP-700SHのOS証拠ではない。同時期SHARP写真機器の比較候補。
+これはDP-700SHのOS証拠ではない。
+
+## 現時点の共通基盤仮説
+
+**確定:** DP-700SH / DP-850SH / DP-1020SHは同じ2010-04-30ファーム更新を受け、IrSimple/IrSS/IrDA通信スタックの同じ不具合を修正した。
+
+**状況証拠:** `RRMCG2009SCZZ` はDP-700SHで直接確認され、DP-850SH/1020SH向けとしても流通する。3機種は画像管理、赤外線、USB、メディア処理など共通機能が多い。
+
+**推測:** 少なくともアプリケーション/ミドルウェアのかなりの部分を共有していた可能性が高い。ただしSoC、メイン基板、RAM/Flashが同一であることは未証明。
+
+DP-700SH本体銘板の `MADE IN CHINA` とDP-1020SHの同様の実機報告から、2010世代に中国量産の個体が存在したことは整合的に見える。台湾側で設計/ソフト開発、中国で量産という構図は有力な仮説だが、ODM/EMS社名は未特定。
 
 ## 未解決事項
 
 - DP-700SHのSoC型番
 - RAM / Flash型番
-- メイン基板型番
+- メイン基板型番 / 基板写真
 - OS / RTOS
-- 2010年公式更新ファイル本体・ファイル名・バージョン
+- 2010年公式更新ファイル本体・実ファイル名・バージョン
 - 更新形式、署名/暗号化の有無
-- リモコンの搬送波周波数/プロトコル/全キーコード
+- `RRMCG2009SCZZ` の搬送波周波数 / プロトコル / 全キーコード
 - DP-70SHの隠し更新シーケンスがDP-700SHにも残るか
 - DP-700SH/850SH/1020SHの基板/ソフト共通範囲
 - 2008〜2010年案件を担当した台湾側開発会社/ODM
+- 中国側の実製造会社/EMS
 
 ## 次に掘るもの
 
 - 旧FUJIFILMページのWayback/CDXから更新ファイルhref回収
-- DP-70SHの2009-09-18更新についてバージョン番号・変更内容・実ファイル名を回収
-- DP-70SHおよびDP-701SH/801SHの旧公開ファイル名を回収し命名規則を推定
+- DP-70SH / DP-701SH / DP-801SH / DP-7Vの旧公開ファイル名を回収し命名規則を推定
 - DP-700SH/850SH/1020SHの分解・修理・基板写真
-- DP-7Vの公開Ver.1.2.30の実ファイル名・基板/SoCを回収し、同時期FUJIFILM DPFの更新形式・設計系統を比較
-- `RRMCG2009SCZZ` の信号コード
-- `RRMCG` 系SHARPリモコンのプロトコル対応から信号方式を逆引き。ただし型番接頭辞だけで `RC_PROTO_SHARP` と決め打ちしない
-- ALBUM/Story BookのFCC・内部写真・基板・SoC
-- Dusty Shyr氏の当時所属会社を `Dusty Shyr` / `Bih-Wei Shyr` / `Bih Wei Shyr` / `Shyr BW` とJablotron/AIPTEK/Sharpの顧客関係から逆引き
-- JABLOTRON TAIWAN以外の台湾系設計会社/受託チームを、2008年ALBUMの台湾生産・Dusty氏の顧客表記から逆引き
-- Prosoyoや別の台湾開発会社との人員/案件接点
+- `RRMCG2009SCZZ` の実波形/コード
+- ALBUM/Story Bookの内部写真・基板・SoC
+- Dusty Shyr / Bih-Wei Shyrの2008〜2010年勤務先逆引き
+- 中国製造情報からEMS/ODMを逆引き
 - 実機から現在のファームバージョンとUSB VID/PIDを取得
 - 実機で「本体情報→バージョン表示→拡大→縮小→時計→回転」の反応を確認
 
@@ -403,6 +336,6 @@ DP-700SHと同時期のFUJIFILM製デジタルフォトフレーム。2010-07-30
 - SHARP製ACアダプター
 - `RRMCG` 系リモコン部品番号
 - `RC_PROTO_SHARP` などの赤外線プロトコル
+- `MADE IN CHINA` という最終製造国表示
+- 台湾側開発会社 / 中国側EMS / Sharpの役割
 - 本体全体のOEM/SoC/OS
-
-これらは別々の証拠として管理する。
