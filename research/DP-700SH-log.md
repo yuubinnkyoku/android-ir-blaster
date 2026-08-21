@@ -279,6 +279,27 @@ Wayback保存版:
 
 **現状:** ファイル名・容量・公式URLまで回収。バイナリ本体のみ未回収。
 
+### 2009年12月Sanjet公式サイトを復元
+
+Wayback MachineでSanjet公式トップページの **2009-12-15 03:37:34** 保存版を直接取得した。
+
+保存版:
+- https://web.archive.org/web/20091215033734id_/http://www.sanjetco.com/
+
+当時のSanjet自身の記載:
+- OEM/ODMサービスを提供
+- 製品系列に `Digital Photo Frame`
+- ほかに Digital Camcorder / Digital Still Camera / Projector / Digital Tablet
+- 連絡先は `4F, No.19, Industry E. Rd 4, Hsinchu Science Park`
+
+この保存日時はDusty Shyr氏の `FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp` 案件（2009-10〜2010-02）の真ん中に当たる。
+
+**確定:** Sanjetは少なくとも2009年12月時点で、自社公式サイト上でデジタルフォトフレームを含むOEM/ODM事業を明示していた。後年の会社紹介・商標・AIPTEK事業分割だけではなく、案件期間中の一次資料で確認できた。
+
+**推測への影響:** SanjetがSharp向けFUJIFILM DPF案件の台湾受託会社だったという仮説は一段強くなる。時期、所在地、受託形態、製品分野が一致する。
+
+**未確定:** Dusty/Bih-Wei Shyr氏のSanjet在籍、SanjetとSharp/FUJIFILM DPシリーズの直接契約・製品資料。
+
 ### 今回の本丸未回収
 
 - `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` バイナリ本体
