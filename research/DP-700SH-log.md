@@ -332,3 +332,19 @@ Jablotron Groupの当時のCompany Profileを確認すると、支社の役割�
 - https://ov.gov.cz/zapis/9717145
 
 今回も、2010年DP-700SH/850SH/1020SHのファーム実体/実ファイル名、SoC/OS、基板写真、`RRMCG2009SCZZ` の赤外線コード自体には新しい確証は得られなかった。
+
+### Sharp 13-bit探索の前提を再評価
+
+Linux kernelのリモコン・プロトコル資料では `RC_PROTO_SHARP` を **Sharp VCRで使われる方式** と説明している。構造は5-bit address + 8-bit commandで、通常側メッセージの約40 ms後に反転側メッセージを送る。SB-Projectsの資料も、38 kHz搬送波、LSB-first、同じaddressを維持しつつcommand等を反転した第2メッセージを送る構造を示す。
+
+出典:
+- https://www.kernel.org/doc/html/next/userspace-api/media/rc/rc-protos.html
+- https://www.sbprojects.net/knowledge/ir/sharp.php
+
+リポジトリ `lib/ir/protocols/sharp.dart` も確認した。現在の実装は38 kHz、5-bit address + 8-bit commandのLSB-first、第1メッセージ後の長い空白、第2メッセージで同じaddress・反転command・反転したexpansion/checkを送る構造になっている。
+
+**確定:** 現在のSharp総当たり実装は「第2メッセージを省略した単発フレーム」ではない。したがって、実機が反応しない理由を「Sharp方式の対になる第2メッセージを送っていないため」とする仮説は除外できる。
+
+**重要な修正:** `RRMCG...` がSHARP系部品番号であることは、`RRMCG2009SCZZ` が `RC_PROTO_SHARP` を使う証拠ではない。Linux kernel側もこの方式をSharp製品一般ではなくSharp VCRで使われる方式として説明している。このため、従来の「RRMCG型番がSharp 13-bit方式の可能性を押し上げる」という重み付けは弱める。Sharp 13-bit総当たりは探索上の仮説として継続できるが、プロトコル証拠としては扱わない。
+
+今回の再検索でも、2010年DP-700SH/850SH/1020SHの公式ファーム本体・実ファイル名、SoC/OS/基板写真、`RRMCG2009SCZZ` の実コード、Dusty/Bih-Wei Shyr氏の2008〜2010年勤務先を直接示す新資料は得られなかった。
