@@ -215,7 +215,7 @@ SHARPの旧製品資料には `RRMCG1392CESA`, `RRMCG1327CESA`, `RRMCG0033TASA` 
 
 参考:
 - https://sharp.manymanuals.com/data-projectors/xg-e3500u/instruction-manual-16837/37
-- https://manualzilla.com/doc/7351006/sharp-pg-d100u-instruction-manual
+- https://manualzilla.com/doc/7351006/sharp-pg-d100u/instruction-manual
 - https://manualzz.com/doc/736350/sharp-s50a2vl-fd1u-camcorder-service-manual
 
 これはSharpがリモコン設計/調達に関与した状況証拠にはなるが、`RRMCG2009SCZZ` の製造者や赤外線方式を確定するものではない。
@@ -386,6 +386,7 @@ DP-700SHはSharpを製造元として中国製造されている。台湾側でS
 - ATECHの旧認証/製造記録から `EP-D72F` の中国側生産拠点を絞る
 - 実機からUSB VID/PIDを取得
 - 実機で「本体情報→バージョン表示→拡大→縮小→時計→回転」の反応を確認
+- ファーム実体を回収できた場合は `SPMF28XX`, `ThreadX`, `MIPS32_4Kx`, `SPIF RSV`, `2800 sysAppInit` などSunplus SPMF28xx系の文字列も検索する
 
 ## 記録方針
 
@@ -425,5 +426,30 @@ AIPTEK自身の年報を遡ると、2009年6月に **AIPTEK（天瀚科技）が
 **有力な推測:** Dusty Shyr氏の `Story Book inColor / Customer: AIPTEK` 案件は2009-03〜09で、AIPTEK→SanjetのOEM事業分割（2009-06）をまたぐ。次の `FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp` 案件は2009-10開始。もしDusty氏がAIPTEKのOEM部門からSanjetへ移ったチームに所属していたなら、分割後にAIPTEKを「Customer」と表記し、その直後にSharpを顧客としてDPシリーズを担当した時系列が非常に自然になる。
 
 ただし **Dusty/Bih-Wei Shyr氏がSanjetに在籍した直接資料、SanjetがDP-850SH/DP-1020SHを受託した契約・製品資料はまだ見つかっていない**。したがってSanjetは現時点で「台湾側開発会社の最有力候補の一つ」であり、確定扱いにはしない。
+
+### SanjetとSunplusの資本接点、およびSoC探索への影響
+
+Sunplus Technology（凌陽科技）の2009年年報にある有価証券保有表を確認すると、**Sunplus Venture Capital Co., Ltd. が2009-12-31時点で Sanjet Technology Corp. 株式を369千株、持株比率約1%保有**していた。同じ表にはAIPTEK International Inc.も投資先として掲載される。
+
+参考:
+- https://www.sunplus.com/ir/annual/2009_ar_en.pdf
+
+また文曄科技の2009年年報には、AIPTEKが2009年6月の会社分割で一部事業をSanjetへ移し、AIPTEK株主が対価としてSanjet株式を受け取ったことが会計処理まで含めて記載される。AIPTEK→Sanjetの事業移管を別会社の財務資料からも確認できる。
+
+参考:
+- https://www.wtmec.com/wp-content/uploads/2015/05/%E6%96%87%E6%9B%84_2009%E5%B9%B4%E5%B9%B4%E5%A0%B1.pdf
+
+**確定:** 2009年末までにSanjetとSunplus系投資会社の資本接点が存在した。
+
+**注意:** Sunplus Venture CapitalがSanjet株を約1%保有したことは、Sanjet製品がSunplus製SoCを採用した証拠ではない。ベンチャー投資先というだけでも成立するため、SoC採用へ直接結び付けない。
+
+同時期の比較材料として、Sunplusのデジタルフォトフレーム向けSoC `SPMF2800/SPMF2800A` を搭載した2009年前後の市販フォトフレームの解析例がある。公開された起動ログでは `SPMF28XX Boot Loader`、MIPS32 4K系、ThreadX、SPI Flash、SD/MS、USB、リモコン用ドライバ、115200bps UART、SD/USBを使う更新機構などが確認されている。これはDP-700SHとは別製品の解析結果。
+
+参考:
+- https://qiita.com/yamori813/items/2919b6344e7e27704726
+- https://www.mikrocontroller.net/topic/218149
+- https://www.wpgholdings.com/productline/detail/zhtw/Generalplus
+
+**探索上の推測:** SanjetがSunplus系資本と接点を持ち、Sunplus/Generalplusが同時期にフォトフレーム向けSoCを供給していたことから、Sunplus/Generalplus系はDP-700SH/850SH/1020SHのSoC候補として優先して照合する価値が上がった。ただし現時点では **DP-700SHのSoCがSPMF2800系、OSがThreadX、CPUがMIPSであることを示す直接証拠は一切ない**。
 
 今後は2009〜2010年のSanjet社員・求人・特許発明者・旧製品カタログ・Sharp/FUJIFILMとの取引記録を優先して追う。
