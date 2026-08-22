@@ -307,3 +307,23 @@ Wayback MachineでSanjet公式トップページの **2009-12-15 03:37:34** 保�
 - `RRMCG2009SCZZ` の搬送波・プロトコル・全キーコード
 - Dusty/Bih-Wei Shyr氏のSanjet在籍を示す直接資料
 - SanjetとSharp/FUJIFILM DPシリーズを直接結ぶ契約・製品資料
+
+### 2010年2月14日Sanjet公式サイトを追加確認
+
+Wayback MachineでSanjet公式トップページの **2010-02-14 22:13:05** 保存版を取得した。
+
+保存版:
+- https://web.archive.org/web/20100214221305id_/http://www.sanjetco.com/
+
+本文は2009年12月保存版と同系統で、Sanjet自身が以下を明記している。
+- OEM/ODM services
+- 製品系列に `Digital Photo Frame`
+- `4F, No.19, Industry E. Rd 4, Hsinchu Science Park`
+
+この日付はDusty Shyr氏の `FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp` 案件（2009-10〜2010-02）の終了月に当たる。
+
+**確定:** Sanjetは少なくとも2010年2月中旬まで、自社公式サイト上でデジタルフォトフレームを扱うOEM/ODM企業として自社を位置づけていた。
+
+**推測への影響:** 「SanjetのDPF/OEM記載は2009年末だけだった」「Sharp案件終了後にDPF分野へ入った」という説明はさらに取りにくくなる。案件期間とSanjetの事業内容が別時点の一次資料でも重なる。
+
+**未確定:** ページにはSharp/FUJIFILM/Dusty Shyr氏の名はなく、SanjetがDP-850SH/DP-1020SHを受託した直接証拠ではない。
