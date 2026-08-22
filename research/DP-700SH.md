@@ -452,3 +452,18 @@ Wayback保存版:
 **推測への影響:** AIPTEKからOEM事業を継承したSanjetが、Sharp向けFUJIFILM DPF案件の台湾側受託会社だったという仮説は従来より強くなる。時期・所在地・事業形態・製品分野がすべて一致するため。
 
 **未確定:** Dusty/Bih-Wei Shyr氏のSanjet在籍、SanjetがSharpまたはFUJIFILM DP-850SH/DP-1020SHを直接受託した契約・製品資料。ここは引き続き推測として扱う。
+
+## 追加根拠: 2010年2月14日のSanjet公式サイト
+
+Wayback Machineで **2010-02-14 22:13:05** 保存のSanjet公式トップページも取得した。内容は2009年12月保存版と同系統で、Sanjet自身が **OEM/ODMサービス** を提供し、製品系列に **`Digital Photo Frame`** を含むと記載している。
+
+この保存日は、Dusty Shyr氏の `FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp` 案件（2009-10〜2010-02）の終了月そのものに当たる。
+
+Wayback保存版:
+- https://web.archive.org/web/20100214221305id_/http://www.sanjetco.com/
+
+**確定:** 少なくとも2010年2月中旬まで、Sanjetは公式サイト上でデジタルフォトフレームを扱うOEM/ODM企業として自社を位置づけていた。
+
+**推測への影響:** SanjetがSharp向けFUJIFILM DPF案件の台湾側受託会社だったという仮説について、「2009年末だけの一時的な事業記載」や「案件終了後に分野参入した」という説明はさらに取りにくくなる。案件期間とSanjetの事業内容が同時期に重なることを、別時点の一次資料でも確認できた。
+
+**未確定:** このページ自体にSharp/FUJIFILM/Dusty Shyr氏の名前はないため、SanjetがDP-850SH/DP-1020SHを受託した直接証拠ではない。
