@@ -37,6 +37,41 @@
 - DPシリーズ本体の銘板にある `MADE IN CHINA` とSanJetの蘇州工場を直接結び付ける資料は未発見。
 - Sharp→SanJetの発注・契約資料、またはDPシリーズの基板上のSanJet識別子は依然として未発見。
 
+## 後継DP-701SH / DP-801SHの公式ファームは共通 `TH50_dpf.pkg`
+
+### 確定事項
+
+Wayback Machineに保存されたFUJIFILM公式 `DP-701SH／DP-801SH ファームウエアの更新` ページ（2014-07-22保存）から、2011年世代の後継2機種では**同一ファームウェアファイル**が配布されていたことを直接確認した。
+
+- 対象: `DP-701SH / DP-801SH`
+- ファイル名: **`TH50_dpf.pkg`**
+- バージョン: **Ver.1.04.07**
+- 容量: **2.95MB**
+- 公式直リンク: `http://download.fujifilm.co.jp/pub/tools/jtnjcxxwbhehyq/TH50_dpf.pkg`
+
+Wayback保存版:
+- https://web.archive.org/web/20140722194942id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/download002.html
+
+2011年7月29日のデジカメWatch記事も、DP-701SH / DP-801SHについて「ファームウェアは両機種で共通」「バージョン番号は1.04.07」と報じている。
+
+出典:
+- https://dc.watch.impress.co.jp/docs/news/464018.html
+
+### DP-700SH系列への意味 — 状況証拠
+
+2010年世代では、公式ファームが機種ごとに `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` と分かれていた。一方、2011年のDP-701SH / DP-801SHでは2機種共通の `TH50_dpf.pkg` へ統合されている。
+
+このことから、**`THxx_dpf.pkg` という命名がDP-700SH/850SH/1020SHだけの偶発的な3機種連番ではなく、FUJIFILMデジタルフォトフレームの後継世代にも続く更新パッケージ系列だった**ことが分かる。
+
+また、DP-701SH / DP-801SHは同一バイナリを共有できたため、少なくともこの後継2機種はファームウェア側でハード差分を吸収する、または実質的に共通ハード/ソフト基盤を持っていた可能性が高い。
+
+### 推測 / 未確定
+
+- `TH34/35/36` と `TH50` の数値自体がSoC型番、基板番号、案件番号を示す証拠はない。
+- `TH50` の発見は、DP-700SH / 850SH / 1020SHがDP-701SH / 801SHと同一SoCまたは同一OSだったことを証明しない。
+- 2010年世代で機種別バイナリだった理由が、液晶解像度・動画機能・メモリ容量・基板差のどれによるものかは未解明。
+- `TH50_dpf.pkg` 自体もWayback CDXでは保存実体を確認できず、バイナリ解析には至っていない。
+
 ## 今回も未解決
 
 - `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` のバイナリ本体
