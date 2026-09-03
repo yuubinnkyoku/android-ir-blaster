@@ -1,6 +1,6 @@
 # FUJIFILM デジタルフォトフレーム リモコン系譜調査
 
-最終更新: 2026-08-20 JST
+最終更新: 2026-09-04 JST
 
 ## 目的
 
@@ -82,7 +82,28 @@ DP-7VではVictor/JVCテレビリモコンとの混線報告があるため、JV
 
 `RRMCG....SCZZ` はSHARPの補修リモコンで見られそうな形式に見えるが、SHARP公式部品サイトを `RRMCG2009SCZZ`, `RRMCG2010SCZZ` で検索しても該当索引は見つからなかった。
 
-したがって型番形式だけから「SHARP純正部品番号」と断定しない。
+2026-09-04にSHARP公式の旧製品マニュアルを追加確認したところ、SHARP自身がリモコンのモデル番号として **`RRMCG` 接頭辞を実際に使用していた**ことを一次資料で確認できた。
+
+例:
+- SHARP PG-C30X系公式マニュアル: リモコン銘板に `REMOTE CONTROL MODEL NO.: RRMCG 1579CESA`
+  - https://global.sharp/products/text/pdf/pg-c30x/manuals/usa/c30_usp.pdf
+- SHARP XG-E1200U公式マニュアル: 交換部品一覧に `Remote control (RRMCG 1354CESA)`
+  - https://business.sharpusa.com/portals/0/downloads/Manuals/pro_man_xge1200U.pdf
+
+### 確定事項
+
+- `RRMCG` は少なくともSHARPが自社製品の純正リモコン型番で用いていた命名接頭辞である。
+- DP-700SH純正リモコン `RRMCG2009SCZZ` が、このSHARP型番体系と同じ `RRMCG` 接頭辞を持つ。
+
+### 状況証拠
+
+DP-700SH本体の銘板上の製造元がSHARPであること、ACアダプターもSHARP名義であることと合わせると、`RRMCG2009SCZZ` は単なるFUJIFILM独自命名より、**SHARP側の部品番号/調達体系で採番されたリモコンである可能性が高い**。
+
+### 未確定
+
+- `SCZZ` 接尾辞そのものの意味は未解明。
+- `RRMCG2009SCZZ` をSHARP公式の補修部品データベースで直接引けたわけではないため、「SHARP製造リモコン」とまでは断定しない。
+- 型番体系の共通性は赤外線方式がSHARP 13-bitであることを意味しない。SHARP製品の純正リモコンでも製品系列によって赤外線方式は異なり得るため、IRコードは別途実測が必要。
 
 ## 現在の候補マッピング
 
