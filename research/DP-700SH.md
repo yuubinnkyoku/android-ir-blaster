@@ -269,3 +269,28 @@ Dusty Shyr氏の `FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp` 案件は2009-1
 **注意:** 現在の経済部商工登記公示ページの經理人欄には `廖筠松 / 到職日期 098年11月02日` と表示されるが、同ページ自身がこの欄を法定の商工公示資料ではなく跨域参照情報と注意書きしており、上記取材の経歴とも1年ずれる。現段階ではこの日付をFUJIFILM案件への廖氏関与の証拠には採用しない。
 
 **推測への影響:** 当時の台湾側組織を追う検索キーとして、後年の経営陣より **楊建國 / 郭國湞**、旧住所 `新竹市工業東四路19號6樓`、2009〜2010年当時の董事・技術者を優先する価値が高い。ただし楊氏・郭氏がSharp/FUJIFILM案件を直接担当した証拠はまだない。
+
+### SanJet旧拠点とGeneralplus（凌通科技）が同じ `工業東四路19號`
+
+SanJetの案件期間中の公式サイト保存版（2009-12-15 / 2010-02-14）は、連絡先を **`4F, No.19, Industry E. Rd 4, Hsinchu Science Park`** と記載している。一方、会社登記履歴では同時期に `新竹市工業東四路19號6樓` と記録される。階数表記は食い違うが、建物番号 `工業東四路19號` は一致する。
+
+同じ `新竹市工業東四路19號` は、半導体設計会社 **Generalplus Technology Inc.（凌通科技股份有限公司）** の本社所在地でもある。
+
+参考:
+- https://web.archive.org/web/20091215033734id_/http://www.sanjetco.com/
+- https://web.archive.org/web/20100214221305id_/http://www.sanjetco.com/
+- https://www.findcompany.com.tw/index.php/GENERALPLUS%20TECHNOLOGY%20INC.
+- https://w3.sunplus.com/tw/about/locations.asp
+
+さらにSunplus（凌陽科技）の公式沿革は、**2009年にグループ内のPMP / MP3 / DPF（Digital Photo Frame）製品線をGeneralplusへ分割した**ことを明記している。当時の記事では分割基準日を **2009-12-01** としており、Dusty Shyr氏のFUJIFILM DP-850SH/DP-1020SH案件（2009-10〜2010-02）と重なる。Generalplusの正規流通資料にも製品線として `Digital Photo Frame IC` が掲げられている。
+
+参考:
+- https://www.sunplus.com/tw/about/milestones.asp
+- https://www.unlistedstock.com.tw/news/detail/19702512
+- https://www.wpgholdings.com/aitg/subsidiary/zhtw/sac/Generalplus
+
+**確定:** 案件期間中のSanJetは、DPF用ICを正式な製品線として持つGeneralplusと同じ番地の建物に拠点を置いていた。また、GeneralplusがSunplusグループからDPF製品線を引き継いだ時期も案件期間と重なる。
+
+**有力な推測:** SanJetがSharp向けFUJIFILM DPFを受託していたという仮説が正しい場合、Generalplus/Sunplus系SoCまたはその参照設計を使った可能性は、従来より優先して検証する価値が高い。特に基板写真が得られた場合は `Generalplus` / `Sunplus` / `GPL...` / `SPMP...` / `SPMF...` 系刻印を優先照合する。
+
+**未確定:** DP-700SH / DP-850SH / DP-1020SHがGeneralplus製SoCを搭載した直接証拠はない。同一住所はテナント・グループ関係・単なる立地共有などでも説明でき、SoC採用の確定根拠にはしない。特定チップ型番、CPUアーキテクチャ、OSも未確認。
