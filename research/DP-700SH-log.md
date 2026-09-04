@@ -347,3 +347,38 @@ Wayback MachineでSanjet公式トップページの **2010-02-14 22:13:05** 保�
 **推測:** 700SH/850SHがSharpを製造元とする近縁系列だった可能性を補強する。台湾側の `FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp` という開発案件記録とも整合するが、これだけで同一SoC・同一基板・同一OSや、Sanjetを含む台湾ODMの具体的な関与までは確定しない。
 
 **未確定:** DP-1020SHの背面写真も見つかったが、今回確認した画像は製造元欄を十分鮮明に読めないため、銘板上の製造元は保留。
+
+## 2026-09-05: Generalplus（凌通科技）をSoC候補として優先調査対象に追加
+
+SanJetの案件期間中の所在地を再照合した。2009-12-15および2010-02-14のSanJet公式サイト保存版は `4F, No.19, Industry E. Rd 4, Hsinchu Science Park` と記載する。一方、会社登記履歴は2009-06-25 / 2010-05-31に `新竹市工業東四路19號6樓`。階数は異なるが、どちらも **工業東四路19號** で一致する。
+
+この番地は **Generalplus Technology Inc.（凌通科技）** の本社所在地でもある。
+
+出典:
+- https://web.archive.org/web/20091215033734id_/http://www.sanjetco.com/
+- https://web.archive.org/web/20100214221305id_/http://www.sanjetco.com/
+- https://www.findcompany.com.tw/index.php/GENERALPLUS%20TECHNOLOGY%20INC.
+- https://w3.sunplus.com/tw/about/locations.asp
+
+ここでGeneralplus側の当時の事業を確認すると、Sunplus（凌陽科技）の公式沿革に **2009年、PMP / MP3 / DPF等の製品線をGeneralplusへ分割** と明記されている。当時の記事では分割基準日が **2009-12-01**。これはDusty Shyr氏の `FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp` 案件（2009-10〜2010-02）の途中に当たる。
+
+出典:
+- https://www.sunplus.com/tw/about/milestones.asp
+- https://www.unlistedstock.com.tw/news/detail/19702512
+
+さらにGeneralplusの正規流通資料は製品線として **`Digital Photo Frame IC`** を列挙している。
+
+出典:
+- https://www.wpgholdings.com/aitg/subsidiary/zhtw/sac/Generalplus
+
+### 判断
+
+**確定:** 案件期間中、SanJetはGeneralplus本社と同じ番地の建物に拠点を持っていた。Generalplusは同じ2009年にSunplusグループからDPF製品線を引き継いでいる。
+
+**状況証拠:** SanJetがSharp向けFUJIFILM案件を担当したという既存仮説が正しい場合、Generalplus/Sunplus系のDPF SoC・参照設計を使っていた可能性を優先して検証する理由が新たにできた。
+
+**未確定:** DP-700SH / DP-850SH / DP-1020SHがGeneralplus製SoCを搭載したという直接証拠はない。`工業東四路19號` の一致だけでSoC供給関係とは断定しない。特定チップ型番、CPU、OSも不明。
+
+### 次回以降の基板照合キー
+
+基板写真・分解記録を得た場合は、従来のSharp/Sunplus候補に加え、`Generalplus`、`GPL...`、`SPMP...`、`SPMF...` 系刻印を優先して確認する。Sunplus公式沿革上のDPF製品線移管と案件時期が重なるため、単なる一般的なSoC候補より優先度を上げる。
