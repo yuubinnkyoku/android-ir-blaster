@@ -219,78 +219,24 @@ DP-700SHの名前はこの記録にはない。ただし700SH/850SH/1020SHは同
 
 国立陽明交通大学（旧・国立交通大学）の機関リポジトリに、1998年の修士論文 `影像序列中網型物件之建立與追蹤` の著者として **石璧維 / Bih-Wei Shyr** が記録されている。2000年のSPIE論文にも `Bih Wei Shyr` として掲載される。
 
-参考:
-- https://ir.lib.nycu.edu.tw/handle/11536/64322
-- https://scholar.nycu.edu.tw/en/publications/generation-and-tracking-of-mesh-objects-in-image-sequences/
-- https://tw.linkedin.com/in/%E7%92%A7%E7%B6%AD-dusty-shyr-%E7%9F%B3-a6ab8a5b
+### 2009年12月のSanJet公式サイトがDPFをOEM/ODM製品群として明記
 
-LinkedInの現在所属欄に出る `新帝` は **SanDisk（新帝科技）** であり、2008〜2010年当時の受託会社名としては扱わない。
+Wayback Machineに保存された **2009-12-15 03:37:34** のSanJet Technology Corp.公式サイトを確認した。この時点でトップページは、SanJetがOEM/ODMサービスを提供し、製品群に **Digital Photo Frame** を含めると明記している。
 
-### AIPTEK資料との食い違いは「外部受託チーム」仮説を強める
+保存本文の要旨:
+- `We provide top-notch and streamlined OEM/ODM services.`
+- 製品群: `Digital Camcorder, Digital Still Camera, Projector, Digital Photo Frame, and Digital Tablet`
+- 所在地: `4F, No.19, Industry E. Rd 4, Hsinchu Science Park, Hsin-Chu 300, Taiwan, R.O.C.`
 
-2009年のStory Book inColorについて台湾側公開資料は **天瀚科技（AIPTEK）が研発・製造** とする一方、Dusty氏の履歴では同案件を `Customer: AIPTEK` と記録している。
-
-参考:
-- https://9lib.co/document/rz32k9eq-Aiptek%E5%BD%A9%E8%89%B2%E5%85%92%E7%AB%A5%E9%9B%BB%E5%AD%90%E6%9B%B8%E9%80%B2%E8%BB%8D%E6%96%B0%E5%8A%A0%E5%9D%A1%E5%B8%82%E5%A0%B4.html
-- https://www.ithome.com.tw/news/58275
-
-**推測:** AIPTEKが製品全体の開発・製造主体でありつつ、一部ソフトウェア/システム開発をDusty氏の所属会社へ委託していた可能性がある。
-
-### JABLOTRON TAIWANは当時「アジア向け営業・マーケティング」拠点
-
-Jablotron Groupの当時のCompany Profileでは:
-
-- `JABLOTRON TAIWAN – sales and marketing for Asia region`
-- `JABLOTRON CHINA – production QC and component supplying`
-
-と記載される。
-
-参考:
-- https://www.sklep-jablotron.pl/userfiles/files/company_profile.pdf
-
-### 勝捷光電の当時の代表者を会社登記履歴から特定
-
-勝捷光電（SanJet Technology Corp.）の変更登記履歴では、AIPTEK/天瀚から代工部門が分割された直後から2010年前半まで、会社の負責人は **楊建國** 氏だった。
-
-- 2009-06-25: 負責人 `楊建國`、`新竹市工業東四路19號6樓`
-- 2010-05-31: 負責人 `楊建國`、同住所
-- 2010-12-15 / 2011-01-20: 負責人 `郭國湞`
-- 2011-09-02以降: 負責人 `廖筠松`
-
-Dusty Shyr氏の `FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp` 案件は2009-10〜2010-02なので、**案件期間中の勝捷光電の会社登記上の代表者は楊建國氏**となる。
-
-参考:
-- https://www.findcompany.com.tw/%E5%8B%9D%E6%8D%B7%E5%85%89%E9%9B%BB%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8
-- https://findbiz.nat.gov.tw/fts/company/24268077
-- https://www.businesstoday.com.tw/article/category/80394/post/201402060014/
-
-2014年の『今周刊』取材では、後年の董事長・CEOである廖筠松氏は **2010年11月に天瀚科技へ正式加入し、2011年4月に勝捷の経営を任された** と説明される。したがって、2009〜2010年初頭のFUJIFILM案件を廖氏主導とみなす根拠はない。
-
-**注意:** 現在の経済部商工登記公示ページの經理人欄には `廖筠松 / 到職日期 098年11月02日` と表示されるが、同ページ自身がこの欄を法定の商工公示資料ではなく跨域参照情報と注意書きしており、上記取材の経歴とも1年ずれる。現段階ではこの日付をFUJIFILM案件への廖氏関与の証拠には採用しない。
-
-**推測への影響:** 当時の台湾側組織を追う検索キーとして、後年の経営陣より **楊建國 / 郭國湞**、旧住所 `新竹市工業東四路19號6樓`、2009〜2010年当時の董事・技術者を優先する価値が高い。ただし楊氏・郭氏がSharp/FUJIFILM案件を直接担当した証拠はまだない。
-
-### SanJet旧拠点とGeneralplus（凌通科技）が同じ `工業東四路19號`
-
-SanJetの案件期間中の公式サイト保存版（2009-12-15 / 2010-02-14）は、連絡先を **`4F, No.19, Industry E. Rd 4, Hsinchu Science Park`** と記載している。一方、会社登記履歴では同時期に `新竹市工業東四路19號6樓` と記録される。階数表記は食い違うが、建物番号 `工業東四路19號` は一致する。
-
-同じ `新竹市工業東四路19號` は、半導体設計会社 **Generalplus Technology Inc.（凌通科技股份有限公司）** の本社所在地でもある。
-
-参考:
+Wayback保存版:
 - https://web.archive.org/web/20091215033734id_/http://www.sanjetco.com/
-- https://web.archive.org/web/20100214221305id_/http://www.sanjetco.com/
-- https://www.findcompany.com.tw/index.php/GENERALPLUS%20TECHNOLOGY%20INC.
-- https://w3.sunplus.com/tw/about/locations.asp
 
-さらにSunplus（凌陽科技）の公式沿革は、**2009年にグループ内のPMP / MP3 / DPF（Digital Photo Frame）製品線をGeneralplusへ分割した**ことを明記している。当時の記事では分割基準日を **2009-12-01** としており、Dusty Shyr氏のFUJIFILM DP-850SH/DP-1020SH案件（2009-10〜2010-02）と重なる。Generalplusの正規流通資料にも製品線として `Digital Photo Frame IC` が掲げられている。
+さらに2010-03-02保存の `Product.htm` も確認でき、当時のサイトに独立した製品ページが存在した。ただし商品一覧の主要情報は画像化されており、HTML本文からFUJIFILM/Sharpの機種名までは確認できない。
 
-参考:
-- https://www.sunplus.com/tw/about/milestones.asp
-- https://www.unlistedstock.com.tw/news/detail/19702512
-- https://www.wpgholdings.com/aitg/subsidiary/zhtw/sac/Generalplus
+- https://web.archive.org/web/20100302133601id_/http://www.sanjetco.com/Product.htm
 
-**確定:** 案件期間中のSanJetは、DPF用ICを正式な製品線として持つGeneralplusと同じ番地の建物に拠点を置いていた。また、GeneralplusがSunplusグループからDPF製品線を引き継いだ時期も案件期間と重なる。
+**確定:** 少なくとも2009年12月時点でSanJet自身が、Digital Photo Frameを含む製品群についてOEM/ODMサービスを提供する会社だと公式サイトで公称していた。これは後年の会社紹介や商標指定商品よりも、FUJIFILM DP-850SH/DP-1020SH案件期間に直接重なる一次資料。
 
-**有力な推測:** SanJetがSharp向けFUJIFILM DPFを受託していたという仮説が正しい場合、Generalplus/Sunplus系SoCまたはその参照設計を使った可能性は、従来より優先して検証する価値が高い。特に基板写真が得られた場合は `Generalplus` / `Sunplus` / `GPL...` / `SPMP...` / `SPMF...` 系刻印を優先照合する。
+**状況証拠:** Dusty Shyr氏の `FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp`（2009-10〜2010-02）がSanJetの受託開発案件だったという仮説を強く補強する。またSanJetの当時所在地は `工業東四路19號` で、Generalplusの所在地と一致するため、同社との技術・供給接点を探す優先度は高い。
 
-**未確定:** DP-700SH / DP-850SH / DP-1020SHがGeneralplus製SoCを搭載した直接証拠はない。同一住所はテナント・グループ関係・単なる立地共有などでも説明でき、SoC採用の確定根拠にはしない。特定チップ型番、CPUアーキテクチャ、OSも未確認。
+**未確定:** この公式サイトはFUJIFILM/Sharpを顧客名として挙げておらず、DP-700SH / DP-850SH / DP-1020SHをSanJetが設計・製造したこと、Generalplus製SoCを採用したことを直接証明するものではない。
