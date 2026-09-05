@@ -1,6 +1,6 @@
 # FUJIFILM DP-700SH リバースエンジニアリング調査メモ
 
-最終更新: 2026-09-05 JST
+最終更新: 2026-09-06 JST
 
 DP-700SH のハードウェア、ファームウェア、赤外線リモコン、開発/製造系統を追跡する作業メモ。**確定情報・状況証拠・推測を分ける**。詳細な探索経路は `research/DP-700SH-log.md` に残す。
 
@@ -316,3 +316,19 @@ AV Watchの2010-03-10記事によると、DP-1020SHは当初2010-03-13発売予�
 **推測:** SanJetのDPF開発能力はゼロから新設されたのではなく、AIPTEKのデジタル映像・DPF開発資産、人員、製造系統を継承した可能性が高い。Sharp向けFUJIFILM DPF案件は、SanJetがAIPTEK依存の代工会社から外部顧客向けODMへ広がる初期案件の一つだった可能性がある。
 
 **未確定:** DP-700SH / DP-850SH / DP-1020SHをSanJetが直接設計・製造したこと、AIPTEK時代のどのSoC/OS/ソフトウェア基盤が継承されたか、Sharp案件で既存DPF設計を再利用したかは未確認。
+
+### AIPTEK Monet BTのBluetooth部分はCSRと明記
+
+AIPTEK Monet BTの取扱説明書ミラーに、Bluetooth仕様として **`Bluetooth EDR 2.0, Class II (CSR), OPP profile`** と記載されている。Monet BTは2008年のAIPTEK製デジタルフォトフレームで、8型800×480、CF/MMC/MS PRO/SD、動画/音楽再生、リモコンを備える。
+
+参考:
+- https://www.notice-facile.com/en/manual/169871/aiptek%2Bmonet-bt-_f
+- https://www.photoscala.de/2008/02/18/bluetooth-bilderrahmen-monet-bt-von-aiptek/
+
+**確定:** 少なくともMonet BTのBluetooth機能にはCSR（Cambridge Silicon Radio）系の実装が使われていたことを、取扱説明書記載から確認できる。
+
+**状況証拠:** AIPTEK時代のデジタルフォトフレームでは、無線機能を主SoCへ完全統合せず、外部の専用無線部品/モジュールを組み合わせる設計が採られていた可能性がある。
+
+**推測への影響:** AIPTEKがMars Semiconductorの顧客だったこと、MarsがDPF向けSoCを扱っていたことは引き続きSoC候補の根拠になるが、**AIPTEK製DPFに無線転送機能があること自体をMars製主SoC採用の根拠にはできない**。Monet BTではBluetooth部分がCSRと明記されており、無線サブシステムと主DPF SoCを分離して考える必要がある。
+
+**未確定:** Monet BTの主SoC、OS、基板上のCSRチップ型番、SanJet/Sharp向けDPシリーズへの回路・ソフトウェア流用は未確認。DP-700SHのIrSimple/IrSS/IrDA部も別チップなのか主SoC内蔵なのか未確認。
