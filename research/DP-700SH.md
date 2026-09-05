@@ -290,3 +290,29 @@ AV Watchの2010-03-10記事によると、DP-1020SHは当初2010-03-13発売予�
 **状況証拠:** 700SHと850SHでSharp/ATECHの電源調達系列が共通し、ATECH内部型番も `...-S2` / `...-S3` と近接する。完成品側が共通設計・調達基盤を持っていた仮説を補強する一方、電源アダプター自体は機種別型番で、完全共通部品ではない。
 
 **未確定:** `S2` / `S3` の差がDCプラグ寸法、極性、EMI対策、筐体仕様など何を表すかは不明。DP-1020SHに付属したACアダプター型番も未確定。
+
+### SanJetはAIPTEK（天瀚科技）の代工部門分割で成立
+
+2009-06-01の公開資訊觀測站重大訊息（MoneyDJ転載）では、天瀚科技が勝捷光電について **「分割計画により譲渡した会社」** とし、分割基準日を **2009-06-01** と明記している。
+
+参考:
+- https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=667e5451-a279-49d9-a14e-0e437620cbb9
+
+2014-02-06の今周刊による企業史記事は、この分割の実態をさらに具体化している。2009年6月、天瀚科技（AIPTEK）はブランド部門と代工部門を分離し、分割後の天瀚科技は国際ブランド会社、**勝捷光電（SanJet）は台湾側の研究開発と中国側の製造を承継する代工会社** になったと説明される。また、再建時点のSanJetには光学・マルチメディア・ソフトウェアの専門チームと専属工場があったと記録されている。
+
+参考:
+- https://www.businesstoday.com.tw/article/category/80394/post/201402060014/
+
+天瀚科技/AIPTEKは分割前からデジタルフォトフレームを事業化していた。現存する同社紹介では2008年の主要新製品として「写真を撮影できるデジタルフォトフレーム」を挙げ、2009年にはAIPTEK Monet digital photo frameの流通・評価記録も残る。
+
+参考:
+- https://114229.web66.tw/
+- https://www.saldo.ch/artikel/artikeldetail/digitale-fotorahmen-nur-die-haelfte-ueberzeugt
+
+**確定:** SanJetは2009-06-01を基準日とするAIPTEK/天瀚科技の事業分割で代工側を承継し、台湾R&Dと中国製造を担う会社として成立した。AIPTEK自体は分割前からDPF製品を扱っていた。
+
+**状況証拠:** 既知のDusty Shyr氏の職歴では、2009-03〜09の `Story Book inColor / Customer: AIPTEK` の直後、2009-10〜2010-02に `FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp` を担当している。AIPTEK→SanJetの分割時期をまたいで案件が連続するため、AIPTEK向け開発を担っていた台湾側チームがSanJetへ移り、その後Sharp/FUJIFILM案件を担当したという仮説は時間軸・会社史の双方とよく整合する。
+
+**推測:** SanJetのDPF開発能力はゼロから新設されたのではなく、AIPTEKのデジタル映像・DPF開発資産、人員、製造系統を継承した可能性が高い。Sharp向けFUJIFILM DPF案件は、SanJetがAIPTEK依存の代工会社から外部顧客向けODMへ広がる初期案件の一つだった可能性がある。
+
+**未確定:** DP-700SH / DP-850SH / DP-1020SHをSanJetが直接設計・製造したこと、AIPTEK時代のどのSoC/OS/ソフトウェア基盤が継承されたか、Sharp案件で既存DPF設計を再利用したかは未確認。
