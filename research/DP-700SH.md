@@ -332,3 +332,23 @@ AIPTEK Monet BTの取扱説明書ミラーに、Bluetooth仕様として **`Blue
 **推測への影響:** AIPTEKがMars Semiconductorの顧客だったこと、MarsがDPF向けSoCを扱っていたことは引き続きSoC候補の根拠になるが、**AIPTEK製DPFに無線転送機能があること自体をMars製主SoC採用の根拠にはできない**。Monet BTではBluetooth部分がCSRと明記されており、無線サブシステムと主DPF SoCを分離して考える必要がある。
 
 **未確定:** Monet BTの主SoC、OS、基板上のCSRチップ型番、SanJet/Sharp向けDPシリーズへの回路・ソフトウェア流用は未確認。DP-700SHのIrSimple/IrSS/IrDA部も別チップなのか主SoC内蔵なのか未確認。
+
+### Mars Semiconductorは創業初期にUSB小型フォトフレームを実製品化
+
+2020-01-08の中央社による天擎積體電路（Mars Semiconductor）の興櫃前法人説明会報道では、董事長の呂惠平氏が、同社は創業初期に消費性影音晶片へ参入し、**代表作が「USB小相框」だった**と説明している。
+
+参考:
+- https://www.cna.com.tw/news/afe/202001080180.aspx
+
+別の会社紹介には、Mars Semiconductorがデジタルカメラ・デジタルフォトフレーム・デジタル画像処理向けSoCの開発販売を主力としていたこと、顧客例として **天瀚（AIPTEK）** を挙げる記録がある。
+
+参考:
+- https://108976.web66.tw/
+
+**確定:** Mars Semiconductorは単に「デジタルフォトフレーム向けSoC」を事業分野として掲げていただけでなく、少なくとも創業初期にUSB接続の小型フォトフレームを代表製品として実際に展開していた。また同社紹介ではAIPTEKが顧客例に含まれる。
+
+**状況証拠:** AIPTEK→SanJet系統の上流SoC候補としてMars Semiconductorを追う根拠は、従来の「DPF向けSoC分野＋AIPTEK顧客」という組み合わせから一段強くなった。DPF用途の回路・ファームウェア資産を実製品まで落とし込んだ経験が同社にあったことを示すため。
+
+**ただし重要:** `USB小相框` がAIPTEK Monetのような8型単体DPFと同一SoC系列だった証拠はない。USB小型フォトフレームはPCから表示データを受ける簡素な機器である可能性もあり、メモリカード・動画・音声・赤外線を備えるDP-700SH/850SH/1020SHの主SoCへ直接つなげてはならない。
+
+**未確定:** Marsの当時の具体的なSoC型番、AIPTEK Monet/Monet BTへの採用、DP-700SH / DP-850SH / DP-1020SHへの採用、OSやファームウェア基盤の共通性はいずれも未確認。
