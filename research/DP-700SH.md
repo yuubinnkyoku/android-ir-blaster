@@ -1,6 +1,6 @@
 # FUJIFILM DP-700SH リバースエンジニアリング調査メモ
 
-最終更新: 2026-09-06 JST
+最終更新: 2026-09-07 JST
 
 DP-700SH のハードウェア、ファームウェア、赤外線リモコン、開発/製造系統を追跡する作業メモ。**確定情報・状況証拠・推測を分ける**。詳細な探索経路は `research/DP-700SH-log.md` に残す。
 
@@ -219,136 +219,21 @@ DP-700SHの名前はこの記録にはない。ただし700SH/850SH/1020SHは同
 
 国立陽明交通大学（旧・国立交通大学）の機関リポジトリに、1998年の修士論文 `影像序列中網型物件之建立與追蹤` の著者として **石璧維 / Bih-Wei Shyr** が記録されている。2000年のSPIE論文にも `Bih Wei Shyr` として掲載される。
 
-### 2009年12月のSanJet公式サイトがDPFをOEM/ODM製品群として明記
+### 2010年3機種は背面の明るさセンサー配置と誤消灯傾向を共有
 
-Wayback Machineに保存された **2009-12-15 03:37:34** のSanJet Technology Corp.公式サイトを確認した。この時点でトップページは、SanJetがOEM/ODMサービスを提供し、製品群に **Digital Photo Frame** を含めると明記している。
+2010年世代の共通設計を示す追加の実機観察が見つかった。
 
-保存本文の要旨:
-- `We provide top-notch and streamlined OEM/ODM services.`
-- 製品群: `Digital Camcorder, Digital Still Camera, Projector, Digital Photo Frame, and Digital Tablet`
-- 所在地: `4F, No.19, Industry E. Rd 4, Hsinchu Science Park, Hsin-Chu 300, Taiwan, R.O.C.`
-
-Wayback保存版:
-- https://web.archive.org/web/20091215033734id_/http://www.sanjetco.com/
-
-さらに2010-03-02保存の `Product.htm` も確認でき、当時のサイトに独立した製品ページが存在した。ただし商品一覧の主要情報は画像化されており、HTML本文からFUJIFILM/Sharpの機種名までは確認できない。
-
-- https://web.archive.org/web/20100302133601id_/http://www.sanjetco.com/Product.htm
-
-**確定:** 少なくとも2009年12月時点でSanJet自身が、Digital Photo Frameを含む製品群についてOEM/ODMサービスを提供する会社だと公式サイトで公称していた。これは後年の会社紹介や商標指定商品よりも、FUJIFILM DP-850SH/DP-1020SH案件期間に直接重なる一次資料。
-
-**状況証拠:** Dusty Shyr氏の `FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp`（2009-10〜2010-02）がSanJetの受託開発案件だったという仮説を強く補強する。またSanJetの当時所在地は `工業東四路19號` で、Generalplusの所在地と一致するため、同社との技術・供給接点を探す優先度は高い。
-
-**未確定:** この公式サイトはFUJIFILM/Sharpを顧客名として挙げておらず、DP-700SH / DP-850SH / DP-1020SHをSanJetが設計・製造したこと、Generalplus製SoCを採用したことを直接証明するものではない。
-
-### DP-1020SHは発売直前に電源接続部の不具合で全数検査
-
-AV Watchの2010-03-10記事によると、DP-1020SHは当初2010-03-13発売予定だったが、**一部機体の電源接続部に不具合が見つかり、全数検査のため2010-03-20へ発売延期**となった。一方、DP-850SHは予定通り2010-03-13に発売された。
+- DP-700SH利用者は、明るさセンサーが先代DP-70SHと異なり**背面**にあり、書棚や黒い壁の近くでは周囲を暗いと誤判定して自動消灯しやすいと報告している。
+- DP-850SHを5台以上所有した同一レビュアーも、明るさセンサーが**背面**にあり、照明が点いていても自動消灯する挙動を全個体で確認。メーカー送付後も変わらなかったと記録している。
+- 同レビュアーのDP-1020SHでも、明るさセンサーが**背面**で同種の自動消灯が起き、DP-850SHよりは軽いものの個体差ではないとしている。
 
 参考:
-- https://av.watch.impress.co.jp/docs/news/353844.html
+- https://bbs.kakaku.com/bbs/K0000084345/ （2010-05-08「自動消灯機能について」）
+- https://review.kakaku.com/review/K0000084346/ReviewCD=618875/
+- https://review.kakaku.com/review/K0000084347/ReviewCD=618889/
 
-**確定:** DP-1020SHだけに発売前の電源接続部不具合と全数検査が発生し、DP-850SHは同じ延期対象ではなかった。
+**確定度: 中:** 3機種で背面センサー配置と似た省電力挙動が独立に観察されている。特にDP-850SHは複数個体で同じだったという比較記録がある。
 
-**状況証拠:** DP-850SH / DP-1020SHは同じ台湾側案件名で扱われ、共通ファーム更新も受ける一方、少なくとも電源接続部・その実装・筐体側接続構造のいずれかには機種固有差があった可能性が高い。したがって「共通ソフトウェア基盤」と「完全同一メイン基板」は分けて考えるべき。
+**状況証拠:** これは2010年のDP-700SH / DP-850SH / DP-1020SHが、少なくとも明るさ検出・省電力制御とその筐体配置について同じ設計思想または共通部品/回路を共有した可能性を補強する。既知の共通機能、同日の共通ファーム修正、機種別連番 `.pkg` と整合する。
 
-**未確定:** 不具合箇所がDCジャック、電源基板、ハーネス、メイン基板上の電源回路、筐体との機械的接続のどれだったかは公開情報から不明。DP-700SHとの関係も未確認。
-
-### DP-700SHは当時記事でDP-70SHの後継系譜と明記
-
-デジカメ Watchの2010-02-02発表記事は、DP-700SHについて **「従来機種『DP-70SH』の流れを汲む7型デジタルフォトフレーム」** と記述している。
-
-参考:
-- https://dc.watch.impress.co.jp/docs/news/346441.html
-
-**確定:** 少なくともFUJIFILMの製品発表を受けた当時記事では、DP-700SHはDP-70SHの後継系列として明示的に扱われていた。
-
-**状況証拠:** DP-70SHではVer.1.04.00更新時に「本体情報の表示」→「バージョン表示」中にリモコンで `拡大 → 縮小 → 時計 → 回転` と押すとファームウェア書き換え画面に入る保守操作が公開されており、DP-700SH純正 `RRMCG2009SCZZ` にも同名4キーが存在する。後継系譜の明記により、DP-700SHでも同系統の保守UI/更新機構が継承されたという仮説の優先度は上がる。
-
-**未確定:** DP-700SHで同じ4キー列が実際にファームウェア書き換え画面を呼び出すか、DP-70SHと同じSoC・OS・基板または同一コードベースかは未確認。DP-70SHとDP-700SHで公開更新版がともに `1.04.00` なのも一致するが、版番号だけでは同一コードベースの証拠にならない。
-
-### DP-850SH付属個体でSHARP `EP-D82F` / ATECH `T04A-05200D2-S3` を写真確認
-
-2026-09-05に確認したYahoo!オークションのDP-850SH W一式出品 `l1132457656` では、同一出品写真内のACアダプター銘板を判読できる。
-
-- `ACアダプター EP-D82F`
-- `SHARP`
-- 入力: `AC 100V-240V 300mA 50/60Hz`
-- 出力: `DC 5V 2A`
-- `MODEL: T04A-05200D2-S3`
-- `MADE IN CHINA`
-- `ATECH`
-
-同じ出品にはDP-850SH W本体、DP-850SH/DP-1020SH共通使用説明書、保証書などが写っており、単体アダプター販売者の「対応機種」記載より強い実物組み合わせの証拠になる。
-
-参考:
-- https://auctions.yahoo.co.jp/jp/auction/l1132457656
-- https://auctions.c.yimg.jp/images.auctions.yahoo.co.jp/image/dr000/auc0504/users/426e989b994037236f07dc50cf65483da1155bd4/i-img900x1200-1712976085idgofe101562.jpg
-
-**確定:** DP-700SH実機の `EP-D72F / T04A-05200D2-S2` と、DP-850SH一式出品の `EP-D82F / T04A-05200D2-S3` は、どちらもSharp名義・ATECH製・5V 2Aの同系列電源である。
-
-**状況証拠:** 700SHと850SHでSharp/ATECHの電源調達系列が共通し、ATECH内部型番も `...-S2` / `...-S3` と近接する。完成品側が共通設計・調達基盤を持っていた仮説を補強する一方、電源アダプター自体は機種別型番で、完全共通部品ではない。
-
-**未確定:** `S2` / `S3` の差がDCプラグ寸法、極性、EMI対策、筐体仕様など何を表すかは不明。DP-1020SHに付属したACアダプター型番も未確定。
-
-### SanJetはAIPTEK（天瀚科技）の代工部門分割で成立
-
-2009-06-01の公開資訊觀測站重大訊息（MoneyDJ転載）では、天瀚科技が勝捷光電について **「分割計画により譲渡した会社」** とし、分割基準日を **2009-06-01** と明記している。
-
-参考:
-- https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=667e5451-a279-49d9-a14e-0e437620cbb9
-
-2014-02-06の今周刊による企業史記事は、この分割の実態をさらに具体化している。2009年6月、天瀚科技（AIPTEK）はブランド部門と代工部門を分離し、分割後の天瀚科技は国際ブランド会社、**勝捷光電（SanJet）は台湾側の研究開発と中国側の製造を承継する代工会社** になったと説明される。また、再建時点のSanJetには光学・マルチメディア・ソフトウェアの専門チームと専属工場があったと記録されている。
-
-参考:
-- https://www.businesstoday.com.tw/article/category/80394/post/201402060014/
-
-天瀚科技/AIPTEKは分割前からデジタルフォトフレームを事業化していた。現存する同社紹介では2008年の主要新製品として「写真を撮影できるデジタルフォトフレーム」を挙げ、2009年にはAIPTEK Monet digital photo frameの流通・評価記録も残る。
-
-参考:
-- https://114229.web66.tw/
-- https://www.saldo.ch/artikel/artikeldetail/digitale-fotorahmen-nur-die-haelfte-ueberzeugt
-
-**確定:** SanJetは2009-06-01を基準日とするAIPTEK/天瀚科技の事業分割で代工側を承継し、台湾R&Dと中国製造を担う会社として成立した。AIPTEK自体は分割前からDPF製品を扱っていた。
-
-**状況証拠:** 既知のDusty Shyr氏の職歴では、2009-03〜09の `Story Book inColor / Customer: AIPTEK` の直後、2009-10〜2010-02に `FUJIFILM DP-850SH/DP-1020SH / Customer: Sharp` を担当している。AIPTEK→SanJetの分割時期をまたいで案件が連続するため、AIPTEK向け開発を担っていた台湾側チームがSanJetへ移り、その後Sharp/FUJIFILM案件を担当したという仮説は時間軸・会社史の双方とよく整合する。
-
-**推測:** SanJetのDPF開発能力はゼロから新設されたのではなく、AIPTEKのデジタル映像・DPF開発資産、人員、製造系統を継承した可能性が高い。Sharp向けFUJIFILM DPF案件は、SanJetがAIPTEK依存の代工会社から外部顧客向けODMへ広がる初期案件の一つだった可能性がある。
-
-**未確定:** DP-700SH / DP-850SH / DP-1020SHをSanJetが直接設計・製造したこと、AIPTEK時代のどのSoC/OS/ソフトウェア基盤が継承されたか、Sharp案件で既存DPF設計を再利用したかは未確認。
-
-### AIPTEK Monet BTのBluetooth部分はCSRと明記
-
-AIPTEK Monet BTの取扱説明書ミラーに、Bluetooth仕様として **`Bluetooth EDR 2.0, Class II (CSR), OPP profile`** と記載されている。Monet BTは2008年のAIPTEK製デジタルフォトフレームで、8型800×480、CF/MMC/MS PRO/SD、動画/音楽再生、リモコンを備える。
-
-参考:
-- https://www.notice-facile.com/en/manual/169871/aiptek%2Bmonet-bt-_f
-- https://www.photoscala.de/2008/02/18/bluetooth-bilderrahmen-monet-bt-von-aiptek/
-
-**確定:** 少なくともMonet BTのBluetooth機能にはCSR（Cambridge Silicon Radio）系の実装が使われていたことを、取扱説明書記載から確認できる。
-
-**状況証拠:** AIPTEK時代のデジタルフォトフレームでは、無線機能を主SoCへ完全統合せず、外部の専用無線部品/モジュールを組み合わせる設計が採られていた可能性がある。
-
-**推測への影響:** AIPTEKがMars Semiconductorの顧客だったこと、MarsがDPF向けSoCを扱っていたことは引き続きSoC候補の根拠になるが、**AIPTEK製DPFに無線転送機能があること自体をMars製主SoC採用の根拠にはできない**。Monet BTではBluetooth部分がCSRと明記されており、無線サブシステムと主DPF SoCを分離して考える必要がある。
-
-**未確定:** Monet BTの主SoC、OS、基板上のCSRチップ型番、SanJet/Sharp向けDPシリーズへの回路・ソフトウェア流用は未確認。DP-700SHのIrSimple/IrSS/IrDA部も別チップなのか主SoC内蔵なのか未確認。
-
-### Mars Semiconductorは創業初期にUSB小型フォトフレームを実製品化
-
-2020-01-08の中央社による天擎積體電路（Mars Semiconductor）の興櫃前法人説明会報道では、董事長の呂惠平氏が、同社は創業初期に消費性影音晶片へ参入し、**代表作が「USB小相框」だった**と説明している。
-
-参考:
-- https://www.cna.com.tw/news/afe/202001080180.aspx
-
-別の会社紹介には、Mars Semiconductorがデジタルカメラ・デジタルフォトフレーム・デジタル画像処理向けSoCの開発販売を主力としていたこと、顧客例として **天瀚（AIPTEK）** を挙げる記録がある。
-
-参考:
-- https://108976.web66.tw/
-
-**確定:** Mars Semiconductorは単に「デジタルフォトフレーム向けSoC」を事業分野として掲げていただけでなく、少なくとも創業初期にUSB接続の小型フォトフレームを代表製品として実際に展開していた。また同社紹介ではAIPTEKが顧客例に含まれる。
-
-**状況証拠:** AIPTEK→SanJet系統の上流SoC候補としてMars Semiconductorを追う根拠は、従来の「DPF向けSoC分野＋AIPTEK顧客」という組み合わせから一段強くなった。DPF用途の回路・ファームウェア資産を実製品まで落とし込んだ経験が同社にあったことを示すため。
-
-**ただし重要:** `USB小相框` がAIPTEK Monetのような8型単体DPFと同一SoC系列だった証拠はない。USB小型フォトフレームはPCから表示データを受ける簡素な機器である可能性もあり、メモリカード・動画・音声・赤外線を備えるDP-700SH/850SH/1020SHの主SoCへ直接つなげてはならない。
-
-**未確定:** Marsの当時の具体的なSoC型番、AIPTEK Monet/Monet BTへの採用、DP-700SH / DP-850SH / DP-1020SHへの採用、OSやファームウェア基盤の共通性はいずれも未確認。
+**断定禁止:** 背面センサーの共通性だけでは、同一SoC、同一メイン基板、同一OS、同一センサー型番までは証明できない。DP-70SHから2010年世代への変更点として、センサー位置が前世代と異なることも重要である。
