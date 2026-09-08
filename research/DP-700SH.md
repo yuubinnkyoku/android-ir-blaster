@@ -252,3 +252,26 @@ DP-700SHの名前はこの記録にはない。ただし700SH/850SH/1020SHは同
 **推測:** `RRMCG2009SCZZ` → `RRMCG2010SCZZ` という連番と2010→2011年DPシリーズの世代交代が対応している可能性が高まった。`RRMCG2010SCZZ` の生波形を採取し、2009版とプロトコル・アドレス・各キーコードを比較する価値が高い。
 
 **断定禁止:** 2009版と2010版の赤外線コードが同一であること、Sharp 13-bitなど特定のプロトコルを採用すること、DP-701SHにも正式に同型番が付属したことまでは今回の記録だけでは確定しない。
+
+### AIPTEKのデジタルフォトフレーム特許がSanJetへ移転
+
+中国実用新案 **CN201153780Y**（「可替换多种框体的数位相框组」）の公開記録を確認した。これはデジタルフォトフレームそのものを対象とする発明で、発明者は **涂茜雯 / Qian-Wen Tu**。
+
+- 中国出願日: 2008-02-01
+- 公開/登録: 2008-11-26
+- 元の権利者: AIPTEK International / 天瀚科技
+- 移転後の権利者: Sanjet Optoelectronics Co., Ltd.（勝捷光電）
+- 権利移転の登録実効日: **2010-09-19**
+- 中国側の移転公示: 2010-11-03
+
+法的イベント欄には `Patentee before: Tianhan Science & Technology Co., Ltd.`、`Patentee after: Sanjet Optoelectronics Co., Ltd.` と明記されている。台湾対応出願 **TWM341472U** は2008-01-30出願、発明者 `qian-wen Tu`、Original Assignee `Aiptek Int Inc` と確認できる。
+
+参考:
+- https://patents.google.com/patent/CN201153780Y/zh
+- https://patents.google.com/patent/TWM341472U/en
+
+**確定:** AIPTEK/天瀚が2008年に保有していたデジタルフォトフレーム固有の知財が、2010年にSanJetへ実際に承継された例が存在する。以前確認した一般特許の権利移転より、DPF技術組織の連続性を直接補強する証拠である。
+
+**状況証拠:** 2009年の代工部門分割、SanJet公式サイト上のDPF OEM/ODM表記、AIPTEK案件→Sharp向けFUJIFILM DPF案件と続く台湾側担当者の職歴と合わせると、AIPTEK時代のDPF設計資産・人員・知財の少なくとも一部がSanJet側へ移ったという見方がかなり強くなる。
+
+**断定禁止:** この特許は交換可能な外枠構造を扱うもので、DP-700SH / DP-850SH / DP-1020SHそのものの基板・SoC・OS・ファームウェアを対象とした特許ではない。したがって、この記録だけからSanJetがDPシリーズのODMだった、あるいはAIPTEKの電子回路/ソフトウェア資産がそのままDPシリーズへ流用されたとは断定しない。
