@@ -1,6 +1,6 @@
 # FUJIFILM DP-700SH リバースエンジニアリング調査メモ
 
-最終更新: 2026-09-12 JST
+最終更新: 2026-09-13 JST
 
 DP-700SH のハードウェア、ファームウェア、赤外線リモコン、開発/製造系統を追跡する作業メモ。**確定情報・状況証拠・推測を分ける**。詳細な探索経路は `research/DP-700SH-log.md` に残す。
 
@@ -446,3 +446,34 @@ DP-700SHの名前はこの記録にはない。ただし700SH/850SH/1020SHは同
 **状況証拠:** 既知の台湾側担当者は2009-03〜09に `Customer: AIPTEK`、直後の2009-10〜2010-02に `Customer: Sharp / FUJIFILM DP-850SH/DP-1020SH` を担当している。AIPTEKのODM事業がSanJetへ承継された時期とも重なるため、AIPTEK/SanJet側が使っていたSoC供給元・参照設計の候補として天擎系を基板写真で照合する価値がある。
 
 **断定禁止:** DP-700SH / DP-850SH / DP-1020SHに天擎製SoCが搭載された直接証拠はない。AIPTEKが天擎の顧客だったことと、Sharp向けFUJIFILM案件で同じSoCを継続採用したことは別問題である。現段階ではITE `IT9834/IT9836`、Generalplus/Sunplus系と並ぶ照合候補に留める。
+
+### `RRMCG...` 系Sharpリモコンの公開IRキャプチャを確認
+
+2026-09-13、DP-700SH純正 `RRMCG2009SCZZ` そのものではないが、同じSharp `RRMCG...` 型番系列の別機種リモコンについて公開された実測IRデータを確認した。
+
+`AliasFakename/ir-remotes` の `RRMCG0041SJSA.lircd.conf` は、Sharp `RRMCG0041SJSA` を次のように記録している。
+
+- `flags SPACE_ENC`
+- `bits 15`
+- `one 318 1722`
+- `zero 318 722`
+- `ptrail 318`
+- `gap 38580`
+- `frequency 38000`
+- `toggle_bit_mask 0x3`
+- 例: `KEY_POWER 0x4A62`, `KEY_CHANNELUP 0x4A22`, `KEY_VOLUMEUP 0x4A42`
+
+また、`Flipper-IRDB` にはSharp `RRMCG A375 WJSA` のPOWER / ENTER / RETURN / 再生制御などがraw timingで保存されている。
+
+参考:
+- https://github.com/AliasFakename/ir-remotes/blob/main/remotes/sharp/RRMCG0041SJSA.lircd.conf
+- https://github.com/sasiplavnik/Flipper-IRDB/blob/main/SHARP/RRMCG%20A375%20WJSA.ir
+- `RRMCG0041SJSA` のSharp純正流通記録: https://onderdelenhuis.nl/sharp-rrmcg0041sjsa-afstandsbediening.htm
+
+**確定:** `RRMCG...` はSharpの実リモコン型番系列として使われており、その一部には38kHzのSharp系らしいSPACE_ENC波形を含む公開キャプチャが存在する。
+
+**状況証拠 / 実装上の示唆:** DP-700SHでSharp系プロトコルを優先して総当たりする方針は、完成品製造元がSharpという事実に加え、同じ型番系列の実測例からも補強される。一方、別の `RRMCG A375 WJSA` はraw timingとして保存され、`RRMCG`という型番だけから単一のビット長・符号化方式へ絞るのは危険である。
+
+**13-bit / 15-bit表記への注意:** 現在DP-700SH側では「Sharp 13-bit」として探索しているが、LIRCの `bits 15` を直ちに矛盾とはみなさない。Sharp系の実装では13ビットのアドレス+コマンド部分と、送信される追加チェック/反転ビットまで含めた表現が混在し得る。DP-700SHを15-bitへ再分類する直接証拠ではなく、現在の13-bit生成実装が必要な末尾ビットまで正しく生成しているかをコード側で照合する材料とする。
+
+**断定禁止:** `RRMCG0041SJSA` / `RRMCG A375 WJSA` はDP-700SH用ではない。`RRMCG2009SCZZ` が同じアドレス・コマンド・bit長を使う証拠はなく、DP-700SHそのもののLIRC / Pronto / Flipper / raw captureは依然未回収。
