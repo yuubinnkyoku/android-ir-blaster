@@ -425,3 +425,57 @@ DP-700SHは手元実機に同じ `本体情報の表示` / `バージョン表�
 - DP-700SHのOS / RTOS直接証拠
 - `RRMCG2009SCZZ` の搬送波・プロトコル・全キーコード
 - Sharp↔SanJetを直接結ぶ契約・発注・製品資料
+
+## 2026-09-13: Sharp `RRMCG...` 系の公開IRキャプチャを確認
+
+GitHubの公開IRデータベースを掘り直し、DP-700SH純正 `RRMCG2009SCZZ` そのものではないが、同じSharp `RRMCG...` 型番系列の実測データを2件確認した。
+
+### `RRMCG0041SJSA`
+
+`AliasFakename/ir-remotes` のLIRC設定は2002-02-22生成。ヘッダに `brand: Sharp`、`model no. of remote control: RRMCG0041SJSA`、対象機器 `Audio System XL-3500 H` と明記。
+
+- `bits 15`
+- `flags SPACE_ENC|CONST_LENGTH`
+- `one 281 1816`
+- `zero 281 775`
+- `ptrail 288`
+- `gap 66679`
+- `min_repeat 2`
+- `toggle_mask 0x3ff`
+- `KEY_POWER 0x11A2`
+
+このファイル自体にはcarrier frequency指定なし。
+
+出典:
+- https://github.com/AliasFakename/ir-remotes/blob/main/remotes/sharp/RRMCG0041SJSA.lircd.conf
+
+### `RRMCG A375 WJSA`
+
+`sasiplavnik/Flipper-IRDB` では、Power / DVD-TV / Zoom / Stop / Rewind等をraw timingで保存。
+
+- `frequency: 38000`
+- `duty_cycle: 0.33`
+- Powerは `3208 1604 394 394 ...` で始まる長いraw列
+
+出典:
+- https://github.com/sasiplavnik/Flipper-IRDB/blob/master/SHARP/RRMCG%20A375%20WJSA.ir
+
+### 判断
+
+**確定:** `RRMCG...` 系Sharpリモコンに公開実測IRデータが存在する。少なくとも一例は15-bit `SPACE_ENC` としてLIRCに記録され、別例は38kHz rawとして保存される。
+
+**探索方針への影響:** DP-700SHでSharp系を優先する根拠は増える一方、`RRMCG`型番だけで13-bitまたは15-bitの一形式へ固定する根拠にはならない。現在のSharp 13-bit総当たりで反応がない場合も、型番を理由に他形式を排除しない。
+
+**注意:** Linux kernelの `RC_PROTO_SHARP` と現行実装については既に2026-08-21に確認済み。今回の15-bit表記は別機種のLIRC表現であり、DP-700SHを15-bitへ再分類する直接証拠ではない。
+
+### 同時探索
+
+- `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg`: Web/GitHub/Waybackで新規ミラーなし。
+- `album-life.com` 2008〜2011保存: 新しいファームZIP/バイナリは見つからず。
+- JABLOTRON公式 `albumq42008_en.zip`: URLは生存するが今回も本文取得・静的解析に到達できず。
+- DP-700SH / 850SH / 1020SHのSoC刻印付き基板写真、OS/RTOS直接証拠: 新規なし。
+- Sharp↔SanJetをDPシリーズ名で直接結ぶ新規資料: なし。
+
+詳細:
+- `research/DP-700SH-evidence-2026-09-13-1228.md`
+- `research/DP-700SH-log-2026-09-13-1228.md`
