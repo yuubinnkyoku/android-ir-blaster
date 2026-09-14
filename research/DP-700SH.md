@@ -495,3 +495,17 @@ DP-700SHの名前はこの記録にはない。ただし700SH/850SH/1020SHは同
 **状況証拠:** これまでの一式写真による筐体・15ボタン配置・CR2025の一致、発売直後ユーザーによる「音楽機能なしの下位機種と同じリモコン」という記録に加え、型番付き適合情報が追加された。したがって、DP-700SH / DP-850SH / DP-1020SHの2010年3機種が同一の `RRMCG2009SCZZ` を共用していた可能性はかなり高い。
 
 **断定禁止:** 中古販売者の適合記載はメーカー公式部品表ではない。DP-850SH / DP-1020SH付属リモコン背面で型番を直接読める写真、またはFUJIFILM/Sharpの部品表を得るまでは、両機種への正式付属を一次資料で確定とは扱わない。また同一型番の共用が確定しても、現時点では `RRMCG2009SCZZ` 自体の生IR波形は未回収である。
+
+### JABLOTRON ALBUM 1.15 の現行公式配布先 — ファイル名を訂正
+
+2026-09-14、JABLOTRON公式ALBUMサポートページの `Latest ALBUM firmware version 1.15`（4.2 MB）を再確認し、ダウンロードリンクの実リンク先を直接取得した。
+
+- 公式ページ: https://www.jablotron.com/en/support/downloads/alarms/software/album
+- 実リンク: https://www.jablotron.com/file/edee/ke-stazeni/software/albumq42008_en.zip
+- 実ファイル名: `albumq42008_en.zip`
+
+**確定:** 現行英語ページの配布ファイル名は `_en` 付きの `albumq42008_en.zip`。前回の調査通知で `albumq42008.zip` とした記載は誤りなので訂正する。
+
+**調査上の意味:** Dusty Shyr氏の2008年 `Electronic photo Album / Customer: Jablotron` 案件に対応する可能性が高い比較対象ファームとして、取得・静的解析を続ける価値がある。
+
+**断定禁止:** ALBUMとDP-700SH / DP-850SH / DP-1020SHでSoC、OS、更新形式が共通という証拠ではない。今回もZIP本体の解析環境への回収には到達していない。
