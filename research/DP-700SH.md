@@ -527,3 +527,34 @@ DP-700SHの名前はこの記録にはない。ただし700SH/850SH/1020SHは同
 **既存推測の修正:** `1.04.00`という番号の一致だけを、DP-70SHとDP-700SHが同一コードベース・同一SoC・同一OSを使う根拠としては扱わない。DP-700SHがDP-70SHの「流れを汲む」系列継承機であること、隠し更新画面のUI/キー構成が比較対象になることは別の根拠で引き続き有効。
 
 **追加探索:** Wayback CDXでは旧公式 `http://fujifilm.jp/support/digitalphotoframe/download/dp70sh/download002.html` の **2010-02-04 00:37:17** 保存を1件確認した。使用許諾後の実ダウンロードページとみられ、DP-70SHの実ファームファイル名・容量・直リンクを回収できる可能性がある。ただし今回の本文取得はHTTP 429で未回収。`http://download.fujifilm.co.jp/pub/tools/dp70sh/` 配下の保存も現時点では確認できていない。
+
+
+### 先代DP-70SH公式ファーム本体 `TH180700.ver` をWaybackから回収
+
+2026-09-28追記。旧FUJIFILM公式のDP-70SHダウンロードページと、公式配布サーバ上のファーム本体のWayback保存を確認した。
+
+- 公式ダウンロードページ保存: https://web.archive.org/web/20100204003717id_/http://fujifilm.jp/support/digitalphotoframe/download/dp70sh/download002.html
+- 公式配布URL: `http://download.fujifilm.co.jp/pub/tools/dp70sh/TH180700.ver`
+- ファーム本体保存: https://web.archive.org/web/20160623113110id_/http://download.fujifilm.co.jp/pub/tools/dp70sh/TH180700.ver
+- ファイル名: `TH180700.ver`
+- 公式ページ上の容量: 約1.9 MB
+
+Waybackに保存された本体はHTMLではなくバイナリとして取得でき、平文として少なくとも `Clearing Stall ep:0x%02x`、`NO USBHS_ENABLE`、`Remote Wakeup`、`RequestType`、`Descriptor`、`SETUP REQ`、`_TaskMgr`、`boot_comm`、`13:21:49 Apr 23 2009` を確認した。
+
+**確定:** DP-70SHについては公式配布ファームの実体が現存し、静的解析可能である。USB制御、タスク管理、ブート通信に関係するとみられる可読文字列を含む。
+
+**比較上の示唆:** DP-70SHは `.ver`、2010年のDP-700SH / DP-850SH / DP-1020SHは既知の `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` であり、配布コンテナの命名・拡張子は世代間で変化している。将来2010年系列の `.pkg` を回収できれば、文字列・ヘッダ・USBスタック・ブート処理の比較対象として `TH180700.ver` を利用できる。
+
+**断定禁止:** `13:21:49 Apr 23 2009` がファーム全体のビルド日時とは限らず、組み込みモジュール単体の日時の可能性がある。現時点の文字列だけからSoC、CPU命令セット、OS/RTOSを特定しない。またDP-70SH用ファームをDP-700SHへ投入しない。
+
+### 参考: 次世代DP-701SH / DP-801SHはファームを共用
+
+2011-07-29のデジカメ Watch記事で、DP-701SHとDP-801SHのファームウェアが**両機種共通**で、バージョン1.04.07だったことを確認した。更新内容には赤外線通信対応機種の追加、メモリーカード対応拡大、動画再生改善などが含まれる。
+
+出典: https://dc.watch.impress.co.jp/docs/news/464018.html
+
+**確定:** 2011年世代の7型/8型2機種では同一ファームを共用していた。
+
+**状況証拠:** FUJIFILMのデジタルフォトフレーム系列では、画面サイズ違いでもソフトウェア基盤を共通化する設計が実際に存在した。2010年のDP-700SH / DP-850SH / DP-1020SHについても共通基盤仮説を検討する補助材料にはなる。
+
+**断定禁止:** 2011年世代の共用実績から、2010年3機種のSoC・基板・ファームが共通だったとは断定できない。特にDP-700SHは動画・音声再生を省略し内蔵メモリー容量も異なる。
