@@ -479,3 +479,29 @@ GitHubの公開IRデータベースを掘り直し、DP-700SH純正 `RRMCG2009SC
 詳細:
 - `research/DP-700SH-evidence-2026-09-13-1228.md`
 - `research/DP-700SH-log-2026-09-13-1228.md`
+
+
+## 2026-09-28 07:05 JST
+
+### 新規確認: DP-70SH公式ファーム実体を回収
+
+Wayback上で旧FUJIFILM公式配布物 `TH180700.ver` のバイナリ本体を確認。公式ページ表示は約1.9 MB。保存本体からUSB制御・タスク管理・ブート通信に関係するとみられる平文文字列、および `13:21:49 Apr 23 2009` を確認した。
+
+出典:
+- https://web.archive.org/web/20100204003717id_/http://fujifilm.jp/support/digitalphotoframe/download/dp70sh/download002.html
+- https://web.archive.org/web/20160623113110id_/http://download.fujifilm.co.jp/pub/tools/dp70sh/TH180700.ver
+
+判断: DP-70SHは「更新ページが存在した」段階から、解析可能な公式ファーム実体を確保できる段階へ進んだ。SoC/OSの断定は保留。
+
+### 補助資料: DP-701SH / DP-801SHのファーム共用
+
+2011-07-29公開のVer.1.04.07はDP-701SH/DP-801SHで共通。画面サイズ違いでもソフトウェア基盤を共通化した後継世代の実例として記録する。
+
+出典: https://dc.watch.impress.co.jp/docs/news/464018.html
+
+### 同時探索
+
+- `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg`: 新規ミラー/Wayback本体なし。
+- DP-700SH / 850SH / 1020SHのSoC刻印付き基板写真、OS/RTOS直接証拠: 新規なし。
+- `RRMCG2009SCZZ` の生IR波形: 新規なし。
+- Sharp↔SanJetをDPシリーズ名で直接結ぶ新規資料: なし。
