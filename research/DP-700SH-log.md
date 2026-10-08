@@ -505,3 +505,20 @@ Wayback上で旧FUJIFILM公式配布物 `TH180700.ver` のバイナリ本体を�
 - DP-700SH / 850SH / 1020SHのSoC刻印付き基板写真、OS/RTOS直接証拠: 新規なし。
 - `RRMCG2009SCZZ` の生IR波形: 新規なし。
 - Sharp↔SanJetをDPシリーズ名で直接結ぶ新規資料: なし。
+
+
+## 2026-10-07: 2010年リモコン写真・Sharp近縁リモコン・SanJet登記の追補
+
+- Sharp公式部品サイトで、2008年AQUOSフォトプレーヤー `HN-PP100/150` 用純正リモコン `5686480005` の適合機種を確認。HN-PP150説明書はCR2025使用。DP-700SH `RRMCG2009SCZZ` のIRコードと互換かは未確認。実測比較対象に留める。
+  - https://cocorostore.jp.sharp/option/option-av/option-photo-player/5686480005.html
+  - https://cgi.jp.sharp/support/photoplayer/doc/hnpp150_mn.pdf
+  - https://corporate.jp.sharp/news/081118-a-2.html
+- RBB TODAY 2010-02-03の記事に、DP-1020SH/850SH/700SHの各「本体正面・背面とリモコン」写真の連番ページを確認。850SHと1020SHのキャプションは再確認済み。リモコン裏面型番・IR互換性は未証明。
+  - https://www.rbbtoday.com/article/img/2010/02/03/65433/94805.html
+  - https://www.rbbtoday.com/article/img/2010/02/03/65433/94806.html
+  - https://www.rbbtoday.com/article/img/2010/02/03/65433/94807.html
+- SanJet（統編24268077）の公開会社登記・輸出入登記を再確認。会社登記の法人設立2008-11-20、税籍上2008-12-02、輸出入原始登録2009-06-03、廖筠松の経理人就任2009-11-02を区別。2009-06-01「正式成立」は事業開始の可能性であり確定解釈ではない。
+  - https://tw-company.info/company/24268077
+  - https://companyradar.tw/c/24268077
+  - https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?id=0000398830_UIF9UDYF2AYO4W1AFVXO2
+- Waybackで `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` のexact/prefix保存を再検索したが、本体は未回収。SoC刻印・OS直接証拠・RRMCG2009SCZZ生波形・Sharp↔SanJet直接契約資料も未回収。
