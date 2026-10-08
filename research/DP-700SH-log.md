@@ -522,3 +522,30 @@ Wayback上で旧FUJIFILM公式配布物 `TH180700.ver` のバイナリ本体を�
   - https://companyradar.tw/c/24268077
   - https://www.digitimes.com.tw/tech/dt/n/shwnws.asp?id=0000398830_UIF9UDYF2AYO4W1AFVXO2
 - Waybackで `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` のexact/prefix保存を再検索したが、本体は未回収。SoC刻印・OS直接証拠・RRMCG2009SCZZ生波形・Sharp↔SanJet直接契約資料も未回収。
+
+
+## 2026-10-08: AIPTEK公式年報と2008〜2009年の適時開示で事業分割を再検証、呉江製造拠点の新たな接点
+
+### 確定
+- AIPTEK公式111年報（PDF p.7 / 印刷頁4）: 2009-06、受託製造事業を既存法人SanJetへ譲渡。分割減資5.3億台湾ドル・5,300万株消却。SanJetがAIPTEK株主へ新株発行。
+- 2008-11-10取締役会決議: 計画上の移管資産745,067千台湾ドル、負債215,067千台湾ドル、差引530,000千台湾ドル。分割先は当初AIPTEK100%出資の受け皿として計画。
+- 2009-06-01開示: 分割基準日2009-06-01。2009-06-19のSanJet臨時株主総会会場は工業東四路19-1号のAIPTEK従業員食堂。
+- SanJet登記: 2009-05-08資本額50万台湾ドル→2009-06-25資本額5億3,050万台湾ドル。増分5億3,000万台湾ドルは事業分割額と一致。
+- AIPTEK公式年報: 2003-07、工業東四路19号の自社建設工場兼事務所ビルに移転。Generalplusとの住所一致はSoC採用の独立根拠として弱い。
+- **今回新規に確認:** 同年報には2000-11、中国江蘇省呉江市で天瀚科技（吳江）有限公司の設立（生産・販売）が認可されたとある。SanJetの後年企業紹介も蘇州呉江経済開発区の自社工場を記載。
+
+### 状況証拠
+- AIPTEKとSanJetは台湾の工場兼事務所だけでなく、中国呉江の製造拠点にも連続性がある可能性。Sharp向けFUJIFILM DPF開発案件は2009-10〜2010-02で事業承継後に位置する。
+
+### 未確定・断定禁止
+- AIPTEK呉江法人とSanJet呉江工場が同一である証拠はない。設備・人員・工場の移転経緯を調査する必要あり。
+- Dusty Shyr氏のSanJet在籍、SharpからSanJetへの発注、DPシリーズの実製造工場・SoC・OSは依然未確定。
+- TH34/TH35/TH36本体、DP-700SH基板写真、RRMCG2009SCZZ生IRコードは今回も未回収。
+
+### 出典
+- https://www.aiptek.com.tw/uploads/information_year/en/111%E5%B9%B4%E5%A0%B1.pdf
+- https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=30d0dbda-0e8a-4b64-9d66-ad4a0c643d56
+- https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=667e5451-a279-49d9-a14e-0e437620cbb9
+- https://findbiz.nat.gov.tw/fts/company/24268077
+- https://www.findcompany.com.tw/%E5%8B%9D%E6%8D%B7%E5%85%89%E9%9B%BB%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8
+- https://www.1111.com.tw/corp/68989454/
