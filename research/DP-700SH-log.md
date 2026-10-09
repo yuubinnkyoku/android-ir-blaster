@@ -559,3 +559,12 @@ Wayback上で旧FUJIFILM公式配布物 `TH180700.ver` のバイナリ本体を�
 - **出典:** https://web.archive.org/web/20160623113110id_/http://download.fujifilm.co.jp/pub/tools/dp70sh/TH180700.ver
 - **取得上の制約:** 保存バイナリの冒頭側を文字列として確認したもので、全体の無損失回収・ハッシュ照合は未実施。
 - **同時再検索:** `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` はWaybackの完全URL一致およびディレクトリ前方一致で保存なし。DP-700SH基板/SoC/OSの直接証拠、`RRMCG2009SCZZ`の生IRコード、Sharp↔SanJetの直接契約資料も未回収。
+
+
+## 2026-10-10: 2007年の呉江工場買収の事後確認（前回未反映資料の整理）
+
+- **確認:** 2007-03-02『自由時報』は、Gemtek（正文科技）がAIPTEK（天瀚科技）の呉江工場を1,000万米ドルで買収する取締役会決議を報道。設備・建物・土地・製造チームを対象とし、AIPTEKが100%保有する海外持株会社の全株式を移転する予定だった。
+- **確認:** 2010-01-15のMoneyDJ記事は、Gemtekが2007年に当該工場を取得し、海外持株会社の全株式が移転したと回顧する。正確な登記移転日は不明。
+- **確認:** AIPTEKの2010-06-30企業開示は、新竹市工業東四路19之1号の工場（11,741.36平方メートル）をESMTへ2億4,200万台湾ドル（税別）で売却すると記す。台湾経済部の工場登記では、AIPTEK名義の工業東四路19号工場が2011-09-16廃業登録。
+- **解釈:** 2009年のAIPTEK→SanJetのODM事業分割と、呉江・新竹工場の不動産・法人持分の移動を同一視できない。2007年買収後の呉江法人の支配関係、SanJetの後年の呉江工場との同一性、Sharp製DPシリーズの製造場所は未確定。
+- **出典:** https://ec.ltn.com.tw/article/paper/118278 ; https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=c974612e-0784-47c1-8147-03b0e65528ad ; https://news.cnyes.com/news/id/3521205 ; https://findbiz.nat.gov.tw/fts/factory/05/08895A00420
