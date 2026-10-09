@@ -549,3 +549,13 @@ Wayback上で旧FUJIFILM公式配布物 `TH180700.ver` のバイナリ本体を�
 - https://findbiz.nat.gov.tw/fts/company/24268077
 - https://www.findcompany.com.tw/%E5%8B%9D%E6%8D%B7%E5%85%89%E9%9B%BB%E8%82%A1%E4%BB%BD%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8
 - https://www.1111.com.tw/corp/68989454/
+
+
+## 2026-10-09: DP-70SH公式バイナリの構造化された名前表を再確認
+
+- **直接確認:** Wayback保存の公式DP-70SH用 `TH180700.ver` に、NUL区切りで `BOOT` / `NVRAM` / `NVRAM_2` / `ROMTAB` / `STRTAB` / `FIRMWARE` / `VERSION` / `CHECKSUM` が連続する箇所がある。
+- **推測:** 更新用の領域/項目名表とみられるが、各項目の役割、実際の記録形式、書換え範囲は未解析。
+- **断定禁止:** 先代DP-70SHの `.ver` の構造を2010年DP-700SHの `.pkg` へそのまま適用しない。DP-700SHのSoC/OSやファームの共通性の証拠にはならない。
+- **出典:** https://web.archive.org/web/20160623113110id_/http://download.fujifilm.co.jp/pub/tools/dp70sh/TH180700.ver
+- **取得上の制約:** 保存バイナリの冒頭側を文字列として確認したもので、全体の無損失回収・ハッシュ照合は未実施。
+- **同時再検索:** `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` はWaybackの完全URL一致およびディレクトリ前方一致で保存なし。DP-700SH基板/SoC/OSの直接証拠、`RRMCG2009SCZZ`の生IRコード、Sharp↔SanJetの直接契約資料も未回収。
