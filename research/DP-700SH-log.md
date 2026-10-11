@@ -568,3 +568,16 @@ Wayback上で旧FUJIFILM公式配布物 `TH180700.ver` のバイナリ本体を�
 - **確認:** AIPTEKの2010-06-30企業開示は、新竹市工業東四路19之1号の工場（11,741.36平方メートル）をESMTへ2億4,200万台湾ドル（税別）で売却すると記す。台湾経済部の工場登記では、AIPTEK名義の工業東四路19号工場が2011-09-16廃業登録。
 - **解釈:** 2009年のAIPTEK→SanJetのODM事業分割と、呉江・新竹工場の不動産・法人持分の移動を同一視できない。2007年買収後の呉江法人の支配関係、SanJetの後年の呉江工場との同一性、Sharp製DPシリーズの製造場所は未確定。
 - **出典:** https://ec.ltn.com.tw/article/paper/118278 ; https://www.moneydj.com/kmdj/news/newsviewer.aspx?a=c974612e-0784-47c1-8147-03b0e65528ad ; https://news.cnyes.com/news/id/3521205 ; https://findbiz.nat.gov.tw/fts/factory/05/08895A00420
+
+
+## 2026-10-11: 2010年3機種共通の公式更新手順PDF本体をWaybackで確認
+
+- **一次資料で確定:** 2012-01-21保存の公式更新案内 `download001.html` が示すPDFの実リンク先は `/support/digitalphotoframe/download/pack/pdf/ff_dp1020sh_dp850sh_dp700sh_firmware_mn_j.pdf`。
+- **一次資料で確定:** WaybackのCDXに2012-01-21 04:01:19、HTTP 200、application/pdfでPDF本体の保存がある。2014年・2015年の再訪記録もある。保存PDFの先頭に `%PDF-1.6`、`/L 432694`、`/N 10`。公式ページ記載422KBと整合。
+- **訂正:** 従来の `/support/pdf/digitalphotoframe/manual/...` というパスは2012年公式案内のリンク先と異なる。正しくは `/support/digitalphotoframe/download/pack/pdf/...`。
+- **未確定:** PDF本文は未抽出。更新ファイルのSD配置、隠しキー列、操作手順はまだ確認していない。PDFが現存しても `TH34_dpf.pkg` 本体は未回収。
+- **推測・次の検証:** PDF本文を取得して画面写真・操作を検証できれば、DP-70SHからの更新ローダ継承仮説を評価できる。
+
+出典:
+- https://web.archive.org/web/20120121024416id_/http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download001.html
+- https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digitalphotoframe/download/pack/pdf/ff_dp1020sh_dp850sh_dp700sh_firmware_mn_j.pdf
