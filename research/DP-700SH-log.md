@@ -581,3 +581,19 @@ Wayback上で旧FUJIFILM公式配布物 `TH180700.ver` のバイナリ本体を�
 出典:
 - https://web.archive.org/web/20120121024416id_/http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download001.html
 - https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digitalphotoframe/download/pack/pdf/ff_dp1020sh_dp850sh_dp700sh_firmware_mn_j.pdf
+
+
+## 2026-10-19: 公式仕様表の3機種比較（共通画像処理・待機制御の状況証拠）
+
+2010年4月保存の富士フイルム公式「主な仕様」3ページを個別取得して照合。DP-700SH / DP-850SH / DP-1020SHのすべてで、**待機時約1.7W、JPEG最大6,400万画素（最大8,000×8,000画素）、インデックス表示30画面/12画面、カレンダー・時計各4種類、同じSD/SDHC・xD・MS・CFスロットとminiUSB-B端子**が明記される。動作時は約8W / 約8.5W / 最大約9.5Wで機種差がある。
+
+**確定:** 以上は3機種それぞれのメーカー公式仕様表の数値・記載であり、単なる中古販売者の証言ではない。
+
+**推測:** 共通JPEG処理上限とUI構成は、共通画像処理ソフトウェアまたは参照設計の可能性を補強する。待機時1.7Wの一致は共通待機制御仕様を示唆するが、公称値の一致だけで電源ICや主基板の共通性は証明できない。
+
+**注意:** 仕様表の「対応OS（USB接続）」に並ぶWindows 7/Vista/XP/2000は接続先PCのOSであり、DPシリーズ本体のOSではない。SoC刻印・OS・基板写真・純正リモコンのIR実測波形・TH34/35/36ファーム本体は依然未回収。
+
+出典:
+- https://web.archive.org/web/20100421070032id_/http://fujifilm.jp/personal/digitalphotoframe/dp700sh/specs.html
+- https://web.archive.org/web/20100422232902id_/http://fujifilm.jp/personal/digitalphotoframe/dp850sh/specs.html
+- https://web.archive.org/web/20100425001655id_/http://fujifilm.jp/personal/digitalphotoframe/dp1020sh/specs.html
