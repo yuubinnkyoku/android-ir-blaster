@@ -597,3 +597,19 @@ Wayback上で旧FUJIFILM公式配布物 `TH180700.ver` のバイナリ本体を�
 - https://web.archive.org/web/20100421070032id_/http://fujifilm.jp/personal/digitalphotoframe/dp700sh/specs.html
 - https://web.archive.org/web/20100422232902id_/http://fujifilm.jp/personal/digitalphotoframe/dp850sh/specs.html
 - https://web.archive.org/web/20100425001655id_/http://fujifilm.jp/personal/digitalphotoframe/dp1020sh/specs.html
+
+
+## 2026-10-20: 公式更新案内にある「IrDA（サポート外）」とSDカード更新の一次確認
+
+**確認資料:** 富士フイルム公式 `download001.html` のWayback保存（2012-01-12 20:12:32 UTC）。
+https://web.archive.org/web/20120112201232id_/http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download001.html
+
+**確定（原文で確認）:**
+- 修正履歴は「IrSimple／IrSS、およびIrDA（サポート外）」の通信中断時のハングを対象としている。従来のメモはIrDAを併記していたが、**メーカーがIrDAをサポート外と明記している点**が欠落していた。
+- 公式の更新手順概要は、パソコン＋カードリーダーで更新ファイルをSDメモリーカードへ書き込み、カードを本体に挿して操作する方式。
+- 詳細手順のPDFリンクは `/support/digitalphotoframe/download/pack/pdf/ff_dp1020sh_dp850sh_dp700sh_firmware_mn_j.pdf`（既知の2012-01-21保存）。本文未抽出。
+
+**推測と限界:** IrDAが修正対象に入ることは、内部に関連処理が存在する可能性を示すが、一般利用可能なIrDA機能やリモコンとの互換性は意味しない。USBによるファーム更新、SDのディレクトリ配置、隠し操作列は依然未確認。今回も `TH34_dpf.pkg` 本体、SoC/OS、基板刻印、`RRMCG2009SCZZ` 実測IRコード、Sharpと台湾側ODMの直接契約資料は未回収。
+
+補助資料（更新手順PDFのWayback保存）:
+https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digitalphotoframe/download/pack/pdf/ff_dp1020sh_dp850sh_dp700sh_firmware_mn_j.pdf
