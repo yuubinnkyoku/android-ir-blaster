@@ -677,3 +677,17 @@ Waybackに保存された本体はHTMLではなくバイナリとして取得で
 **出典:**
 - https://web.archive.org/web/20160623113110id_/http://download.fujifilm.co.jp/pub/tools/dp70sh/TH180700.ver
 - https://web.archive.org/web/20160624124000id_/http://download.fujifilm.co.jp/pub/tools/dp70sh/TH180700.ver
+
+
+### Sharp純正HN-PP150の公式更新手順に、別の隠しキー列を確認（2026-10-21）
+
+**一次資料で確認:** Sharp公式のAQUOSフォトプレーヤー `HN-PP150` 用更新手順PDF（全6ページ）には、更新ファイル `TH150400.ver` をSDカードの**ルートディレクトリ**に置き、`各種設定と確認 → バージョンの確認` 画面でリモコンの **`赤 → 黄 → 青 → 緑`** を押して更新メニューを開く手順が明記される。更新後の表示は `1.04.00.04`。公式案内は2011-10-20付で、HN-PP100は対象外と明記する。
+
+出典（メーカー一次資料）:
+- Sharp公式更新手順PDF: https://jp.sharp/support/photoplayer/doc/how_to_update.pdf （1～6ページ、特に1～4ページ）
+- Sharp公式案内: https://www.sharp.co.jp/support/photoplayer/fw_update.html
+- Sharp公式配布案内: https://jp.sharp/support/photoplayer/fw_agree.html
+
+**比較で確定する範囲:** Sharp製の別系統写真機器にも、バージョン表示から隠しキー列で更新メニューに入る設計が存在する。先代FUJIFILM `DP-70SH` の既知の `拡大 → 縮小 → 時計 → 回転` とは**キー列が異なる**。ファイル名も `HN-PP150: TH150400.ver`、`DP-70SH: TH180700.ver`、`DP-700SH: TH34_dpf.pkg` と異なる。
+
+**推測・未確定:** Sharp製品内で「バージョン表示画面＋隠しキー列＋SDカード更新」という操作設計が再利用された可能性はある。ただし、HN-PP150はHDMI接続のフォトプレーヤーであり、DP-700SHのSoC/OS/ブートローダ/更新形式/IRコードが同一である証拠はない。**`赤黄青緑` をDP-700SHの更新キー列として断定しない**（DP-700SH純正リモコンに同名の色ボタンがある証拠もない）。HN-PP150用ファームをDPシリーズへ投入しない。Sharp配布ページには同ファームの逆解析を禁止する使用許諾条件があるため、今回の確認は公開手順の比較に限る。
