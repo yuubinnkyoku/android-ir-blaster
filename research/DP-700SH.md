@@ -655,3 +655,25 @@ Waybackに保存された本体はHTMLではなくバイナリとして取得で
 出典（富士フイルム公式ページの2012年保存）:
 - https://web.archive.org/web/20120112201232id_/http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download001.html
 - 詳細手順PDFの既知保存: https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digitalphotoframe/download/pack/pdf/ff_dp1020sh_dp850sh_dp700sh_firmware_mn_j.pdf
+
+
+### 2026-10-21: 先代DP-70SH公式ファームからSharp系プラットフォーム識別子とシリアルフラッシュ処理の文字列を確認
+
+**資料:** FUJIFILMが配布した先代DP-70SH用更新ファイル `TH180700.ver` のWayback保存バイナリ。2016-06-23 11:31:10 UTCと2016-06-24 12:40:00 UTCの2保存版について、公開取得経路で返されたバイナリ先頭側の可読文字列を比較し、同じ並びを確認した。
+
+**直接確認した文字列（確定）:**
+- `SHAR\0\0P_PF100_PLATFORM`（可読領域に `SHAR` と `P_PF100_PLATFORM` がNULを挟んで近接。**連続した `SHARP_PF100_PLATFORM` という文字列が存在すると断定しない**）
+- `NEW SERIAL FLASH`
+- `ATMEL`、`MXIC`（フラッシュメモリ製造元名として知られる文字列）
+- `FW Revision: V%`、`main clk %d`、`task switching..`、`SliceCycles:`
+- 既知の `BOOT`、`NVRAM`、`NVRAM_2`、`ROMTAB`、`STRTAB`、`FIRMWARE`、`VERSION`、`CHECKSUM` も同じ取得データ内に存在。
+
+**状況証拠・推測:** `PF100` はSharp関係の内部プラットフォーム識別子、`ATMEL` / `MXIC` は対応するシリアルフラッシュの識別処理、`task switching..` はタスク切替処理を示す可能性がある。従来の銘板だけでなく、**先代DP-70SHの実ファーム側にもSharpを想起させるプラットフォーム名の断片**が見つかった点が新しい。ただし実装主体、CPU命令セット、OS/RTOS、実際に搭載されたフラッシュ部品のメーカーは不明。
+
+**重要な限界:** これは**DP-70SH用の `.ver`** からの情報であり、調査対象DP-700SHの `TH34_dpf.pkg` ではない。2010年のDP-700SH/850SH/1020SHが同じ `PF100` プラットフォーム、同じSoC・OS・フラッシュ部品を使用するという証拠にはならない。公開取得経路はバイナリを文字列化して先頭約20万文字で打ち切るため、バイト単位の完全性・ハッシュは未検証。可読ASCII断片のみを証拠とする。
+
+**今後の照合語:** `PF100`、`P_PF100_PLATFORM`、`SHARP_PF100_PLATFORM`（後者は検索仮説）、`ATMEL`、`MXIC`。実機の基板刻印またはDP-700SH用更新ファイルを入手できたときに照合する。
+
+**出典:**
+- https://web.archive.org/web/20160623113110id_/http://download.fujifilm.co.jp/pub/tools/dp70sh/TH180700.ver
+- https://web.archive.org/web/20160624124000id_/http://download.fujifilm.co.jp/pub/tools/dp70sh/TH180700.ver
