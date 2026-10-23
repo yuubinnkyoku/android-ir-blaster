@@ -773,3 +773,16 @@ Waybackに保存された本体はHTMLではなくバイナリとして取得で
 - 2010年DP-1020SH公式仕様表（Wayback）: https://web.archive.org/web/20100425001655id_/http://fujifilm.jp/personal/digitalphotoframe/dp1020sh/specs.html
 
 **引き続き未回収:** `TH34_dpf.pkg`などのファーム本体、2010年機SoC/OS/基板写真、`RRMCG2009SCZZ`実測IRコード、台湾ODMとの直接契約・基板発注資料。
+
+
+### 2010年DP-700SHの説明書候補: Gizport旧PDFのWayback保存を確認（2026-10-24）
+
+**確認できた事実（資料の所在）:** DP-700SHの中古出品説明に、製品の「性能」参照先としてGizportのPDF `http://img.gizport.jp/pdf/2012-11-18/34460.pdf` が明示されている。Wayback MachineのCDXを照合すると、このURLには **2026-01-06 19:59:30 UTC / HTTP 200 / application/pdf** の保存が1件ある。Waybackから返るPDF先頭部には `%PDF-1.6`、`/L 2167348`、`/N 78`、`/Encrypt` が含まれる。これは **約2.17 MB・78ページのPDFが保存されている** ことを示す。
+
+- DP-700SHとPDFを結びつける中古出品（第三者記載）: https://jmty.jp/osaka/sale-ele-kw-fuji/p-8
+- PDFの旧URL: http://img.gizport.jp/pdf/2012-11-18/34460.pdf
+- 保存PDF: https://web.archive.org/web/20260106195930id_/http://img.gizport.jp/pdf/2012-11-18/34460.pdf
+
+**資料評価:** 2010年世代の説明書を再取得できる可能性がある新しい保管先の手掛かり。メーカー公式PDFそのものと同一かどうか、表紙の機種名、裏表紙のSharp系印刷管理番号、IR受光部や操作説明、図版の内容は**未検証**。今回はPDF本体を無損失に取得して復号・全文照合することができず、PDFの出所と内容を確定できない。WaybackのCDX保存確認とPDFヘッダの直接確認までを確定事項とし、**「DP-700SHの78ページ公式説明書を回収した」とは記載しない**。
+
+**次の検証:** 保存PDFをバイナリとして取得し、表紙・裏表紙・付属品・リモコンの図版を確認。2011年DP-701SH/801SH説明書の `TINSJ4731SCZZ` と比較する。なお、これはファームウェア本体の発見ではなく、`TH34_dpf.pkg` / SoC / OS / 基板写真 / `RRMCG2009SCZZ` 実測IR波形 / Sharp↔台湾ODMの直接証拠は今回も未回収。
