@@ -613,3 +613,14 @@ https://web.archive.org/web/20120112201232id_/http://fujifilm.jp/support/digital
 
 補助資料（更新手順PDFのWayback保存）:
 https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digitalphotoframe/download/pack/pdf/ff_dp1020sh_dp850sh_dp700sh_firmware_mn_j.pdf
+
+
+## 2026-10-23: 公式更新手順PDFの既存確認事項を本体メモへ統合
+
+2026-10-22の独立調査ログ [DP-700SH-log-2026-10-22-official-update-steps.md](DP-700SH-log-2026-10-22-official-update-steps.md) に既に記録済みの公式PDF本文抽出結果を、`research/DP-700SH.md` の末尾へ統合。**今回新しいファーム本体を発見したわけではない。**
+
+- **確定（前回確認済み）:** 2010年3機種共通の公式PDFは、機種別 `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` のSDカード直下への配置と、バージョン画面での「拡大→縮小→時計→回転」による書換え画面呼出しを記載。約1分の更新、赤緑交互点滅、ACアダプター抜き差しで再起動。
+- **推測・未確定:** 2009年DP-70SHと操作列が同じでも、同一SoC/OS/基板/更新ファイル形式は未証明。3機種の `.pkg` 本体、DP-700SHのSoC/OS/基板刻印、純正リモコンの生IR波形、Sharpと台湾ODMの直接契約は依然未回収。
+- **今回の調査:** 公式PDFのWayback保存を再確認。ファーム本体とリモコン実測符号の公開ミラー、SoC刻印付き基板写真、台湾側ODMとの直接関係について、新たな独立証拠は得られなかった。
+
+出典: https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digitalphotoframe/download/pack/pdf/ff_dp1020sh_dp850sh_dp700sh_firmware_mn_j.pdf
