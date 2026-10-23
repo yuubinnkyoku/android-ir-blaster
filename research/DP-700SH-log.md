@@ -666,3 +666,13 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - **判断:** 2010年世代の説明書を調べるための新しい保存先候補。中古販売者の参照記載だけで「DP-700SHのメーカー公式説明書」と断定しない。SoC/OS/IRコード等の新しい直接証拠ではない。
 - **出典:** https://jmty.jp/osaka/sale-ele-kw-fuji/p-8 ; https://web.archive.org/web/20260106195930id_/http://img.gizport.jp/pdf/2012-11-18/34460.pdf
 - **他の探索:** `TH34_dpf.pkg` / `TH35_dpf.pkg` の新規配布ミラー、DP-700SH基板写真、`RRMCG2009SCZZ`の実測IR符号、Sharpと台湾側ODMの直接資料は見つからず。
+
+
+## 2026-10-24 06:12 JST: 78ページのDP-700SH専用説明書を本文から確認
+
+- **確定:** 2026-01-06保存のGizport旧PDF `34460.pdf` について、PDF本文抽出に成功。表紙に `DIGITAL PHOTO FRAME DP-700SH` と「使用説明書」。前回「機種未確定」としていた78ページ資料はDP-700SH専用の説明書だった。
+- **確定（説明書記載）:** 印刷3ページに純正付属ACアダプター `EP-D72F`。印刷69ページにASV液晶、800×480、1GB、miniUSB-B、IrSS/IrSimple受信ポートとリモコン用受信部の別記載。最終ページに `10A ① Printed in China`。
+- **組版の手掛かり:** ページの印刷元ファイル名 `DP-700SH.indd`、日付 `2010/01/21` 相当の文字列。印刷・編集の履歴とみられるが、本体製造日ではない。
+- **技術的な限界:** PDFの日本語と英数字は独自フォントのため文字化けする。一部英数字を符号+31で復元した。印刷地は説明書に関する情報で、本体の製造地や台湾ODMを特定しない。2011年版の `TINSJ4731SCZZ` と異なる番号体系の可能性はあるが、2010年版の番号不在を断定しない。
+- **未解決:** `TH34_dpf.pkg` 本体、SoC/OS、基板写真、`RRMCG2009SCZZ` 生IR符号、Sharp-台湾ODMの直接資料は今回も未回収。
+- **出典:** https://web.archive.org/web/20260106195930id_/http://img.gizport.jp/pdf/2012-11-18/34460.pdf
