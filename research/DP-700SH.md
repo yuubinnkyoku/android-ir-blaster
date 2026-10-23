@@ -705,3 +705,24 @@ Waybackに保存された本体はHTMLではなくバイナリとして取得で
 - https://av.watch.impress.co.jp/docs/news/353844.html
 
 この探索時点でも、DP-700SH用 `TH34_dpf.pkg` の本体、SoC刻印・OS、`RRMCG2009SCZZ` の実測IR符号、Sharpと台湾ODMの直接契約資料は未回収。WaybackでTH34/TH35/TH36の各URL完全一致を再検索したが保存なし。
+
+
+## 2026-10-23: 2010年3機種共通の公式更新手順を調査メモへ反映
+
+**既存調査ログの未反映事項を統合した記録（新たなバイナリ発見ではない）。** 2026-10-22に抽出した富士フイルム公式「ユーザバージョンアップ手順」（2010-04-30付、10ページ）の内容を、調査メモ本体にも反映する。上記の古い「PDF本文未抽出」「DP-700SHの隠しキー列未確認」という記述は**この確認によって更新済み**と読み替える。
+
+### 公式手順で確認された事項（確定）
+
+- DP-700SH: `TH34_dpf.pkg`、DP-850SH: `TH35_dpf.pkg`、DP-1020SH: `TH36_dpf.pkg`。各ファイルをSDカードの**ルートディレクトリ**に置く。3機種共通の手順PDFはDP-700SHを画面例に使っている。
+- リモコンで「メニュー → 設定 → 表示の設定 → 本体情報の表示 → バージョン表示」と進み、**拡大 → 縮小 → 時計 → 回転**を順に押すと書換え画面へ移る。これは2009年DP-70SHと同じ隠しキー列。
+- 書換え画面に移った**後で**SDカードを挿入し、アクセスランプ点灯を確認して「実行」。版数確認後に書換え開始。所要約1分、電源ランプは赤・緑交互に点滅。完了後はACアダプターを抜き差しして再起動・版数確認。
+
+### 推測・未確定
+
+- 隠しキー列の一致は、先代DP-70SHから2010年の3機種へ更新操作仕様が継承されたことを示す。ただし**同一SoC、OS、起動処理、基板、更新形式**までは立証しない。
+- `TH34_dpf.pkg`、`TH35_dpf.pkg`、`TH36_dpf.pkg` のバイナリ本体は未回収。更新用の正規ファイルがない状態での書換えや、他機種用ファームの投入は行わない。
+
+出典:
+- 富士フイルム公式手順PDF（Wayback 2012-01-21保存）: https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digitalphotoframe/download/pack/pdf/ff_dp1020sh_dp850sh_dp700sh_firmware_mn_j.pdf
+- 公式更新案内（Wayback 2012-01-12保存）: https://web.archive.org/web/20120112201232id_/http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download001.html
+- 本文抽出の既存調査ログ: [DP-700SH-log-2026-10-22-official-update-steps.md](DP-700SH-log-2026-10-22-official-update-steps.md)
