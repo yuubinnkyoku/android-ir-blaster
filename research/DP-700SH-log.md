@@ -657,3 +657,12 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - https://web.archive.org/web/20100421070032id_/http://fujifilm.jp/personal/digitalphotoframe/dp700sh/specs.html
 - https://web.archive.org/web/20100422232902id_/http://fujifilm.jp/personal/digitalphotoframe/dp850sh/specs.html
 - https://web.archive.org/web/20100425001655id_/http://fujifilm.jp/personal/digitalphotoframe/dp1020sh/specs.html
+
+
+## 2026-10-24 05:12 JST: DP-700SHに紐付けられたGizport旧PDFのWayback保存を確認
+
+- **確認:** DP-700SH中古出品の製品仕様参照先として `http://img.gizport.jp/pdf/2012-11-18/34460.pdf` が記載。Wayback CDXで `20260106195930`、HTTP 200、application/pdfを確認。
+- **PDF先頭部を直接確認:** `%PDF-1.6`、`/L 2167348`、`/N 78`、`/Encrypt`。約2.17 MB・78ページの保存PDF。ファイル内容の無損失取得・表紙の確認・復号・ハッシュ照合は未実施。
+- **判断:** 2010年世代の説明書を調べるための新しい保存先候補。中古販売者の参照記載だけで「DP-700SHのメーカー公式説明書」と断定しない。SoC/OS/IRコード等の新しい直接証拠ではない。
+- **出典:** https://jmty.jp/osaka/sale-ele-kw-fuji/p-8 ; https://web.archive.org/web/20260106195930id_/http://img.gizport.jp/pdf/2012-11-18/34460.pdf
+- **他の探索:** `TH34_dpf.pkg` / `TH35_dpf.pkg` の新規配布ミラー、DP-700SH基板写真、`RRMCG2009SCZZ`の実測IR符号、Sharpと台湾側ODMの直接資料は見つからず。
