@@ -624,3 +624,19 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - **今回の調査:** 公式PDFのWayback保存を再確認。ファーム本体とリモコン実測符号の公開ミラー、SoC刻印付き基板写真、台湾側ODMとの直接関係について、新たな独立証拠は得られなかった。
 
 出典: https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digitalphotoframe/download/pack/pdf/ff_dp1020sh_dp850sh_dp700sh_firmware_mn_j.pdf
+
+
+## 2026-10-24 02:17 JST: 後継DP-701SH/801SHの実配布パッケージを特定
+
+- **一次資料（確定）:** 2014-07-22 / 2015-03-31 / 2019-09-15の富士フイルム公式 `download002.html` Wayback保存を照合し、3版とも `TH50_dpf.pkg Ver.1.04.07（2.95MB）` および `http://download.fujifilm.co.jp/pub/tools/jtnjcxxwbhehyq/TH50_dpf.pkg` を記載することを確認。
+- **一次資料（確定）:** 2011-11-04保存の `download001.html` は2011年2機種共通の更新手順PDF `ff_dp701sh_dp801sh_firmware_mn_j.pdf` を案内し、2013-11-09のPDF保存も確認。
+- **比較:** 2010年3機種の `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` に対し、2011年2機種は `TH50_dpf.pkg` 1本。世代間の命名・拡張子の連続性が新たに確認された。
+- **推測:** 更新容器や書換え処理に共通部分がある可能性。ただし拡張子だけで同一形式/SoC/OSとはいえない。
+- **未回収:** Wayback CDXで `TH50_dpf.pkg` 本体はHTTP/HTTPS完全URL・ディレクトリ前方一致とも保存なし。2010年3ファイル、SoC/基板、実測IR、ODM直接資料にも新規直接証拠なし。
+
+出典:
+- https://web.archive.org/web/20140722194942id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/download002.html
+- https://web.archive.org/web/20150331120125id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/download002.html
+- https://web.archive.org/web/20190915053305id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/download002.html
+- https://web.archive.org/web/20111104091802id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/download001.html
+- https://web.archive.org/web/20131109113605id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/pack/pdf/ff_dp701sh_dp801sh_firmware_mn_j.pdf
