@@ -640,3 +640,20 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - https://web.archive.org/web/20190915053305id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/download002.html
 - https://web.archive.org/web/20111104091802id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/download001.html
 - https://web.archive.org/web/20131109113605id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/pack/pdf/ff_dp701sh_dp801sh_firmware_mn_j.pdf
+
+
+## 2026-10-24 04:54 JST: 2011年後継2機種の説明書でハードウェア世代差とSharp文書管理番号を確認
+
+- **新規資料:** 富士フイルム名義のDP-701SH/DP-801SH「使用説明書」全文転載（2011年2月時点の仕様）。印刷頁1の付属品欄に**ACアダプター`EP-D701`**、印刷頁51の仕様表に**TN液晶、512MB内蔵メモリー、SD/メモリースティック、miniUSB-B、別系統の画像転送IRとリモコンIR、6W動作/1.6W待機、JPEG最大8000×8000**が明記される。印刷頁18には12枚/30枚の写真一覧、裏表紙には**`11B ② TINSJ4731SCZZ`**。
+- **確定（資料の記載）:** 2010年DP-700SH/850SHのSharp製ASV液晶、1GB/2GB内蔵メモリー、xD/CF対応と比較して、2011年の後継世代ではハードウェア仕様が変更された。JPEG処理上限・写真一覧形式・リモコンのボタン名称などは共通。2011年2機種の更新ファイル`TH50_dpf.pkg`は既知であり、今回発見したファイルではない。
+- **Sharp関連の照合:** `TINSJ4731SCZZ`は説明書末尾の印刷管理番号。Sharp公式の別製品説明書にも`TINSJ`系の番号がある。文書管理経路の状況証拠であり、2011年機のSoCや基板のSharp独自設計を立証するものではない。
+- **推測:** 2010→2011年のハードウェア変更にもかかわらずUI・画像処理の仕様が継承されており、ソフトウェア資産の共通性を比較検証する価値がある。ただし同一バイナリ・SoC/OS・IRコードの互換性は未証明。EP-D701の電気仕様・プラグ寸法も未確認。
+- **同時探索の結果:** GitHubコード検索で`TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH50_dpf.pkg` / `RRMCG2009SCZZ`の公開ファイルに新規一致なし。Waybackの2010年3パッケージおよび2011年`TH50`の公式配布URL完全一致でも保存なし。SoC/OS、基板刻印写真、実測IR、ODM直接証拠は未回収。
+
+出典:
+- https://manualzilla.com/doc/6704692/%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89---%E5%AF%8C%E5%A3%AB%E3%83%95%E3%82%A4%E3%83%AB%E3%83%A0
+- https://manualzz.com/doc/4760993/fujifilm-dp-701sh--dp-801sh-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%83%95%E3%82%A9%E3%83%88%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0-%E4%BD%BF%E7%94%A8%E8%AA%AC%E6%98%8E%E6%9B%B8
+- https://www.sharp.co.jp/support/led/doc/lnlw3a1-ls2a1_mn.pdf
+- https://web.archive.org/web/20100421070032id_/http://fujifilm.jp/personal/digitalphotoframe/dp700sh/specs.html
+- https://web.archive.org/web/20100422232902id_/http://fujifilm.jp/personal/digitalphotoframe/dp850sh/specs.html
+- https://web.archive.org/web/20100425001655id_/http://fujifilm.jp/personal/digitalphotoframe/dp1020sh/specs.html
