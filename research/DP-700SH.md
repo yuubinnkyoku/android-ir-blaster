@@ -726,3 +726,25 @@ Waybackに保存された本体はHTMLではなくバイナリとして取得で
 - 富士フイルム公式手順PDF（Wayback 2012-01-21保存）: https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digitalphotoframe/download/pack/pdf/ff_dp1020sh_dp850sh_dp700sh_firmware_mn_j.pdf
 - 公式更新案内（Wayback 2012-01-12保存）: https://web.archive.org/web/20120112201232id_/http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download001.html
 - 本文抽出の既存調査ログ: [DP-700SH-log-2026-10-22-official-update-steps.md](DP-700SH-log-2026-10-22-official-update-steps.md)
+
+
+## 2026-10-24: 2011年後継2機種の公式更新ファイル名と直リンクを特定
+
+**確定（富士フイルム公式配布ページのWayback保存を直接照合）:** DP-701SH / DP-801SH共通ファームウェア Ver.1.04.07 の実ファイル名は **`TH50_dpf.pkg`**、公称容量は **2.95MB**。公式のリンク先は次の通り。
+
+- `http://download.fujifilm.co.jp/pub/tools/jtnjcxxwbhehyq/TH50_dpf.pkg`
+- 公式 `download002.html` の2014-07-22、2015-03-31、2019-09-15の保存で、ファイル名・容量・直リンクが一致。
+- 2011-11-04保存の公式 `download001.html` は、別途10ページの更新手順PDF `ff_dp701sh_dp801sh_firmware_mn_j.pdf`（公称837KB）を案内。PDF自体も2013-11-09に保存されている。
+
+**2010年世代との比較:** DP-700SH / DP-850SH / DP-1020SH の `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` に対し、2011年世代の2機種は `TH50_dpf.pkg` 1本を共用する。両世代が `THxx_dpf.pkg` という命名規則と `.pkg` 拡張子を使用したことは確定。後継版は機種名でなく不透明な配布用ディレクトリ `jtnjcxxwbhehyq` に置かれている。
+
+**推測:** 両世代で同じ更新容器形式・書換え機構または開発系統を引き継いだ可能性がある。後継の `TH50_dpf.pkg` を入手できれば、2010年世代の `.pkg` 解析の比較対象となる。
+
+**未確定:** 拡張子・命名規則の一致だけで同一のバイナリ形式、SoC、OS、ブートローダを断定できない。Wayback CDXで上記 `TH50_dpf.pkg` のHTTP/HTTPS完全URLとディレクトリ前方一致を検索したが、ファイル本体の保存は確認できなかった。2010年世代の `TH34/35/36` 本体、基板刻印、純正リモコン実測IRコード、Sharp↔台湾ODMの直接契約資料も未回収。
+
+出典:
+- https://web.archive.org/web/20140722194942id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/download002.html
+- https://web.archive.org/web/20150331120125id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/download002.html
+- https://web.archive.org/web/20190915053305id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/download002.html
+- https://web.archive.org/web/20111104091802id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/download001.html
+- https://web.archive.org/web/20131109113605id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/pack/pdf/ff_dp701sh_dp801sh_firmware_mn_j.pdf
