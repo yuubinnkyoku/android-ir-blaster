@@ -748,3 +748,28 @@ Waybackに保存された本体はHTMLではなくバイナリとして取得で
 - https://web.archive.org/web/20190915053305id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/download002.html
 - https://web.archive.org/web/20111104091802id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/download001.html
 - https://web.archive.org/web/20131109113605id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/pack/pdf/ff_dp701sh_dp801sh_firmware_mn_j.pdf
+
+
+## 2026-10-24: 後継DP-701SH/DP-801SHの使用説明書で電源部品・表示方式・Sharp文書番号を照合
+
+**新規の資料確認:** 富士フイルム名義の「DP-701SH / DP-801SH 使用説明書」（2011年2月現在の仕様を収録）の全文転載を確認。参照箇所は印刷頁1（付属品）、7–9（受光部とリモコン）、51（主な仕様）、裏表紙（印刷管理番号）。原版のメーカーPDFそのものではなく、第三者による説明書転載のため、画像や原版PDFとの再照合余地がある。
+
+**説明書に明記された事項（資料上の確定）:**
+- 2011年の2機種の付属ACアダプターは **`EP-D701`**。2010年DP-700SHの実機付属`EP-D72F`、DP-850SHの実機付属`EP-D82F`と**型番が異なる**。EP-D701の出力電圧・電流やプラグ寸法はこの資料だけでは確定しない。
+- DP-701SH / DP-801SHはともに**TN液晶**（7.0型 / 8.0型、800×480、コントラスト約500:1）、内蔵メモリー**512MB**（ユーザー領域約400MB）。2010年DP-700SH/850SHはSharp製ASV液晶（それぞれ1GB/2GB）であり、少なくとも液晶方式・容量は変更された。
+- 2011年2機種はメモリーカードスロットを**SD系・メモリースティック系**に絞り、2010年3機種に存在した**xD/CF対応は説明書の仕様表にない**。miniUSB-BのPC接続と、IrSS/IrSimple画像受信・専用リモコンの別受光系統は引き続き記載。
+- 動作時最大約**6W**、待機時約**1.6W**。2010年3機種の公式値（動作時約8/8.5/9.5W、待機時約1.7W）より小さい。値は仕様上の公称値であり、回路構成は特定しない。
+- **最大JPEG画像8,000×8,000（6,400万画素）**、**12枚/30枚の写真一覧**、リモコンの「拡大・縮小・時計・回転」を含むボタン名称は2010年機と共通する。2011年2機種は動画再生にも対応し、2010年DP-700SHのJPEG専用とは異なる。
+- 説明書裏表紙の印刷管理番号は **`11B ② TINSJ4731SCZZ`**。Sharp公式の別製品取扱説明書にも`TINSJ`から始まる印刷管理番号（例:`TINSJ A004VLRZ 08BH`）が見られ、**Sharp系文書管理の手掛かり**として照合可能。
+
+**解釈（推測）:** 2010→2011年で液晶・カードスロット・電源付属品などのハードウェア仕様が変化した一方、UIのキー名称・画像処理上限・IR系統と`THxx_dpf.pkg`という更新命名規則が継続した。**ソフトウェアや設計資産の継承仮説を補強するが、同一SoC/OS/基板やIRコード互換を証明しない。** `TINSJ`の一致は文書作成・管理経路の示唆にとどまり、2011年機の電子回路をSharpが独自設計した証拠ではない。EP-D701とEP-D72F/EP-D82Fを相互接続しない。
+
+**出典:**
+- 富士フイルム名義DP-701SH/DP-801SH使用説明書の全文転載（印刷頁1、7–9、51、裏表紙）: https://manualzilla.com/doc/6704692/%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89---%E5%AF%8C%E5%A3%AB%E3%83%95%E3%82%A4%E3%83%AB%E3%83%A0
+- 同じ説明書の別転載: https://manualzz.com/doc/4760993/fujifilm-dp-701sh--dp-801sh-%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%83%95%E3%82%A9%E3%83%88%E3%83%95%E3%83%AC%E3%83%BC%E3%83%A0-%E4%BD%BF%E7%94%A8%E8%AA%AC%E6%98%8E%E6%9B%B8
+- Sharp公式説明書の`TINSJ`印刷番号の別例: https://www.sharp.co.jp/support/led/doc/lnlw3a1-ls2a1_mn.pdf
+- 2010年DP-700SH公式仕様表（Wayback）: https://web.archive.org/web/20100421070032id_/http://fujifilm.jp/personal/digitalphotoframe/dp700sh/specs.html
+- 2010年DP-850SH公式仕様表（Wayback）: https://web.archive.org/web/20100422232902id_/http://fujifilm.jp/personal/digitalphotoframe/dp850sh/specs.html
+- 2010年DP-1020SH公式仕様表（Wayback）: https://web.archive.org/web/20100425001655id_/http://fujifilm.jp/personal/digitalphotoframe/dp1020sh/specs.html
+
+**引き続き未回収:** `TH34_dpf.pkg`などのファーム本体、2010年機SoC/OS/基板写真、`RRMCG2009SCZZ`実測IRコード、台湾ODMとの直接契約・基板発注資料。
