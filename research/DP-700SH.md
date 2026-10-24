@@ -833,3 +833,17 @@ Waybackに保存された本体はHTMLではなくバイナリとして取得で
 - 2011年版: https://web.archive.org/web/20131109113605id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/pack/pdf/ff_dp701sh_dp801sh_firmware_mn_j.pdf
 
 **未回収:** `TH34_dpf.pkg` / `TH50_dpf.pkg` の実バイナリ、DP-700SHのSoC/OS/基板写真、`RRMCG2009SCZZ` の生IRコード、Sharpと台湾側ODMの直接契約資料。
+
+
+### 2026-10-25: Sharp純正HN-PP100/150の交換用リモコン部品番号を一次資料で確認
+
+**新たな一次資料（Sharp公式通販）:** SharpのAQUOSフォトプレーヤー用交換リモコンは、公式部品番号 **`568 648 0005`（`5686480005`）** で販売されている。メーカー公式の適合表は **`HN-PP100-B`、`HN-PP100-W`、`HN-PP150`** の3型番を列挙する。この2系列のフォトプレーヤーについて、**同一交換用リモコン部品がメーカーにより適合指定されている**ことは確定。
+
+**DP-700SHとの対照（別途実機写真で確認済み）:** FUJIFILM DP-700SHの付属リモコン裏面には **`RRMCG2009SCZZ`** と表示される。一方、`5686480005`はSharp通販の**交換部品番号**であり、リモコン本体の裏面印字型番と同じ種類の番号とは限らない。両者の数字が異なるだけで別回路・別IR符号と断定できない。
+
+**IR解析への示唆（推測）:** Sharp製HN-PP100/150は別製品群であり、公式適合表にDP-700SHは記載されない。HN-PP系のリモコン信号をDP-700SHの正解コードとして採用する根拠はない。ただしSharp内のリモコン符号体系を比較する際の**部品番号付きの対照機**として使える可能性がある。実測波形・搬送波・符号方式・DPシリーズとの互換性は未確認。
+
+出典:
+- Sharp公式通販（交換部品と適合型番）: https://cocorostore.jp.sharp/option/option-av/option-photo-player/5686480005.html
+- Sharp公式仕様（HN-PP100/150に専用リモコンが付属）: https://jp.sharp/support/photoplayer/doc/lineup.html
+- DP-700SHリモコンの既確認写真: https://auctions.yahoo.co.jp/jp/auction/q1171811726
