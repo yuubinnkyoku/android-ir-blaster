@@ -700,3 +700,17 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 出典:
 - 2010年版: https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digitalphotoframe/download/pack/pdf/ff_dp1020sh_dp850sh_dp700sh_firmware_mn_j.pdf
 - 2011年版: https://web.archive.org/web/20131109113605id_/http://fujifilm.jp/support/digitalphotoframe/download/dp701sh_dp801sh/pack/pdf/ff_dp701sh_dp801sh_firmware_mn_j.pdf
+
+
+## 2026-10-25 00:10 JST: Sharp HN-PP100/150の純正交換リモコン部品番号を確認
+
+- **探索対象:** DP-700SHの`RRMCG2009SCZZ`に近いSharp純正写真機器のリモコン型番・IRコード。Web検索では`RRMCG2009SCZZ`の生波形やコード表は得られなかった。
+- **新規一次資料（確定）:** Sharp公式部品通販にAQUOSフォトプレーヤー用リモコン **`568 648 0005` / `5686480005`** が掲載され、適合機種に **HN-PP100-B / HN-PP100-W / HN-PP150** を明記。Sharp純正の異なる2機種系列に同一交換用リモコンが指定されている。
+- **番号の比較:** DP-700SH用`RRMCG2009SCZZ`はリモコン裏面印字、HN-PP用`5686480005`は交換部品番号であり、番号体系が違う可能性がある。異なる型番=異なるIRコードとみなさない。
+- **推測・次の検証:** HN-PP系リモコンの実測符号が得られればSharp系符号との比較対象になる。ただし同じメーカーの写真機器というだけでDP-700SHとのIR互換を仮定しない。DP-700SHの受光部は説明書上前面であり、画像転送用IrSS/IrSimpleとは別系統。
+- **未回収:** `TH34_dpf.pkg`等の実ファーム、DP-700SH SoC/OS/基板写真、`RRMCG2009SCZZ`の生IRコード、Sharpと台湾側ODMの直接契約資料。
+
+出典:
+- https://cocorostore.jp.sharp/option/option-av/option-photo-player/5686480005.html
+- https://jp.sharp/support/photoplayer/doc/lineup.html
+- https://auctions.yahoo.co.jp/jp/auction/q1171811726
