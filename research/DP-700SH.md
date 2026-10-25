@@ -907,3 +907,31 @@ Waybackに保存された本体はHTMLではなくバイナリとして取得で
 - https://web.archive.org/web/20120121024416id_/http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download002.html （DP-700SH 2.1MB）
 
 **主要未回収事項は変わらず:** DP-700SHの`TH34_dpf.pkg`実バイナリ、SoC/OS/基板写真、`RRMCG2009SCZZ`実測IRコード、Sharpと台湾ODMの直接的な契約・設計資料。
+
+
+### 2026-10-25: SPMF2800実機解析者の公開ソースコードを確認（比較用・DP-700SH搭載証拠ではない）
+
+**新たに確認した一次資料（別機種の解析コード）:** 先に記録したSPMF2800搭載フォトフレームの解析者が、GitHubで実験用の低水準コード `yamori813/spmf_hack` を公開している。リポジトリの公開メタデータでは2022-07-04作成、最終pushは2026-01-26。2026-10-25時点で実ファイルを確認した。
+
+- `hello/Makefile`: MIPS向けツールチェーンで `-EL`（リトルエンディアン）を指定し、`Entry.S`、`uart.c`、`mon.c` などをビルドする。
+- `hello/ldscript`: 実験コードの配置開始アドレスを `0x80010000` と指定。
+- `hello/uart.c` / `hello/Entry.S`: 実験対象のメモリマップ上、UARTの状態レジスタ `0xB0001101`、送信 `0xB0001108`、受信 `0xB000110C` を参照する。
+- `hello/mon.c`: シリアル経由でメモリ表示（`D`）、メモリ書込み（`W`）、指定アドレス実行（`G`）を行う実験用モニタ。**書込み・実行操作は危険**で、DP-700SHに適用できると考えない。
+- `tools/splzo.c`: LZO1X圧縮の実装を含み、出力先頭に `LZO\\0`（バイト列 `4C 5A 4F 00`）を書き込む。
+- `hello/mkimg.sh`: `Kernel.bin` を `splzo` で圧縮し、別途用意する `bootonly.bin` と連結して2MiBのイメージを作る例。**bootonly.binは公開リポジトリ内に存在しない**ため、このソースだけで純正イメージを復元できない。
+
+**確定範囲:** 公開コードが上記の構成・アドレス・処理を使用していること。既知のQiita記事にある `SPMF28XX Boot Loader` / `loadLzoFW` / MIPS・ThreadX実測ログを、独立に参照できる実装面の資料が増えた。コードの動作を当方が実機で再検証したわけではない。
+
+**推測・調査上の利用:** 将来DP-700SHの基板写真や `TH34_dpf.pkg` 本体を入手した場合、SoC刻印に加え、MIPS命令列、`LZO\\0`、UART周辺アドレス等を候補照合できる。ただし、`SPMF2800` とメーカー発表の `SPMP2800` の同一性も未確定であり、**DP-700SHがこのSoC/OS/メモリマップ/圧縮形式を使う証拠はない**。このコードや他機種イメージをDP-700SHへ書き込まない。
+
+**出典（実ファイル）:**
+- https://github.com/yamori813/spmf_hack
+- https://github.com/yamori813/spmf_hack/blob/main/hello/Makefile
+- https://github.com/yamori813/spmf_hack/blob/main/hello/ldscript
+- https://github.com/yamori813/spmf_hack/blob/main/hello/uart.c
+- https://github.com/yamori813/spmf_hack/blob/main/hello/mon.c
+- https://github.com/yamori813/spmf_hack/blob/main/hello/mkimg.sh
+- https://github.com/yamori813/spmf_hack/blob/main/tools/splzo.c
+- 先に確認済みの別機種実測記事: https://qiita.com/yamori813/items/2919b6344e7e27704726
+
+**未解決:** DP-700SH用 `TH34_dpf.pkg`、DP-850SH/1020SH用 `TH35/36_dpf.pkg`、2010年機のSoC/OS/基板写真、`RRMCG2009SCZZ`の実測赤外線コード、Sharpと台湾ODMの直接契約・設計資料は未回収。Wayback CDXで公式パッケージ4件（2010年3件＋2011年 `TH50_dpf.pkg`）の完全URLを再検索したが保存なし。
