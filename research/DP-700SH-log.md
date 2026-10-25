@@ -731,3 +731,18 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - https://corporate.jp.sharp/news/081118-a-2.html
 - https://web.archive.org/web/20260106195930id_/http://img.gizport.jp/pdf/2012-11-18/34460.pdf
 - https://web.archive.org/web/20100421070032id_/http://fujifilm.jp/personal/digitalphotoframe/dp700sh/specs.html
+
+
+## 2026-10-25 17:04 JST: SunplusのDPF用SoC SPMP2800公式発表とSPMF2800実機解析を発見
+
+- **確定・メーカー資料:** Sunplusの2008-03-04発表は`SPMP2800`系列を「數位相框單晶片」（デジタルフォトフレーム用SoC）と明示。ハードウェアJPEG符号化/復号、画像補正、5～10型液晶制御、RTC、PWM、電源制御、USB、NAND等を統合。
+- **確定・別機種の実測報告:** 2018年公開のQiita実機解析では、`SPMF2800`搭載の別製品から`ThreadX MIPS32_4Kx/GNU Version G4.0c.R`、`SPMF28XX Boot Loader`、`loadLzoFW`、`serialFlashDetect`、`Evm RC Driver`等の文字列・起動ログを取得。UART 115200bpsで操作可能と記録。部品は8MB SDRAM `M12L64164A`、2MB SPI Flash `S25FL016A`。
+- **補助証拠:** ドイツ語掲示板の2011年投稿で別の7型フォトフレームの`SPMF 2800A`刻印を報告。2013年投稿はSunplus広報からの返信としてGeneralplusへのSPMF2800移管を引用するが、原メールを確認できないため伝聞として扱う。
+- **型番の限界:** `SPMP2800`と`SPMF2800`/`SPMF2800A`が同一なのかは不明。2018年解析者自身も疑問としている。
+- **推測・次の照合:** 既存のGeneralplus/Sunplus候補を具体的なSoC系列とOS識別文字列に落とし込めた。DP-700SHの基板・更新ファイルを取得した場合に、上記の識別子、MIPS命令、LZO圧縮、シリアルフラッシュ、リモコン駆動モジュールを比較する。ただし**DP-700SHがSPMP/SPMF2800、ThreadX、MIPSである根拠は現時点でゼロ**。DP-70SH用`TH180700.ver`の文字列との表面的類似を同一基盤の証明に使わない。
+- **同時探索:** 公開Web/GitHubコード検索で`TH34_dpf.pkg`/`TH35_dpf.pkg`/`TH36_dpf.pkg`と`RRMCG2009SCZZ`の実データに新規一致なし。Waybackの配布ファイル探索は一部CDX応答がタイムアウト/503であり、保存が絶対に存在しないとの再断定は避ける。SoC/OS/基板・IRコード・ODM直接資料は引き続き未確認。
+
+出典:
+- https://www.sunplus.com/tw/press/press.asp?id=30291837291A544
+- https://qiita.com/yamori813/items/2919b6344e7e27704726
+- https://www.mikrocontroller.net/topic/218149
