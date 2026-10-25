@@ -761,3 +761,22 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - https://jp.sharp/support/photoplayer/doc/how_to_update.pdf
 - https://web.archive.org/web/20100204003717id_/http://fujifilm.jp/support/digitalphotoframe/download/dp70sh/download002.html
 - https://web.archive.org/web/20120121024416id_/http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download002.html
+
+
+## 2026-10-25 23:53 JST: SPMF2800向け実験コードの公開元を特定
+
+- **新たに確認した公開資料:** 先に調査したSPMF2800フォトフレームの解析者 `yamori813` が、`spmf_hack` というC・MIPSアセンブリの実験コードをGitHubで公開。GitHub APIで各ファイルを直接取得して照合。リポジトリは2022-07-04作成、2026-01-26に最終push。
+- **コード上の確定事項:** `hello/Makefile` の `-EL`（MIPSリトルエンディアン）、`hello/ldscript` の `0x80010000`、`hello/uart.c` のUARTレジスタ `0xB0001101` / `0xB0001108` / `0xB000110C`、`hello/mon.c` の `D/W/G` メモリ操作、`tools/splzo.c` の `LZO\\0` ヘッダ（`4C 5A 4F 00`）を確認。
+- **書換え上の注意:** `hello/mkimg.sh` は外部の `bootonly.bin` とLZO圧縮データを結合して2MiBイメージを作る例で、当該bootonly.binは公開リポジトリに存在しない。書込み/任意アドレス実行のコードは実機を破損し得る。
+- **意味と限界:** SPMF2800候補を照合するための具体的な命令・圧縮形式・メモリマップ資料が得られた。しかし**DP-700SH自体のSoC、OS、UART配置、LZO採用、SPMF2800系列との関係は一切確定していない**。別機種の実験コードをDP-700SHへ移植・投入しない。
+- **同時確認:** Waybackの公式直URL（`TH34_dpf.pkg`、`TH35_dpf.pkg`、`TH36_dpf.pkg`、`TH50_dpf.pkg`）に保存版なし。GitHub全体のコード検索で`TH34_dpf.pkg`・`TH35_dpf.pkg`・`RRMCG2009SCZZ`に一致なし。SoC刻印付きDP-700SH基板写真、純正リモコン実測波形、台湾ODM直接資料は見つからず。
+
+出典:
+- https://github.com/yamori813/spmf_hack
+- https://github.com/yamori813/spmf_hack/blob/main/hello/Makefile
+- https://github.com/yamori813/spmf_hack/blob/main/hello/ldscript
+- https://github.com/yamori813/spmf_hack/blob/main/hello/uart.c
+- https://github.com/yamori813/spmf_hack/blob/main/hello/mon.c
+- https://github.com/yamori813/spmf_hack/blob/main/hello/mkimg.sh
+- https://github.com/yamori813/spmf_hack/blob/main/tools/splzo.c
+- https://qiita.com/yamori813/items/2919b6344e7e27704726
