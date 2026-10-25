@@ -746,3 +746,18 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - https://www.sunplus.com/tw/press/press.asp?id=30291837291A544
 - https://qiita.com/yamori813/items/2919b6344e7e27704726
 - https://www.mikrocontroller.net/topic/218149
+
+
+## 2026-10-25 20:29 JST: Sharp HN-PP150の公式更新容量121MBを確認（比較対象の限定）
+
+- **一次資料で確定:** Sharp公式のHN-PP150用更新ファイルは`TH150400.ver`、ページ表示の公称容量**121MB**。更新対象は`1.03.01.04`以前。既知の手順PDFでは更新後`1.04.00.04`。
+- **既知資料との比較:** 先代DP-70SH `TH180700.ver`は公称約1.9MB、DP-700SH `TH34_dpf.pkg`は公称2.1MB。HN-PP150とDP-70SHは`.ver`を共有しても公称容量が約64倍異なる。
+- **解釈（推測）:** ファイル名拡張子やSD経由の隠し更新操作の類似から同一プラットフォームを推すのは危険。ただし大容量の原因（画像・音声・プリンター関連資産の同梱等）は未検証で、容量差だけでは別SoC/OSと断定できない。
+- **制限:** Sharpの使用許諾に逆解析禁止条項あり。公開ページのメタデータのみ確認し、HN-PP150のファーム本体の取得・解析は行っていない。
+- **探索結果:** Waybackで`TH34_dpf.pkg`のHTTP/HTTPS完全URLに新規保存なし。検索でもDP-700SH基板・実測IR・ODM直接資料を確認できず。
+
+出典:
+- https://jp.sharp/support/photoplayer/fw_agree.html
+- https://jp.sharp/support/photoplayer/doc/how_to_update.pdf
+- https://web.archive.org/web/20100204003717id_/http://fujifilm.jp/support/digitalphotoframe/download/dp70sh/download002.html
+- https://web.archive.org/web/20120121024416id_/http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download002.html
