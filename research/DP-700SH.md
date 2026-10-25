@@ -847,3 +847,24 @@ Waybackに保存された本体はHTMLではなくバイナリとして取得で
 - Sharp公式通販（交換部品と適合型番）: https://cocorostore.jp.sharp/option/option-av/option-photo-player/5686480005.html
 - Sharp公式仕様（HN-PP100/150に専用リモコンが付属）: https://jp.sharp/support/photoplayer/doc/lineup.html
 - DP-700SHリモコンの既確認写真: https://auctions.yahoo.co.jp/jp/auction/q1171811726
+
+### 2026-10-25: Sharp HN-PP100/150公式説明書とDP-700SHの画像・リモコン仕様を照合
+
+**今回新たに確認した一次資料（Sharp公式、2008〜2009年世代）:**
+
+- Sharp HN-PP100取扱説明書の印刷83ページはJPEGの最大画素数を **8,000×8,000** と明記。印刷19ページのリモコン操作図は **約2m以内、約30°以内**、使用電池はCR2025。
+- Sharp HN-PP150取扱説明書の印刷32ページはJPEGの最大画素数を **8,000×8,000**、印刷100ページの仕様表でも同じ値。印刷19ページのリモコン操作範囲は **約2m以内、上下左右約30°以内**、電池はCR2025。
+- 既知のFUJIFILM DP-700SHの説明書もJPEG上限 **8,000×8,000**、リモコン操作範囲 **約2m以内、左右約30°以内**、電池CR2025。DP-850SH/DP-1020SHもメーカー仕様表のJPEG上限は同じ。Sharp製の写真関連製品に、同じ数値の仕様が存在したことを一次資料同士で確認できた。
+- **差異と注意:** HN-PP100/150はHDMI出力・昇華型プリンター搭載の写真プレーヤーで、DP-700SHとは機器構成が大きく異なる。HN-PP100/150の説明書は画像転送で **IrSSのみ対応、IrSimple/IrDA非対応** と記す一方、DP-700SHはIrSimple/IrSS対応（IrDAは公式更新履歴でサポート外）。画像転送の対応範囲は同一ではない。
+- **公式資料内の不一致:** Sharpの2008-11-18付HN-PP100/150発表資料は対応JPEGを **8,000×6,000画素・12MB** と記すが、両機種の取扱説明書は **8,000×8,000** と記す。発売前資料と説明書の仕様差（または対象機能の違い）の理由は未確認。比較では説明書の数値を用い、両者の不一致も残す。
+
+**確定:** 上記の各数値・対応範囲がそれぞれのメーカー公式資料に記載されている。DP-700SHとの一致は「文書に記載された仕様の一致」であり、IR符号の一致や共通部品の実測ではない。
+
+**推測:** Sharp製写真機器の画像処理ソフトウェア、仕様策定、またはリモコン受信仕様の共通資産が2010年FUJIFILM製品群に流用された可能性を比較する材料になる。ただしJPEG上限や公称操作距離は共通化されやすい仕様であり、同一SoC、OS、IRプロトコル、基板設計、Sharp社内開発・台湾ODMの特定には直結しない。HN-PP100/150の交換部品番号 5686480005 とDP-700SHの RRMCG2009SCZZ の互換性も未確認。
+
+**出典（メーカー一次資料）:**
+- https://jp.sharp/support/photoplayer/doc/hnpp100_mn.pdf （印刷19、83ページ）
+- https://cgi.jp.sharp/support/photoplayer/doc/hnpp150_mn.pdf （印刷19、32、100ページ）
+- https://corporate.jp.sharp/news/081118-a-2.html （2008-11-18発表、8,000×6,000画素・12MB）
+- https://web.archive.org/web/20260106195930id_/http://img.gizport.jp/pdf/2012-11-18/34460.pdf （DP-700SH説明書）
+- https://web.archive.org/web/20100421070032id_/http://fujifilm.jp/personal/digitalphotoframe/dp700sh/specs.html （DP-700SH仕様）
