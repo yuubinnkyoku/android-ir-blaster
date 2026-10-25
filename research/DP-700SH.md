@@ -868,3 +868,21 @@ Waybackに保存された本体はHTMLではなくバイナリとして取得で
 - https://corporate.jp.sharp/news/081118-a-2.html （2008-11-18発表、8,000×6,000画素・12MB）
 - https://web.archive.org/web/20260106195930id_/http://img.gizport.jp/pdf/2012-11-18/34460.pdf （DP-700SH説明書）
 - https://web.archive.org/web/20100421070032id_/http://fujifilm.jp/personal/digitalphotoframe/dp700sh/specs.html （DP-700SH仕様）
+
+
+### 2026-10-25: Sunplus SPMP2800公式資料とSPMF2800実機解析から、比較用SoC/OS候補を具体化
+
+**メーカー一次資料で確定（DP-700SHへの搭載を意味しない）:** 台湾Sunplus（凌陽科技）の2008-03-04公式発表は、子会社Sunplus mMedia（凌陽多媒體）がデジタルフォトフレーム専用SoC **`SPMP2800`系列**をIIC-China 2008に出展したと記す。ハードウェアJPEG符号化/復号、画像補正、5～10型液晶向け表示制御、RTC、電源投入制御、PWM、液晶電源制御、USB、NAND Flash等を統合し、外付けWi-Fiにも対応可能と説明。DP-700SHの7型画面や写真表示・カード・USB等と機能領域は重なるが、一般的なDPF向け仕様でもある。
+
+**別機種の独立した実機解析（2018-03-06公開、2026-01-25更新）:** Qiitaの分解・起動ログ調査は、2009年第39週製とされるSunplus **`SPMF2800`** 搭載の*別の*7型フォトフレームを扱う。解析者は実機で **ThreadX RTOS** の著作権文字列 `ThreadX MIPS32_4Kx/GNU Version G4.0c.R`、MIPS系命令、`[SPMF28XX Boot Loader]`、`BOOT SPI`、`loadLzoFW`、`serialFlashDetect`、`Module[Evm RC Driver] init` などの起動ログを記録。UART 115200bpsで対話可能と報告し、搭載部品として8MB SDRAM `M12L64164A`、2MB SPI Flash `S25FL016A` を記す。これは**当該解析対象機での結果**であってDP-700SHのOS・CPU・部品の証拠ではない。
+
+**系列の同定に注意:** メーカー発表は`SPMP2800`、分解者がパッケージから読んだのは`SPMF2800`。解析者自身も同一チップか疑問符を付けており、**両者を同一型番と確定しない**。2011年のドイツ語電子工作掲示板にも別の7型機の`SPMF 2800A`刻印写真があり、2013年の投稿にはSunplus広報を名乗る返信の引用として「SPMF2800はGeneralplusへ移管」と記されるが、転載されたメールの真正性は独立検証できない。
+
+**調査上の仮説:** 既知のGeneralplus/Sunplus系SoC候補を`SPMP2800`/`SPMF2800(A)`まで具体化できた。DP-700SHの基板または`TH34_dpf.pkg`が得られたら、SoC刻印、`ThreadX`、`MIPS32_4Kx`、`SPMF28XX`、`loadLzoFW`、`serialFlashDetect`、`Jfs_mount`、`Evm RC Driver`、`BOOT SPI`を**照合候補**にする。既知の先代DP-70SH `TH180700.ver`の`task switching..`やシリアルフラッシュ関連文字列だけでは、ThreadX・MIPS・SPMF2800搭載を断定できない。UARTもDP-700SHに同じ速度・端子があるとは限らず、端子探索時は電圧を実測してから接続する。
+
+**未確認:** DP-700SH/850SH/1020SHのSoC刻印・OS・基板写真、`TH34_dpf.pkg`等のファーム本体、純正`RRMCG2009SCZZ`の実測IRコード、Sharpと台湾ODMとの直接契約。上記3資料は**Sharp/FUJIFILM製品への採用を一切示していない**。
+
+出典:
+- Sunplus公式（2008-03-04）: https://www.sunplus.com/tw/press/press.asp?id=30291837291A544
+- 独立実機解析（2018-03-06、2026-01-25更新）: https://qiita.com/yamori813/items/2919b6344e7e27704726
+- 別の`SPMF 2800A`実機写真と2013年移管言及（投稿者報告）: https://www.mikrocontroller.net/topic/218149
