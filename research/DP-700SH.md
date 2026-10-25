@@ -886,3 +886,24 @@ Waybackに保存された本体はHTMLではなくバイナリとして取得で
 - Sunplus公式（2008-03-04）: https://www.sunplus.com/tw/press/press.asp?id=30291837291A544
 - 独立実機解析（2018-03-06、2026-01-25更新）: https://qiita.com/yamori813/items/2919b6344e7e27704726
 - 別の`SPMF 2800A`実機写真と2013年移管言及（投稿者報告）: https://www.mikrocontroller.net/topic/218149
+
+
+### 2026-10-25: Sharp HN-PP150の公式更新ファイル公称容量は121MB — DPシリーズとの比較で注意
+
+**メーカー一次資料で確認:** Sharp公式「AQUOSフォトプレーヤー HN-PP150」ファームウェア配布・使用許諾ページの末尾に、配布ファイル **`TH150400.ver` / `121MB`** と明記されている。対象はファームウェア版 **`1.03.01.04` 以前**のHN-PP150。別途確認済みの公式更新手順書では更新後 `1.04.00.04` とされる。
+
+- HN-PP150: `TH150400.ver` — **公称121MB**（Sharp公式配布ページの表示。実ファイルのバイト数は未検証）
+- FUJIFILM DP-70SH: `TH180700.ver` — **公称約1.9MB**（既確認の富士フイルム公式配布ページ）
+- FUJIFILM DP-700SH: `TH34_dpf.pkg` — **公称2.1MB**（既確認の富士フイルム公式配布ページ）
+
+**新しい比較上の事実:** Sharpの写真機器であるHN-PP150とFUJIFILM DP-70SHは拡張子`.ver`を共有するが、公式配布容量には**約64倍**の開きがある（121/1.9）。DP-700SHの`.pkg`と比べても約58倍。HN-PP150はHDMI/プリンター機能を持つ別系統の製品で、更新ファイルの収録範囲や同梱データも未確認。
+
+**推測・限界:** 大きな容量差は「拡張子や隠し更新画面の類似だけで同一更新形式・共通SoC/OSを推定できない」という**反証上の注意材料**になる。ただし、容量差だけで内部形式やSoCが異なると確定することもできない。今回HN-PP150のバイナリ本体は取得・解析していない。**Sharp公式の使用許諾は当該ソフトの逆解析・逆コンパイル・逆アセンブルを禁止しているため、配布ページの公開メタデータ比較に限定**する。DP-700SHへ他機種ファームを投入しない。
+
+**出典（Sharp一次資料）:**
+- https://jp.sharp/support/photoplayer/fw_agree.html （`TH150400.ver 121MB`、更新対象版、使用許諾）
+- https://jp.sharp/support/photoplayer/doc/how_to_update.pdf （更新後版 `1.04.00.04`）
+- https://web.archive.org/web/20100204003717id_/http://fujifilm.jp/support/digitalphotoframe/download/dp70sh/download002.html （DP-70SH 約1.9MB）
+- https://web.archive.org/web/20120121024416id_/http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download002.html （DP-700SH 2.1MB）
+
+**主要未回収事項は変わらず:** DP-700SHの`TH34_dpf.pkg`実バイナリ、SoC/OS/基板写真、`RRMCG2009SCZZ`実測IRコード、Sharpと台湾ODMの直接的な契約・設計資料。
