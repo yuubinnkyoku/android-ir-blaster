@@ -714,3 +714,20 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - https://cocorostore.jp.sharp/option/option-av/option-photo-player/5686480005.html
 - https://jp.sharp/support/photoplayer/doc/lineup.html
 - https://auctions.yahoo.co.jp/jp/auction/q1171811726
+
+## 2026-10-25 15:19 JST: Sharp HN-PP100/150公式説明書の画像・リモコン仕様を比較
+
+**新規一次資料:** Sharp公式HN-PP100説明書（印刷19・83ページ）、HN-PP150説明書（印刷19・32・100ページ）を照合。
+
+- **確定:** HN-PP100とHN-PP150は、JPEG最大8,000×8,000画素、リモコン約2m以内・約30°以内、CR2025という数値を公式説明書に記載。DP-700SHも既知の公式説明書にJPEG最大8,000×8,000画素、リモコン約2m・左右約30°、CR2025を記載しており、Sharp系写真機器間の仕様上の一致を追加確認。
+- **差異:** HN-PP100/150はIrSS画像転送のみ対応（IrSimple/IrDA非対応）と説明するが、DP-700SHはIrSimple/IrSS対応、IrDAサポート外。画像転送方式の対応範囲は一致しない。
+- **公式資料内の食い違い:** 2008-11-18のSharp発表資料ではHN-PP100/150の対応JPEGを8,000×6,000画素・12MBと記す。取扱説明書の8,000×8,000との差の理由は不明。資料の版・機能区分の違いを未確認のまま統一しない。
+- **推測:** Sharpの画像処理・リモコン周辺の仕様/実装資産の継承可能性を調べるための比較対象が増えた。ただし同じ公称値だけで同一SoC/OS/基板/IRコードを主張できず、HN-PP100/150はプリンター・HDMI出力を持つ別種の機器。
+- **未回収:** TH34_dpf.pkg / TH35_dpf.pkg / TH36_dpf.pkg 本体（Wayback CDXで完全URLを再確認したが保存なし）、DP-700SHのSoC/OS・基板刻印、RRMCG2009SCZZ実測IR波形、台湾ODMの直接契約資料。GitHubコード検索でも当該pkg名・リモコン型番に新規一致なし。
+
+出典:
+- https://jp.sharp/support/photoplayer/doc/hnpp100_mn.pdf
+- https://cgi.jp.sharp/support/photoplayer/doc/hnpp150_mn.pdf
+- https://corporate.jp.sharp/news/081118-a-2.html
+- https://web.archive.org/web/20260106195930id_/http://img.gizport.jp/pdf/2012-11-18/34460.pdf
+- https://web.archive.org/web/20100421070032id_/http://fujifilm.jp/personal/digitalphotoframe/dp700sh/specs.html
