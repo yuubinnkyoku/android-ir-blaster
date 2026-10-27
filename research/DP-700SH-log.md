@@ -793,3 +793,16 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - https://jp.mercari.com/shops/product/2JQohR4vzgoe47oRWMSxCk
 - https://item.rakuten.co.jp/ruitasu-r/1000063190/
 - https://web.archive.org/web/20120121024416id_/http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download002.html
+
+
+## 2026-10-28 01:53 JST: Sharpの2009年DPF特許とIrSimple言及を確認（周辺資料・製品直結なし）
+
+- **探索範囲:** DP-700SH/850SH/1020SHの公式更新ファイル名、リモコン型番、基板・SoC・OS、台湾ODMをWeb・公開GitHubコード検索・Waybackで再探索。TH34_dpf.pkg、TH35_dpf.pkg、TH36_dpf.pkg、RRMCG2009SCZZ の新しい実ファイル・生IR波形は得られず。GitHubコード検索も該当なし。Wayback CDX/保存状況照会は今回HTTP 429/503で失敗したため、「保存版がない」との再断定は避ける。
+- **新規一次資料:** Sharp出願 **JP2009102154A / JP2010250236A**（2009-04-20出願、2010-11-04公開、発明者・松本友子）。同一発明の米国公報 **US8878834B2** を照合。
+- **確定:** 発明の実施形態がデジタルフォトフレームで、携帯端末の識別情報に応じた写真表示を扱う。画像の受け渡し方式の候補として IrSimple を明記。ただし具体例はBluetooth。リモコンは一般的な操作部の選択肢としてのみ言及され、IR符号の記載なし。SoC/OS/基板/委託先の特定情報なし。
+- **解釈（推測・限界）:** Sharp自身が2009年にDPFとIrSimpleを含む技術を特許出願した一次記録、発明者名を開発系統の比較キーとして追加できた。ただし**DP-700SH等との採用・担当関係は未確認**で、同公報の近接端末に応じた写真表示機能もDPシリーズに搭載された証拠なし。既知の台湾側Sharp顧客案件との組織的接続もない。
+- **未解決:** 2010年機の公式ファーム本体、SoC/OS・基板刻印、RRMCG2009SCZZの実測IR、Sharpと台湾ODMの直接契約/設計資料。
+
+出典:
+- https://patents.google.com/patent/JP2010250236A/ja
+- https://patents.google.com/patent/US8878834B2/en
