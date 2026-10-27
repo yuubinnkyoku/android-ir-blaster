@@ -780,3 +780,16 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - https://github.com/yamori813/spmf_hack/blob/main/hello/mkimg.sh
 - https://github.com/yamori813/spmf_hack/blob/main/tools/splzo.c
 - https://qiita.com/yamori813/items/2919b6344e7e27704726
+
+## 2026-10-27 20:33 JST: 更新ファイル再探索とSharp電源アダプターの適合主張
+
+- **公式ファーム再探索:** Wayback CDXで `download.fujifilm.co.jp/pub/tools/dp700sh/`、`dp850sh/`、`dp1020sh/` をprefix検索し、既知の `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` の完全URLをexact検索。いずれも保存結果なし。後継の `TH50_dpf.pkg` についても `dp701sh/` と `dp801sh/` の候補URLを照会したが保存結果なし。**検索したURLでの不発であり、全アーカイブに一切存在しないという証明ではない。**
+- **公開コード再探索:** GitHubのコード検索で `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` / `RRMCG2009SCZZ` / `DP-700SH` に新規一致なし。一般Web検索（日本語・英語・中国語）でも基板のSoC刻印、実測IR波形、台湾側ODMの直接資料は未発見。
+- **新規流通資料:** 株式会社カエル寫眞機のメルカリShops出品が、Sharp `EP-D82F` を **DP-700SH / DP-850SH W 対応**と記載。仕様は5V/2A、プラグ外径約5.0mm、センタープラス。同店は「動作確認済み」と記す一方、適合確認をメーカーに求める但し書きも付す。**販売店の主張であり、公式互換表・両機種での動作実測ではない**。同店の別出品を独立根拠として重複計上しない。
+- **解釈:** 既知のDP-700SH純正 `EP-D72F`（5V/2A）と比較するための、電源系共通化の弱い手掛かり。メイン基板・SoC・OS・IRコードの共通性を推定しない。端子内径などは未測定。
+- **未解決:** `TH34_dpf.pkg`実バイナリ、SoC/OS・基板、純正リモコン実測コード、Sharp-台湾ODMの直接証拠。
+
+出典:
+- https://jp.mercari.com/shops/product/2JQohR4vzgoe47oRWMSxCk
+- https://item.rakuten.co.jp/ruitasu-r/1000063190/
+- https://web.archive.org/web/20120121024416id_/http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download002.html
