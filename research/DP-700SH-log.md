@@ -806,3 +806,19 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 出典:
 - https://patents.google.com/patent/JP2010250236A/ja
 - https://patents.google.com/patent/US8878834B2/en
+
+
+## 2026-10-28 03:05 JST: Sharp HN-PP100/150とJD-7C1CL/CWの採用OSを一次資料で特定
+
+- **探索:** 2010年FUJIFILM 3機種の更新ファイル名（`TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg`）、SoC・分解写真、`RRMCG2009SCZZ`実測IR、Sharp/台湾ODMを日本語・英語・中国語のWeb検索で再探索。公開された実ファイルや基板写真・IR波形は未発見。Waybackの公式パッケージ3件の完全URLを検索したが保存結果なし、`/pub/tools/dp700sh/`配下のprefix検索も保存結果なし。より広いprefix検索はタイムアウト/503であり、全アーカイブ不在の断定は避ける。
+- **新しい直接の採用発表:** イーソルの2009-05-12付プレスリリースは、Sharp開発の`HN-PP100`/`HN-PP150`に`eCROS`採用、具体的にμITRON4.0準拠RTOS `PrKERNELv4`、`eBinder`、ファイルシステム、SD/メモリースティック用ドライバ、USBホストスタックを明記。写真取り込み用`IrSS`も製品説明に記載。2009-05-22英語版でも一致（同一会社の再掲で独立証拠ではない）。
+- **同じ会社から別Sharp製品への採用:** 2009-10-20のイーソル発表は、デジタルフォトフレーム機能を持つSharp`JD-7C1CL/CW`にも`eCROS`、`PrKERNELv4`、`eBinder`等を採用したと記載。発表の役員コメントに「AQUOSフォトプレーヤーに続き」の明示あり。Sharp公式の2009-08-19製品発表でもJD-7C1の写真表示機能を確認。
+- **確定:** 2009年のSharp写真表示関連2系統で、外部供給の同じRTOS/開発基盤が採用されたこと。これまで比較してきたHN-PP系について、OS製品名まで明らかになった。
+- **推測・除外:** DP-700SH/850SH/1020SHへの`PrKERNELv4`採用は**未確認**。同じSharp、同じ写真表示・IrSS機能は採用の証明にならず、別機種の`ThreadX`やSoC候補を排除する根拠にもならない。eSOLは日本企業で、台湾ODMの同定資料ではない。将来ファームや起動ログを入手した際の比較文字列（`PrKERNELv4`、`eSOL`、`eCROS`、`eBinder`）として扱う。
+- **未解決:** `TH34/35/36_dpf.pkg`本体、DP-700SHのSoC/OS/基板写真、`RRMCG2009SCZZ`実測コード、台湾側受託チームとSharpの直接資料。
+
+出典:
+- https://www.esol.co.jp/archive/news/emb_press090512.html
+- https://esol.com/archive/news/emb_press090522.html
+- https://www.esol.co.jp/archive/news/emb_press091020.html
+- https://corporate.jp.sharp/news/090819-a.html
