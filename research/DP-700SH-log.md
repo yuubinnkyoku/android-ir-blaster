@@ -837,3 +837,17 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - https://jp.mercari.com/item/m93734607492
 - https://jp.mercari.com/item/m90940837676
 - https://jp.mercari.com/item/m50242772672
+
+
+## 2026-10-28 21時台 JST: EP-D82Fの端子寸法に食い違い（互換性の注意喚起）
+
+- **調査:** 既存の `DP-700SH.md` と本ログを読み、`TH34/35/36_dpf.pkg`、基板・SoC・OS、`RRMCG2009SCZZ`、Sharpと台湾側開発者を日英中Web検索・GitHub公開コード検索・Wayback CDXで再探索。公式 `TH34_dpf.pkg` の完全URLのWayback保存記録は見つからず、配布ディレクトリprefix照会は30秒でタイムアウト。GitHubコード検索で `TH34_dpf.pkg` / `RRMCG2009SCZZ` / `DP-850SH` に新規一致なし。基板写真、実測IR、ODM直接資料は未発見。失敗したprefix照会から全保存不在を断定しない。
+- **新しい矛盾の発見:** `EP-D82F` の外径をカエル寫眞機は約5.0mm、888スリーエイト企画ヤフー店は3.8mm、別のメルカリ出品者は3.6mmと表示。カエル寫眞機による `DP-700SH` 純正 `EP-D72F` の表示は約4.0mm。同店が `EP-D82F` を `DP-700SH/850SH` 対応とする従来の主張に対して、端子寸法の根拠が一致しないことが分かった。
+- **限界:** 販売者の表示を確認したのであって、外径・内径・接続互換性の実測ではない。3.6/3.8/5.0mmのどれが正しいかは不明。実機に無理に挿入せず、寸法と極性・電圧・電流を測定するまで代用しない。メイン基板の共通性は未確認。
+- **引き続き未回収:** 2010年公式更新ファイル本体、SoC/OS・基板写真、純正リモコンの実測コード、Sharp-台湾ODMの直接証拠。
+
+出典:
+- https://jp.mercari.com/shops/product/2JQohR4vzgoe47oRWMSxCk
+- https://store.shopping.yahoo.co.jp/kouga888/cadtk450-000157.html
+- https://jp.mercari.com/item/m64744466799
+- https://jp.mercari.com/shops/product/witsx6ex6bHgyj9pdEhooj
