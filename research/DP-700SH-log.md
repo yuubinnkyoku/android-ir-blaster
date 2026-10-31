@@ -851,3 +851,15 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - https://store.shopping.yahoo.co.jp/kouga888/cadtk450-000157.html
 - https://jp.mercari.com/item/m64744466799
 - https://jp.mercari.com/shops/product/witsx6ex6bHgyj9pdEhooj
+
+
+## 2026-10-31 14時台 JST: 2010年3機種の電源系に関する独立記録
+
+- 調査: 公式ファームTH34/35/36_dpf.pkg、SoC/OS/分解写真、RRMCG2009SCZZのIRコード、Sharp/台湾ODMを日英中Webで再検索。GitHub公開コード検索ではファイル名、リモコン型番、DP-700SH、SHARP_PF100_PLATFORMに新規一致なし。公式配布先は取得できず、保存版が存在しないとは断定しない。
+- **メーカー説明を引用した報道:** AV Watch（2010-03-10）は、DP-1020SHが3/13から3/20へ発売延期され、富士フイルムが一部個体の「電源接続部の不具合」に伴う全数検査を理由としたと報道。DP-850SHは予定通り3/13発売。メーカー原文未取得につき報道経由の確認。
+- **購入者の別の観察:** 価格.com（2010-05-29、書込番号11424901）で、白・黒2台のDP-700SHを同時購入した所有者が、黒付属のSharp製ACアダプターでは起動せず、白付属アダプターに交換するとスタンバイランプが点灯したと報告。こちらで現物測定はしていない単一事例。
+- **解釈と限界:** 電源不良個体の調査ではアダプターと本体入力部を分けて診断する根拠になる。ただし1020SHの「電源接続部」と700SHの「ACアダプター」の事例は異なり、共通欠陥・共通部品・同一基板・同一ODMを意味しない。SoC/OS/IRコード/ODMの直接証拠は未回収。
+
+出典:
+- https://av.watch.impress.co.jp/docs/news/353844.html
+- https://bbs.kakaku.com/bbs/K0000084345/ （書込番号11424901）
