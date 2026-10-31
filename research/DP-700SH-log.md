@@ -876,3 +876,10 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 出典:
 - https://ctimes.com.tw/%E6%95%B8%E4%BD%8D%E7%9B%B8%E6%A1%86/3D%E5%A4%9A%E5%AA%92%E9%AB%94%E6%99%B6%E7%89%87/%E8%81%AF%E9%99%BD%E5%8D%8A%E5%B0%8E%E9%AB%94/09120712007G.shtml （2009-12-07）
 - https://www.phileweb.com/news/d-av/201002/02/25247.html （2010-02-02、製品仕様）
+
+## 2026-10-31 18時台 JST: Sharp赤外線方式の多様性を実測コード資料で確認（他機種、DP未実証）
+
+- 既存のDP-700SH実機状況（Sharp 13-bit総当たり）と過去のLIRC/リモコン型番調査を確認したうえで、Sharpの旧式IRと家製協IRの波形・純正コード公開資料を照合。
+- **別機種での資料上の事実:** `https://shrkn65.nobody.jp/remocon/sharp.html` は旧Sharp方式を5-bitアドレス+8-bit命令+1-bit拡張+1-bit検査の15ビットおよび反転フレームで説明。 `https://shrkn65.nobody.jp/remocon/database.html` はSharp AQUOSの`GA952WJSA`（2011）/ `GB221SA`（2016）について、家製協6バイト`aa 5a 8f 12 YZ PX`を掲載（電源`aa 5a 8f 12 16 d1`、決定`aa 5a 8f 12 52 d1`）。`https://shrkn65.nobody.jp/remocon/aeha.html` に家製協波形と38kHz例あり。いずれも第三者の公開解析でSharp公式仕様ではない。
+- **新しい判断:** Sharp名義だけでは13/15ビット方式に限定できない。13-bit全探索の失敗は、他方式を含む全赤外線候補の否定にはならない。旧Sharp方式の拡張・検査・反転フレーム生成を点検し、家製協方式も検討候補とする。ただし家製協48-bitの総当たりは現実的でなく、純正リモコン実測を優先。
+- **厳密な限界:** `RRMCG2009SCZZ`の家製協採用、DP-700SHで上記AQUOS用コードが動作することは**未確認**。DPシリーズの赤外線信号・SoC・OS・基板写真・公式pkg・台湾ODMの直接証拠は今回も未回収。ファーム直URLへのアクセスは不成功。GitHub公開コード検索で`TH34_dpf.pkg`/`TH35_dpf.pkg`/`RRMCG2009SCZZ`等に新規一致なし。
