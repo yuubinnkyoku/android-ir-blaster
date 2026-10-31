@@ -863,3 +863,16 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 出典:
 - https://av.watch.impress.co.jp/docs/news/353844.html
 - https://bbs.kakaku.com/bbs/K0000084345/ （書込番号11424901）
+
+## 2026-10-31 17時台 JST: ITE IT9834/IT9836の同時代発表から、IT9836固有の機能差を確認
+
+- **新規の比較資料:** CTIMESの2009-12-07記事（台湾・林佳穎記者）を本文まで確認。聯陽半導體のデジタルフォトフレーム向け`IT9834`/`IT9836`を扱い、既知のDigiTimes 2009-12-10記事に加え、**IT9836は最大1440×900・24bitのLCD I/F、画像の変形投影`3D plus`、Flash系ツールによるUI制作支援`Flash-like`を備える**と記す。IT9834はJPEG/M-JPEG・MPEG1/4・音声・SD/MMC/xD/MS/MS PRO/CF・8K page/24bit ECC NAND I/Fなどを統合。
+- **既知製品仕様との照合:** DP-1020SHは1024×600、DP-850SH/DP-700SHは800×480で、記事に記載されたIT9836の出力上限と整合。DP-850SH/1020SHの動画・音声と多数のカード規格も候補SoCの機能と矛盾しない。
+- **確定度の区別:** 確定したのは**2009年当時のITE製品発表に関する報道内容**とDPシリーズの公表仕様の整合のみ。FUJIFILM/Sharpへの採用、実装された3D効果、OS/CPU、基板設計、ODMは未確認。2009年記事にIT9834の最大解像度は書かれていないので1024×600のDP-1020SHからIT9834を除外しない。2021年以降の同名`IT983x` RISC-V系仕様とも混同しない。
+- **GitHub公開コード検索:** `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` / `RRMCG2009SCZZ` / `SHARP_PF100_PLATFORM` / `FUJIFILM DP-850SH` の新規一致なし。
+- **Wayback CDX:** 2010年3機種の公式pkg直URL3件と`/pub/tools/dp700sh/`の前方一致を照会し、保存結果なし。ほかのディレクトリはタイムアウトしたため全域不在とは断定しない。
+- **継続課題:** `TH34/35/36_dpf.pkg`本体、SoC刻印/基板写真とOSの実証、`RRMCG2009SCZZ`の実測赤外線信号、Sharp↔台湾ODMの直接資料。
+
+出典:
+- https://ctimes.com.tw/%E6%95%B8%E4%BD%8D%E7%9B%B8%E6%A1%86/3D%E5%A4%9A%E5%AA%92%E9%AB%94%E6%99%B6%E7%89%87/%E8%81%AF%E9%99%BD%E5%8D%8A%E5%B0%8E%E9%AB%94/09120712007G.shtml （2009-12-07）
+- https://www.phileweb.com/news/d-av/201002/02/25247.html （2010-02-02、製品仕様）
