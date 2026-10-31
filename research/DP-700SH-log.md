@@ -896,3 +896,14 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - https://tukipie.net/camera/PHOTO/DP70SH.jpg （先代DP-70SH背面、`DC IN 12V`）
 - DP-700SH 5V/8W: 2026-08-21ユーザー提供実機写真
 - 既知のFUJIFILM公式ダウンロード案内保存版: https://web.archive.org/web/20120121024416id_/http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download002.html
+
+## 2026-11-01 03時台 JST: 2009年FPD展示会でSharpの10.2型フォトフレーム用液晶を確認
+
+- **新しい同時代の資料:** 2009-10-29付デジカメ Watchの「FPD International 2009」現地取材。Sharpは2009-10-28〜30の展示会で**10.2型・1024×600のフォトフレーム用TFT液晶**を展示し、**色再現率NTSC比64%**と報道された。同記事はSharpがすでに富士フイルムのデジタルフォトフレームへ液晶を供給していることも記す。
+- **2010年機との照合:** DP-1020SHは2010-02-02発表、Sharp製「新モード液晶」10.2型・1024×600、2000:1。展示品とはサイズ・解像度・用途・時期が整合。NTSC比64%はパネル仕様書が見つかった場合の比較項目。展示写真から部品型番は得られなかった。
+- **限界:** 展示品とDP-1020SH搭載品の同一性、DP-700SH/850SHの液晶との設計上の関係、SoC/OS/基板/台湾ODMの共通性は**いずれも未証明**。記事はDP-1020SHを名指ししていない。Sharpの液晶供給関係自体は既知で、今回の新規性は**発売約4か月前の具体的な10.2型パネル展示とNTSC比64%という照合値**。
+- **その他の探索:** 公開Webで`TH34_dpf.pkg`/`TH35_dpf.pkg`/`TH36_dpf.pkg`、`RRMCG2009SCZZ`のIR波形、DP-700SH/850SH/1020SHの分解・基板写真、石璧維氏とSharp/台湾ODMを直接結ぶ資料を日英中で再検索したが、既知の製品情報・中古流通記録が中心で新しい直接証拠はなかった。Waybackの3つの公式pkg完全URLも保存結果なし。保存されていないことを全アーカイブへ一般化しない。
+
+出典:
+- https://dc.watch.impress.co.jp/docs/news/325170.html （2009-10-29、展示会取材）
+- https://dc.watch.impress.co.jp/docs/news/346441.html （2010-02-02、製品発表）
