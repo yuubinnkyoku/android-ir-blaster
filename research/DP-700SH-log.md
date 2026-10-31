@@ -883,3 +883,16 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - **別機種での資料上の事実:** `https://shrkn65.nobody.jp/remocon/sharp.html` は旧Sharp方式を5-bitアドレス+8-bit命令+1-bit拡張+1-bit検査の15ビットおよび反転フレームで説明。 `https://shrkn65.nobody.jp/remocon/database.html` はSharp AQUOSの`GA952WJSA`（2011）/ `GB221SA`（2016）について、家製協6バイト`aa 5a 8f 12 YZ PX`を掲載（電源`aa 5a 8f 12 16 d1`、決定`aa 5a 8f 12 52 d1`）。`https://shrkn65.nobody.jp/remocon/aeha.html` に家製協波形と38kHz例あり。いずれも第三者の公開解析でSharp公式仕様ではない。
 - **新しい判断:** Sharp名義だけでは13/15ビット方式に限定できない。13-bit全探索の失敗は、他方式を含む全赤外線候補の否定にはならない。旧Sharp方式の拡張・検査・反転フレーム生成を点検し、家製協方式も検討候補とする。ただし家製協48-bitの総当たりは現実的でなく、純正リモコン実測を優先。
 - **厳密な限界:** `RRMCG2009SCZZ`の家製協採用、DP-700SHで上記AQUOS用コードが動作することは**未確認**。DPシリーズの赤外線信号・SoC・OS・基板写真・公式pkg・台湾ODMの直接証拠は今回も未回収。ファーム直URLへのアクセスは不成功。GitHub公開コード検索で`TH34_dpf.pkg`/`TH35_dpf.pkg`/`RRMCG2009SCZZ`等に新規一致なし。
+
+## 2026-10-31 23時台 JST: 先代DP-70SHの12V入力を同時代実機写真で確認（DP-700SHは5V）
+
+- **新規画像根拠:** 2010-06-01掲載の個人撮影写真に、赤色 `DP-70SH R` の背面が写り、`DIGITAL PHOTO FRAME DP-70SH` と電源端子横の **`DC IN 12V`** が判読できた。端子の位置・CF、xD/SD/MS、miniUSBの配置も見える。対象は**DP-700SHではなく先代DP-70SH**。
+- **既存の直接証拠との比較:** 2026-08-21にユーザーが撮影したDP-700SHの銘板は **`5V 8W`**。先代DP-70SHは12V入力、後継DP-700SHは5V入力で、電源アダプターを世代間で流用してはいけない。プラグ寸法や極性、SoC、OS、基板共通性は未確認。
+- **再探索:** 2010年公式 `TH34_dpf.pkg`/`TH35_dpf.pkg`/`TH36_dpf.pkg` についてWayback CDXの各完全URLを再照会し、保存結果なし。`dp700sh/`ディレクトリの前方一致照会は30秒で時間切れ。GitHub公開コード検索で3ファイル名、`RRMCG2009SCZZ`、`DP-700SH`、`SHARP_PF100_PLATFORM` に新規一致なし。日本語・英語・中国語でSoC/基板・リモコンIR・Sharp/台湾ODMを調査したが直接証拠は未発見。既知の台湾側技術者のSharp顧客案件とITE IT9834/9836の機能は既存記録を超えない。
+- **結論:** 電源入力の世代間差は実機の安全な比較に有用な新事実。ただし2010年3機種の共通SoC/OS、赤外線コード、ODMの特定には結びつかない。公式ファーム本体も未回収。
+
+出典:
+- https://tukipie.net/camera/PHOTO/Panasonic_DMC-G1.html （2010-06-01掲載の写真一覧）
+- https://tukipie.net/camera/PHOTO/DP70SH.jpg （先代DP-70SH背面、`DC IN 12V`）
+- DP-700SH 5V/8W: 2026-08-21ユーザー提供実機写真
+- 既知のFUJIFILM公式ダウンロード案内保存版: https://web.archive.org/web/20120121024416id_/http://fujifilm.jp/support/digitalphotoframe/download/dp1020sh_dp850sh_dp700sh/download002.html
