@@ -1,6 +1,6 @@
 # FUJIFILM DP-700SH リバースエンジニアリング調査メモ
 
-最終更新: 2026-11-01 JST
+最終更新: 2026-11-02 JST
 
 DP-700SH のハードウェア、ファームウェア、赤外線リモコン、開発/製造系統を追跡する作業メモ。**確定情報・状況証拠・推測を分ける**。詳細な探索経路は `research/DP-700SH-log.md` に残す。
 
@@ -1199,3 +1199,19 @@ Waybackに保存された本体はHTMLではなくバイナリとして取得で
 - 蘇州市人社局・企業紹介の旧URL（検索結果に情報が残るが本文はトップページへ転送）: https://hrss.suzhou.gov.cn/szxyyc/mobile/companyinfo/show-7502.html
 
 **主要未回収項目は不変:** `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` の本体、SoC刻印・OS・基板写真、`RRMCG2009SCZZ` の実測赤外線波形、Sharpと台湾側受託先を2010年DPシリーズで直接結ぶ資料。
+
+
+### 2026-11-02: 呉江天瀚とSanJetを同一行で結ぶHDMI加盟企業一覧、2008年の製造元指定、2011年の輸出記録
+
+**新しい状況証拠（2021-09-16公開の第三者集計）:** 劉文浩氏の「HDMI中国区会员清单」は、2021年9月時点の中国地区HDMI採用企業894社を整理したと説明する一覧で、列見出し `公司英文名 | 隶属于 | 公司中文名 | 网址` の下に、**`AIPTEK Technology (Wujiang) Co.,Ltd | SanJet Technology Corp.`** と明記する。これまでの `sanjetco.com.cn` メールドメイン類似・2011年の「勝捷吳江廠」報道より**法人名同士を直接対応させた公開記録**である。ただし**HDMI団体の公式原簿ではなく個人による再集計**であり、「隶属于」の意味（HDMI加盟管理上の所属か、実際の親子・支配関係か）、原資料の時点、持株比率は未検証。**2021年の表記を2009～2010年の所有関係へ遡及しない。**
+
+**新しい一次性の高い技術文書（2008-09-16発行の第三者試験所の試験報告書）:** QuieTek CorporationのEMC試験報告書 **`089111R-ITUSP01V02`** は、WALTOP International Corp.のデジタイザ・タブレット **`WHK-C10`** の製造元欄に **`AIPTEK TECHNOLOGY(WU JIANG) CO., LTD`** を、所在地欄に **`NO.518 Yun Li Road, TongLi Town, WuJiang City, China`** を記す。もう1社の製造元は `Shanghai Hank wireless Co., Ltd.`。これは**2008年時点で呉江天瀚が別ブランド向け製品の製造元として技術文書に記載された**直接証拠であり、住所も既知の雲梨路518号と一致する。対象はペンタブレットであり、デジタルフォトフレームやSharp向け製品ではない。
+
+**独立した物流記録の転載:** S&P Global Market Intelligence系のPanjiva企業ページは、`Aiptek Technology (WuJiang) Co., Ltd.` の住所を同じ `No. 518, Yunli Road` とし、米国税関の船荷証券由来の取引として **2011-02-17および2011-03-22の`Vistablet Systems Co., Ltd.`向け出荷**を掲げる。住所・法人英語表記と、2009年の分割後も呉江法人名義で外部顧客向けの出荷記録があることを別系統で補強する。Panjivaは通関記録を集約した民間サービスで、貨物詳細は一部伏字。**この取引をSharp/FUJIFILM向けとみなさない。**
+
+**現時点の判断:** 呉江天瀚の2008年の受託製造、2011年の外部向け出荷、2021年のSanJetへの「所属」表記が、**別系統の資料でつながった**。これはSanJet/呉江法人の関係をさらに追う根拠だが、**2009年の工場・資産移管、2010年のDP-700SH/850SH/1020SHの製造工場、Sharpとの受発注、共通SoC/OS/基板**の直接証拠ではない。HDMI採用企業一覧は**2010年DPシリーズのHDMI搭載を示すものでもない**。公式ファーム実体・`RRMCG2009SCZZ`実測IR・基板写真は引き続き未回収。
+
+出典:
+- 劉文浩、2021-09-16「HDMI中国区会员清单」（894社の**個人再集計**、`隶属于`欄にSanJet）: https://www.liuwenhao.me/?p=5262
+- QuieTek Corporation、2008-09-16発行、`089111R-ITUSP01V02`、2/27頁（WALTOP `WHK-C10`、製造元・所在地）: https://usermanual.wiki/Pdf/177405Slim10FccTestReport.34536257.pdf
+- Panjiva、Aiptek Technology (WuJiang) Co., Ltd.企業・通関記録（2011-02-17、2011-03-22）: https://panjiva.com/Aiptek-Technology-WuJiang-Co-Ltd/1006053
