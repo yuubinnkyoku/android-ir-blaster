@@ -996,3 +996,15 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - https://www.liuwenhao.me/?p=5262 （2021-09-16、第三者再集計）
 - https://usermanual.wiki/Pdf/177405Slim10FccTestReport.34536257.pdf （2008-09-16、QuieTek報告書）
 - https://panjiva.com/Aiptek-Technology-WuJiang-Co-Ltd/1006053 （2011年出荷の集計）
+
+
+## 2026-11-02 02時台 JST: 凌陽科技の公式2009・2010年報からAIPTEK・SanJetへの同時少数出資を確認
+
+- **新規一次資料:** 凌陽科技（Sunplus）の2009年英語版年報・印刷132頁の保有有価証券表で、投資会社Sunplus Venture Capital Co., Ltd.が2009-12-31に**AIPTEK International Inc. 803千株（1%）**、**Sanjet Technology Corp. 369千株（1%）**を保有していたと確認。2010年英語版年報・印刷89頁にはAIPTEK 803千株（1%）、Sanjet 148千株（1%）と記載。**数値はWeb検索で抽出された表を行順に対応させたもので、PDF原本の画像による照合は未了**。2010年のSanjet株数減少の原因は未確認。
+- **新規性:** 既知の正文科技（Gemtek）とは別の半導体企業グループも、2009年の事業分割直後に台湾AIPTEKと台湾SanJetの両方へ少数出資していたという同時代の資本資料。台湾企業2社と中国呉江法人を混同しない。
+- **解釈の限界:** 1%程度の少数出資から、凌陽製SoCの搭載、Sharp/FUJIFILMの製造委託、基板・OS共通性、呉江法人への出資を推論しない。2009年のSanJetとAIPTEKの関係も、共通投資家の存在だけでは親子関係と断定できない。
+- **並行探索:** 公式pkg3種、RRMCG2009SCZZの公開IR波形、DP-700SH/850SH/1020SHの基板・SoC/OS、Sharp↔台湾ODMの機種別資料を日英中の公開Webで再検索。実体・直接証拠は未発見。中古のRRMCG2009SCZZ出品は既知の調達候補と重複するため新成果に数えない。
+
+出典:
+- https://w3.sunplus.com/ir/annual/2009_ar_en.pdf （凌陽科技2009年年報、印刷132頁）
+- https://w3.sunplus.com/ir/annual/2010_ar_en.pdf （凌陽科技2010年年報、印刷89頁）
