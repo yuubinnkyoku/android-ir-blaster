@@ -1008,3 +1008,20 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 出典:
 - https://w3.sunplus.com/ir/annual/2009_ar_en.pdf （凌陽科技2009年年報、印刷132頁）
 - https://w3.sunplus.com/ir/annual/2010_ar_en.pdf （凌陽科技2010年年報、印刷89頁）
+
+
+## 2026-11-02 03時台 JST: Sunplus公式年報2008〜2011の投資表を画像で照合、2投資子会社による並行保有を確認
+
+- **再検証の動機:** 既存メモの2009・2010年のSunplusによるAIPTEK・Sanjet保有株数は、年報検索索引に見える1社分のみで、原本の表画像を未照合だった。2008・2009・2010・2011年の公式PDFを直接開き、保有会社名が複数ページにまたがる表の行を画像で照合した。
+- **新たに確認:** Sunplusの100%投資子会社は **Lin Shih Investment Co., Ltd.** と **Sunplus Venture Capital Co., Ltd.** の2社（2009年年報、印刷152頁）。2009年末の保有はLin ShihがAIPTEK **136千株**・Sanjet **63千株**、Sunplus Venture CapitalがAIPTEK **803千株**・Sanjet **369千株**。旧記録の803/369は後者だけの値で、誤りではないが**グループ全体の説明としては不完全**だった。
+- **2008年末:** Lin ShihがAIPTEK **199千株**、Sunplus Venture CapitalがAIPTEK **1,172千株**。2008年の同一覧ではSanjet名を確認できず、非保有と断定しない。
+- **2010年末:** Lin ShihがAIPTEK **136千株**・Sanjet **25千株**、Sunplus Venture CapitalがAIPTEK **803千株**・Sanjet **148千株**。
+- **2011年末:** Lin ShihがAIPTEK **136千株**・Sanjet **8千株**、Sunplus Venture CapitalがAIPTEK **803千株**・Sanjet **49千株**。株数変動の原因は不明で、持分比率欄の「-」をゼロと解釈しない。
+- **位置付け:** 台湾AIPTEKとSanjetの事業分割前後における資本的接点を、保有主体と4時点で具体化できた。**SoCの部品供給、Sharpとの製造委託、呉江法人の株主、DP-700SH系列の製造工場や共通OS/基板の証拠ではない**。
+- **並行探索:** Waybackで`TH34_dpf.pkg`/`TH35_dpf.pkg`/`TH36_dpf.pkg`の3公式完全URLを再照会して保存版なし。ディレクトリ前方一致検索は時間切れ。日英検索で3機種の基板・SoC・OS、`RRMCG2009SCZZ`の実測IR、Sharpと台湾ODMの直接資料は新規に確認できなかった。
+
+出典（公式年報、PDF表画像を直接確認）:
+- https://w3.sunplus.com/ir/annual/2008_ar_en.pdf （印刷81〜82頁）
+- https://w3.sunplus.com/ir/annual/2009_ar_en.pdf （印刷80〜82頁、100%子会社は印刷152頁）
+- https://w3.sunplus.com/ir/annual/2010_ar_en.pdf （印刷88〜89頁）
+- https://w3.sunplus.com/ir/annual/2011_ar_en.pdf （印刷82〜83頁）
