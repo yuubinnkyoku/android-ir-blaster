@@ -982,3 +982,17 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 - https://www.shuididp.cn/yp-eed6f04cd0f27a522df64644312a974e.html （登記転載・株主一覧）
 - https://m.zhipin.com/companys/5281ce078d6b60c21nB82ti6GA~~.html （法人番号・代表者・住所）
 - https://hrss.suzhou.gov.cn/szxyyc/mobile/companyinfo/show-7502.html （蘇州市人社局の企業紹介、現在トップページへ転送）
+
+
+## 2026-11-02 01時台 JST: HDMI企業一覧でSanJet↔呉江天瀚の明示的対応、2008年製造元記録・2011年出荷を発見
+
+- **新規・第三者の企業一覧（2021-09-16）:** 劉文浩氏がHDMI中国地区の加盟企業894社を集計したページで、`AIPTEK Technology (Wujiang) Co.,Ltd` の `隶属于` 欄に **`SanJet Technology Corp.`** が記載されている。これまでのメールドメインや工場所在地の間接的な照合とは異なり、法人名とSanJetを同一行で直接対応させる記録。ただしHDMI団体の公式原簿を確認できず、集計の根拠、所属の法的意味、2021年以前の有効期間は不明。親会社・持株比率・2009年の資産移転を確定しない。
+- **新規・2008-09-16の試験所報告書:** QuieTekの`089111R-ITUSP01V02`（WALTOP製デジタイザ`WHK-C10`）2/27頁に、製造元として`AIPTEK TECHNOLOGY(WU JIANG) CO., LTD`、住所`NO.518 Yun Li Road, TongLi Town, WuJiang City`が記載される（上海の別製造元も併記）。2008年に呉江法人が別ブランドの製造元として記載された直接証拠。**対象はDPFではなくペンタブレット**。
+- **新規・貿易データ:** Panjivaは同一英語法人名・雲梨路518号を示し、2011-02-17と2011-03-22のVistablet向け米国出荷記録を掲載。2011年に外部顧客への輸出記録があることの補強。貨物詳細は伏字で、DPシリーズやSharp向けとは無関係または未確認。
+- **公式ファーム/赤外線/基板の並行探索:** `TH34_dpf.pkg` / `TH35_dpf.pkg` / `TH36_dpf.pkg` の旧公式URLをWayback CDXで個別照会し、保存版なし。DP-700SH配布ディレクトリの前方一致照会は30秒時間切れ、DP-850SHはHTTP 503、DP-1020SHは該当なし。公開Webの日英中検索と画像検索で3機種のSoC刻印・基板写真、純正`RRMCG2009SCZZ`の実測IRを回収できなかった。GitHubコード検索は**自リポジトリに存在する既知文字列も一致なし**となるため、検索結果0件を世界全体での不存在証明としない。
+- **結論:** 2008年の製造元指定、2011年の物流、2021年の「SanJet所属」表記を時点別に整理。2010年DPシリーズのODM確定・同一SoC/OSの証拠ではない。一次資料であるHDMI加盟原簿と、呉江法人の当時の株主/資産移管資料の回収が次の焦点。
+
+出典:
+- https://www.liuwenhao.me/?p=5262 （2021-09-16、第三者再集計）
+- https://usermanual.wiki/Pdf/177405Slim10FccTestReport.34536257.pdf （2008-09-16、QuieTek報告書）
+- https://panjiva.com/Aiptek-Technology-WuJiang-Co-Ltd/1006053 （2011年出荷の集計）
