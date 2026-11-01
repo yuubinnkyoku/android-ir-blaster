@@ -1215,3 +1215,18 @@ Waybackに保存された本体はHTMLではなくバイナリとして取得で
 - 劉文浩、2021-09-16「HDMI中国区会员清单」（894社の**個人再集計**、`隶属于`欄にSanJet）: https://www.liuwenhao.me/?p=5262
 - QuieTek Corporation、2008-09-16発行、`089111R-ITUSP01V02`、2/27頁（WALTOP `WHK-C10`、製造元・所在地）: https://usermanual.wiki/Pdf/177405Slim10FccTestReport.34536257.pdf
 - Panjiva、Aiptek Technology (WuJiang) Co., Ltd.企業・通関記録（2011-02-17、2011-03-22）: https://panjiva.com/Aiptek-Technology-WuJiang-Co-Ltd/1006053
+
+
+### 2026-11-02: 凌陽科技（Sunplus）の2009・2010年公式年報に、天瀚（AIPTEK）と勝捷（SanJet）への同時少数出資を確認（SoC供給の証拠ではない）
+
+**新規の一次資料（2009年末時点）:** 台湾の半導体企業・凌陽科技（Sunplus Technology）の2009年年次報告、印刷132頁の「期末保有有価証券」一覧では、同社の投資会社 **Sunplus Venture Capital Co., Ltd.** の保有先として、台湾の **AIPTEK International Inc.（天瀚科技）803千株、持分1%** と **Sanjet Technology Corp.（勝捷光電）369千株、持分1%** が同時に掲載される。2009年6月のAIPTEK受託製造部門分割後、**2009-12-31時点に別の半導体企業グループが両社へ並行して少数出資していた**ことを示す。数字は英語版年報の検索索引にある表を行順で照合したもので、PDF原本のページ画像による再照合は未実施。
+
+**翌年の記録（2010年末時点）:** 同じ凌陽科技の2010年年報、印刷89頁の保有有価証券一覧にも、Sunplus Venture Capitalの投資先として **AIPTEK 803千株・1%、Sanjet 148千株・1%** が記載される。2009年のSanjet 369千株との差の原因（売却、組織再編、持分調整など）は不明であり、取引を推定しない。表にある1%は年報記載の丸められた比率で、厳密な議決権比率とは限らない。
+
+**既存の証拠との差分と限界:** 既に記録した正文科技（Gemtek）の2009年末のAIPTEK・SanJet・呉江法人への少数出資とは**異なる投資家**の同時代の一次資料である。半導体企業が両社へ出資していたことは開発・製造企業の資本関係を追う手掛かりになるが、**Sunplus製SoCがDP-700SH/850SH/1020SHに採用された証拠ではない**。またSunplusとGemtekの間の共同開発、Sharpとの受発注、SanJetと呉江法人の法的親子関係を示す資料でもない。保有先は台湾AIPTEKと台湾SanJetであり、中国の天瀚科技（呉江）へのSunplus出資を示すものではない。
+
+出典（凌陽科技公式の英語版年報、表の検索索引で確認。原本表示は取得時に時間切れ）:
+- https://w3.sunplus.com/ir/annual/2009_ar_en.pdf （2009年年報、印刷132頁、2009-12-31時点）
+- https://w3.sunplus.com/ir/annual/2010_ar_en.pdf （2010年年報、印刷89頁、2010-12-31時点）
+
+主要未回収項目は不変: 公式 `TH34/35/36_dpf.pkg` の実体、DP-700SH系列のSoC刻印・OS・基板写真、`RRMCG2009SCZZ` の実測赤外線コード、Sharpと台湾ODMの機種別直接証拠。
