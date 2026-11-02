@@ -1093,3 +1093,13 @@ https://web.archive.org/web/20120121040119id_/http://fujifilm.jp/support/digital
 
 出典（正文科技公式PDF、2022Q1、印刷56・60頁）:
 - https://www.gemteks.com/ir/finance/XJ5Vkd/download/q1
+
+
+## 2026-11-02 16時台 JST: Gemtek 2011年公開説明書の表画像でAIPTEK (Cayman) 8.49%保有主体を直接確認
+
+- **探索:** 2007年のGemtekによるAIPTEK呉江工場買収と、既知の2006年AIPTEK (B.V.I.)→AIPTEK (Cayman)→呉江法人100%保有、および2009〜2022年のGemtek少数出資の間をつなぐ資料を探した。日英中の社名・Cayman・G-TechnologyでWeb検索し、2011年のGemtek自身の公開説明書（2011-06-27刊）を発見。
+- **確定・表画像照合済み:** 印刷**161頁／PDF 0起算166頁**「附表八」には、Gemtekの投資子会社 **G-Technology Investment Co., Ltd.** が **AIPTEK (Cayman) Inc.を2,434千株・8.49%保有、帳簿価額NT$28,791千（USD900千）** と明記。印刷**167頁／PDF 0起算172頁**「附表十三」には、**天瀚科技（吳江）有限公司**への間接持分**8.49%**、投資経路 **G-Technology Investment Co., Ltd.**、払込資本金**USD15,600千**、累積送金**USD900千**が記載される。2010年の期初・期末累積送金は同額。2011年の公開説明書だが、附表は**2010年度末の財務情報**として読む。
+- **従来の情報との差分:** 2009年末のGemtek→呉江法人8.49%、2022年のG-Technology→呉江法人11.54%、2006年のAIPTEK (Cayman)→呉江法人100%を既に記録していた。今回、**2010年末のGemtek子会社が直接保有した証券の発行体名がAIPTEK (Cayman) Inc.である**と、同時代の企業開示で明確になった。既知の2006年の中間持株会社と同名であり、投資経路を具体化する。
+- **未確定・注意:** 2007年に買収された「境外持株会社」がCaymanかBVIか、2010年末までに何が移転したか、2007年報道の「全株式取得」と2010年末の8.49%の関係は未解決。**2010年の8.49%を2007年の買収比率へ遡及しない**。2010年の8.49%はSharp/FUJIFILMのDPシリーズ製造委託やSoC/OS/IRの根拠ではない。PDFは第三者サイト配信の当事者作成原本複製であり、台湾当局配布版との照合は未了。
+- **技術面:** `TH34_dpf.pkg`/`TH35_dpf.pkg`/`TH36_dpf.pkg`、`RRMCG2009SCZZ`のIRコード、DP-700SH/850SH/1020SHのSoC/OS/基板を並行検索。既知の資料のみで新しい実体なし。
+- **出典:** https://cdn.financialreports.eu/financialreports/media/filings/52434/2026/RNS/52434_rns_2026-04-14_966301c4-4508-485d-a9da-a33b1f2c2e62.pdf （正文科技、2011-06-27「公開說明書稿本」、印刷161・167頁）
